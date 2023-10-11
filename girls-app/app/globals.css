@@ -138,6 +138,7 @@ header {
 }
 .artists_bx li {
     width: 150px;
+    cursor: pointer;
 }
 .artists_bx li img {
     width: 100%;
@@ -145,3 +146,18 @@ header {
     object-fit: cover;
     border-radius: 20px;
 }
+.artists_bx h3 {
+    display: inline-block;
+}
+.artists_bx span {
+    float: right;
+    font-weight: 600;
+    color: #595757;
+}
+.imgbx .member_name {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+/* 뮤직플레이어 */

@@ -2,7 +2,7 @@
 
 /* 초기화 CSS - reset.css */
 /* 마진,패딩 초기화 */
-html,body,div,h3,ul,li,nav,header,main,section,p,a {
+html,body,div,h3,ul,li,nav,header,main,section,p,a,button,figure,figcaption {
     margin: 0;
     padding: 0;
     background: none;

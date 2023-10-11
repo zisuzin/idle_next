@@ -54,13 +54,15 @@ export default function Home() {
                         {/* 멤버프로필 출력 */}
                         { artists.map((v,i) => (
                         <li>
-                            <div className="imgbx">
+                            <figure className="imgbx">
                                 <img src={v.isrc + '.jpeg'} alt={v.name} />
-                            </div>
+                                <figcaption className="member_name">{v.name}</figcaption>
+                            </figure>
                         </li>
                         ))}
                     </ul>
                 </div>
+                
             </div>
         </div>
     </div>
