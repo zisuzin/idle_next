@@ -24,6 +24,11 @@ a {
     text-decoration: none;
 }
 
+button {
+    outline: none;
+    border: none;
+}
+
 /* 이미지 관련 */
 img {
     border: none;

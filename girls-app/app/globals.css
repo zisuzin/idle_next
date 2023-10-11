@@ -65,7 +65,7 @@ header {
 .txt_area {
     position: relative;
     padding: 50px 90px 0 60px;
-    background-image: url(/_next/static/media/bg_cover.a90a7acd.jpg);
+    background-image: url(../public/images/bg_cover.jpg);
     background-repeat: no-repeat;
     background-size: 2000px;
     background-position: 50%;
@@ -132,9 +132,14 @@ header {
     width: 54px;
     height: 54px;
 }
+.artists_bx {
+    float: left;
+    width: 62.6569%;
+    padding: 20px;
+}
 .artists_bx ul {
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
 }
 .artists_bx li {
     width: 150px;
@@ -161,3 +166,46 @@ header {
     margin-top: 10px;
 }
 /* 뮤직플레이어 */
+.player_inner {
+    padding: 20px 15px;
+    background: rgb(43 43 43);
+    width: 100%;
+}
+.player_inner * {
+    border: 1px solid #fff;
+}
+.player_inner .p_img {
+    height: 160px;
+    border-radius: 15px;
+}
+.player_inner h3 {
+    color: #fff;
+}
+.player_inner .p_wrap {
+    padding: 30px 45px;
+}
+.player_inner .p_info {
+    margin: 30px 0;
+    font-size: 28px;
+    text-align: center;
+    color: #fff;
+}
+.player_inner .artist {
+    font-size: 18px;
+}
+.player_inner .timer {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+}
+.material-icons-outlined {
+    content: '/e043';
+}
+.p_control button {
+    color: #fff;
+}
+.player_bx {
+    float: right;
+    width: 37.3431%;
+}

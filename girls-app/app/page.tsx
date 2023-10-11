@@ -1,5 +1,12 @@
 import Link from "next/link"
 import artists from "./data/hcode.js";
+/* Material UI 컴포넌트 */
+import IconButton from '@mui/material/IconButton';
+import ShuffleIcon from '@mui/icons-material/Shuffle';
+import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
+import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import SkipNextIcon from '@mui/icons-material/SkipNext';
+import RepeatIcon from '@mui/icons-material/Repeat';
 
 export default function Home() {
   return (
@@ -33,18 +40,18 @@ export default function Home() {
                             <div className="info">(여자)아이들의 유쾌한 자아도취 있는 그대로의 '나'를 사랑할 수 있는 퀸카(Queencard)는 자신의 생각과 감정에 따라 변화하는 자존감'에 대한 메시지를 (여자)아이들의 솔직하고 유쾌한 매력으로 풀어내며, 누구나 쉽게 공감하고 즐길 수 있는 (여자)아이들만의 또 다른 오리지널 시리즈를 제공한다.</div>
                             <div className="sub">
                                 <span className="item">
-                                    <span className="blind">아티스트</span>
+                                    <em className="blind">아티스트</em>
                                     <span>(G)IDLe</span>
                                 </span>
                                 <span className="item">
-                                    <span className="blind">발매일</span>
+                                    <em className="blind">발매일</em>
                                     <span>2023.05.15</span>
                                 </span>
                             </div>
                         </div>
                     </div>
                     <a href="#" role="button" className="play_now_btn">
-                        <span className="blind">재생하기</span>
+                        <em className="blind">재생하기</em>
                     </a>
                 </div>
                 <div className="artists_bx">
@@ -62,7 +69,56 @@ export default function Home() {
                         ))}
                     </ul>
                 </div>
-                
+                {/* 뮤직 플레이어 */}
+                <div className="player_bx">
+                    <div className="player_inner">
+                        <h3>Player</h3>
+                        <div className="p_wrap">
+                            <div className="p_img">
+                            </div>
+                            <div className="p_info">
+                                <p className="name">Queencard</p>
+                                <p className="artist">(G)IDLe</p>
+                            </div>
+                        </div>
+                        <div className="p_progress">
+                            <div className="bar">
+                                <span className="pin"></span>
+                                <audio src="" id="audio"></audio>
+                            </div>
+                            <div className="timer">
+                                <span className="current">0:00</span>
+                                <span className="duration">0:00</span>
+                            </div>
+                        </div>
+                        <div className="p_control">
+                            <IconButton id="shuffle-btn">
+                                <RepeatIcon/>
+                                <em className="blind">곡 전체 랜덤 반복</em>
+                            </IconButton>
+                            {/* 이전 곡 재생버튼 */}
+                            <IconButton id="prev-btn">
+                                <SkipPreviousIcon/>
+                                <em className="blind">이전 버튼</em>
+                            </IconButton>
+                            {/* 중지/재생 버튼 */}
+                            <IconButton id="play-pause">
+                                <PlayCircleIcon/>
+                                <em className="blind">재생/중지 버튼</em>
+                            </IconButton>
+                            {/* 다음 곡 재생버튼 */}
+                            <IconButton id="next-btn">
+                                <SkipNextIcon/>
+                                <em className="blind">다음 버튼</em>
+                            </IconButton>
+                            {/* 현재 곡 반복버튼 */}
+                            <IconButton id="repeat-btn">
+                                <ShuffleIcon />
+                                <em className="blind">현재 곡 반복</em>
+                            </IconButton>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
