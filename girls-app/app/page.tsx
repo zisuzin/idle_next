@@ -73,48 +73,50 @@ export default function Home() {
                 {/* 뮤직 플레이어 */}
                 <div className="player_bx">
                     <div className="player_inner">
-                        <h3>Player</h3>
-                        <div className="p_wrap1">
-                            <div className="p_img">
+                        <div className="p_wrap">
+                            <h3>Player</h3>
+                            <div className="p_depth1">
+                                <div className="p_img">
+                                </div>
+                                <div className="p_info">
+                                    <p className="name">Queencard</p>
+                                    <p className="artist">(G)IDLe</p>
+                                </div>
                             </div>
-                            <div className="p_info">
-                                <p className="name">Queencard</p>
-                                <p className="artist">(G)IDLe</p>
+                            <div className="timer">
+                                <span className="current">0:00</span>
+                                <div className="p_progress p_depth2">
+                                    <div className="bar">
+                                        <span className="pin"></span>
+                                        <audio src="" id="audio"></audio>
+                                    </div>
+                                </div>
+                                <span className="duration">0:00</span>
                             </div>
                         </div>
-                        <div className="p_wrap2">
-                            <div className="p_progress">
-                                <div className="bar">
-                                    <span className="pin"></span>
-                                    <audio src="" id="audio"></audio>
-                                </div>
-                                <div className="timer">
-                                    <span className="current">0:00</span>
-                                    <span className="duration">0:00</span>
-                                </div>
-                            </div>
+                        <div className="p_depth3">
                             <div className="p_control">
-                                <IconButton id="shuffle-btn">
+                                <IconButton id="shuffle-btn" disableRipple>
                                     <RepeatIcon/>
                                     <em className="blind">곡 전체 랜덤 반복</em>
                                 </IconButton>
                                 {/* 이전 곡 재생버튼 */}
-                                <IconButton id="prev-btn">
+                                <IconButton id="prev-btn" disableRipple>
                                     <SkipPreviousIcon/>
                                     <em className="blind">이전 버튼</em>
                                 </IconButton>
                                 {/* 중지/재생 버튼 */}
-                                <IconButton id="play-pause">
+                                <IconButton id="play-pause" disableRipple>
                                     <PlayCircleIcon/>
                                     <em className="blind">재생/중지 버튼</em>
                                 </IconButton>
                                 {/* 다음 곡 재생버튼 */}
-                                <IconButton id="next-btn">
+                                <IconButton id="next-btn" disableRipple>
                                     <SkipNextIcon/>
                                     <em className="blind">다음 버튼</em>
                                 </IconButton>
                                 {/* 현재 곡 반복버튼 */}
-                                <IconButton id="repeat-btn">
+                                <IconButton id="repeat-btn" disableRipple>
                                     <ShuffleIcon/>
                                     <em className="blind">현재 곡 반복</em>
                                 </IconButton>
