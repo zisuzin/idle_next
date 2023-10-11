@@ -52,7 +52,7 @@ header {
 }
 .headline {
     position: relative;
-    margin-top: 25px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -140,6 +140,7 @@ header {
 .artists_bx ul {
     display: flex;
     gap: 20px;
+    margin-top: 20px;
 }
 .artists_bx li {
     width: 150px;
@@ -181,8 +182,8 @@ header {
 .player_inner h3 {
     color: #fff;
 }
-.player_inner .p_wrap {
-    padding: 30px 45px;
+.player_inner .p_wrap1 {
+    padding: 10% 20%;
 }
 .player_inner .p_info {
     margin: 30px 0;
@@ -193,14 +194,24 @@ header {
 .player_inner .artist {
     font-size: 18px;
 }
+.player_inner .p_wrap2 {
+    padding: 5% 10%;
+}
 .player_inner .timer {
     color: #fff;
     display: flex;
     justify-content: space-between;
     font-size: 14.5px;
 }
+.p_progress {
+    padding: 0 10px;
+}
 .material-icons-outlined {
     content: '/e043';
+}
+.p_control {
+    display: flex;
+    justify-content: space-between;
 }
 .p_control button {
     color: #fff;
@@ -208,4 +219,14 @@ header {
 .player_bx {
     float: right;
     width: 37.3431%;
+}
+#play-pause svg {
+    font-size: 60px;
+}
+.lyrics_info {
+    color: #fff;
+    text-align: center;
+}
+.lyrics_info > p {
+    font-size: 13px;
 }

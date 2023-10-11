@@ -1,5 +1,6 @@
 "use client";
 
+/* Styled-components 불러오기 */
 import styled from "styled-components";
 
 const GalleryWrap = styled.div`

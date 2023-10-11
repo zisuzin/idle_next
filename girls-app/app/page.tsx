@@ -1,12 +1,13 @@
 import Link from "next/link"
 import artists from "./data/hcode.js";
-/* Material UI 컴포넌트 */
+/* Material UI 컴포넌트 불러오기 */
 import IconButton from '@mui/material/IconButton';
 import ShuffleIcon from '@mui/icons-material/Shuffle';
 import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import RepeatIcon from '@mui/icons-material/Repeat';
+import ExpandLessRoundedIcon from '@mui/icons-material/ExpandLessRounded';
 
 export default function Home() {
   return (
@@ -73,7 +74,7 @@ export default function Home() {
                 <div className="player_bx">
                     <div className="player_inner">
                         <h3>Player</h3>
-                        <div className="p_wrap">
+                        <div className="p_wrap1">
                             <div className="p_img">
                             </div>
                             <div className="p_info">
@@ -81,41 +82,47 @@ export default function Home() {
                                 <p className="artist">(G)IDLe</p>
                             </div>
                         </div>
-                        <div className="p_progress">
-                            <div className="bar">
-                                <span className="pin"></span>
-                                <audio src="" id="audio"></audio>
+                        <div className="p_wrap2">
+                            <div className="p_progress">
+                                <div className="bar">
+                                    <span className="pin"></span>
+                                    <audio src="" id="audio"></audio>
+                                </div>
+                                <div className="timer">
+                                    <span className="current">0:00</span>
+                                    <span className="duration">0:00</span>
+                                </div>
                             </div>
-                            <div className="timer">
-                                <span className="current">0:00</span>
-                                <span className="duration">0:00</span>
+                            <div className="p_control">
+                                <IconButton id="shuffle-btn">
+                                    <RepeatIcon/>
+                                    <em className="blind">곡 전체 랜덤 반복</em>
+                                </IconButton>
+                                {/* 이전 곡 재생버튼 */}
+                                <IconButton id="prev-btn">
+                                    <SkipPreviousIcon/>
+                                    <em className="blind">이전 버튼</em>
+                                </IconButton>
+                                {/* 중지/재생 버튼 */}
+                                <IconButton id="play-pause">
+                                    <PlayCircleIcon/>
+                                    <em className="blind">재생/중지 버튼</em>
+                                </IconButton>
+                                {/* 다음 곡 재생버튼 */}
+                                <IconButton id="next-btn">
+                                    <SkipNextIcon/>
+                                    <em className="blind">다음 버튼</em>
+                                </IconButton>
+                                {/* 현재 곡 반복버튼 */}
+                                <IconButton id="repeat-btn">
+                                    <ShuffleIcon/>
+                                    <em className="blind">현재 곡 반복</em>
+                                </IconButton>
                             </div>
-                        </div>
-                        <div className="p_control">
-                            <IconButton id="shuffle-btn">
-                                <RepeatIcon/>
-                                <em className="blind">곡 전체 랜덤 반복</em>
-                            </IconButton>
-                            {/* 이전 곡 재생버튼 */}
-                            <IconButton id="prev-btn">
-                                <SkipPreviousIcon/>
-                                <em className="blind">이전 버튼</em>
-                            </IconButton>
-                            {/* 중지/재생 버튼 */}
-                            <IconButton id="play-pause">
-                                <PlayCircleIcon/>
-                                <em className="blind">재생/중지 버튼</em>
-                            </IconButton>
-                            {/* 다음 곡 재생버튼 */}
-                            <IconButton id="next-btn">
-                                <SkipNextIcon/>
-                                <em className="blind">다음 버튼</em>
-                            </IconButton>
-                            {/* 현재 곡 반복버튼 */}
-                            <IconButton id="repeat-btn">
-                                <ShuffleIcon />
-                                <em className="blind">현재 곡 반복</em>
-                            </IconButton>
+                            <div className="lyrics_info">
+                                <ExpandLessRoundedIcon/>
+                                <p>LYRICS</p>
+                            </div>
                         </div>
                     </div>
                 </div>
