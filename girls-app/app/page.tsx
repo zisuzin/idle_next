@@ -4,6 +4,9 @@ import Link from "next/link"
 import React, { useEffect, useState } from 'react';
 /* 더미데이터 불러오기 */
 import {artists, headlines} from "./data/hcode.js";
+/* Redux 모듈 불러오기 */
+import { useSelector, useDispatch, Provider } from 'react-redux';
+import { setImgUrl } from './ts/redux';
 /* Swiper 불러오기 */
 import { Swiper } from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -21,10 +24,21 @@ import ExpandLessRoundedIcon from '@mui/icons-material/ExpandLessRounded';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import QueueMusicIcon from '@mui/icons-material/QueueMusic';
 
+// RootState 타입 정의
+type RootState = {
+    image: {
+        imgUrl: string;
+    }
+}
+
 export default function Home() {
+
+    const imgUrl = useSelector((state: RootState) => state.image.imgUrl);
+    const dispatch = useDispatch();
 
     // 헤드라인 재생버튼 클릭시 해당 음원 재생
     const playSong = (img: string, audio: string) => {
+        dispatch(setImgUrl(img));
         console.log(img)
         console.log(audio)
     }
@@ -110,6 +124,7 @@ export default function Home() {
                             </h3>
                             <div className="p_depth1">
                                 <div className="p_img">
+                                    <img src={imgUrl} alt="" />
                                 </div>
                                 <div className="p_info">
                                     <p className="name">Queencard</p>
