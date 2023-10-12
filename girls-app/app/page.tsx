@@ -1,17 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom/client";
 /* 더미데이터 불러오기 */
 import { artists, headlines } from "../data/hcode";
 /* Redux 모듈 불러오기 */
-import { useSelector, useDispatch, Provider } from "react-redux";
-import { setImgUrl } from "../ts/redux";
-import store from "../ts/store";
+import { useSelector, useDispatch } from "react-redux";
+import { setImg, setTit } from "../ts/redux";
 import "../app/globals.css";
 /* Swiper 불러오기 */
-import { Swiper } from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper as SwiperReact, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
@@ -29,20 +25,21 @@ import QueueMusicIcon from "@mui/icons-material/QueueMusic";
 
 // RootState 타입 정의
 type RootState = {
-    image: {
+    ref: {
         imgUrl: string;
+        alTit: string;
     };
 };
 
 export default function Home() {
-    const imgUrl = useSelector((state: RootState) => state.image.imgUrl);
+    const imgUrl = useSelector((state: RootState) => state.ref.imgUrl);
+    const alTit = useSelector((state: RootState) => state.ref.alTit);
     const dispatch = useDispatch();
 
     // 헤드라인 재생버튼 클릭시 해당 음원 재생
-    const playSong = (img: string, audio: string) => {
-        dispatch(setImgUrl(img));
-        console.log(img);
-        console.log(audio);
+    const playSong = (img: string, audio: string, tit: string) => {
+        dispatch(setImg(img));
+        dispatch(setTit(tit));
     };
 
     return (
@@ -91,7 +88,7 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#" role="button" className="play_now_btn" onClick={() => playSong(x.albimg, x.msrc)}>
+                                <a href="#" role="button" className="play_now_btn" onClick={() => playSong(x.albimg, x.msrc, x.mtit)}>
                                     <PlayArrowIcon />
                                     <em className="blind">재생하기</em>
                                 </a>
@@ -125,10 +122,10 @@ export default function Home() {
                                 </h3>
                                 <div className="p_depth1">
                                     <div className="p_img">
-                                        <img src="#" alt="" />
+                                        <img src={imgUrl} alt={alTit}/>
                                     </div>
                                     <div className="p_info">
-                                        <p className="name">Queencard</p>
+                                        <p className="name">{alTit}</p>
                                         <p className="artist">(G)IDLe</p>
                                     </div>
                                 </div>
