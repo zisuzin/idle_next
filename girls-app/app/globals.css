@@ -49,17 +49,22 @@ header {
 }
 .container_inner {
     padding: 50px 55px;
+    overflow: hidden;
 }
 .headline {
     position: relative;
     margin-top: 20px;
-    display: flex;
-    align-items: center;
+    display: inherit !important;
     cursor: pointer;
 }
 /* 헤드라인 이미지 */
 .img_area {
     height: 334px;
+}
+.img_area img {
+    width: 462px;
+    height: 100%;
+    object-fit: cover;
 }
 /* 헤드라인 텍스트 */
 .txt_area {
@@ -86,7 +91,7 @@ header {
     z-index: 9999;
 }
 .title {
-    font-size: 38px;
+    font-size: 36px;
     line-height: 47px;
     letter-spacing: -.5px;
 }
@@ -127,10 +132,15 @@ header {
     position: absolute;
     bottom: 10px;
     left: 10px;
-    background: url(../public/images/sp_button.png) no-repeat;
-    background-position: -68px -146px;
     width: 54px;
     height: 54px;
+    color: #fff;
+    background: rgba(0,0,0,.7);
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .artists_bx {
     float: left;
@@ -181,9 +191,16 @@ header {
 }
 .player_inner h3 {
     color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+.player_inner h3 > span {
+    cursor: pointer;
+}
+
 .player_inner .p_depth1 {
-    padding: 10% 20%;
+    padding: 10% 15%;
 }
 .player_inner .p_info {
     margin: 30px 0;
@@ -254,4 +271,17 @@ header {
     height: 6px;
     border-radius: 3px;
     background: rgba(255,255,255,0.4);
+}
+/* 스와이퍼 네비게이션 */
+.swiper-button-next {
+    top: 60% !important;
+}
+.swiper-button-prev, .swiper-button-next {
+    left: 95% !important;
+    transform: rotate(90deg);
+}
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 15px !important;
+    font-weight: bold;
+    color: #ccc !important;
 }

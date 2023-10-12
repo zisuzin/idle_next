@@ -1,5 +1,15 @@
+"use client";
+
 import Link from "next/link"
-import artists from "./data/hcode.js";
+import React, { useEffect } from 'react';
+/* 더미데이터 불러오기 */
+import {artists, headlines} from "./data/hcode.js";
+/* Swiper 불러오기 */
+import { Swiper } from 'swiper';
+import { Navigation } from 'swiper/modules';
+import { Swiper as SwiperReact, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
+import 'swiper/css/navigation';
 /* Material UI 컴포넌트 불러오기 */
 import IconButton from '@mui/material/IconButton';
 import ShuffleIcon from '@mui/icons-material/Shuffle';
@@ -8,8 +18,20 @@ import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import ExpandLessRoundedIcon from '@mui/icons-material/ExpandLessRounded';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import QueueMusicIcon from '@mui/icons-material/QueueMusic';
 
 export default function Home() {
+
+    // 스와이퍼
+    const mySwiper: Swiper = new Swiper('.hd-swiper', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        loop: true, // 무한 루프 활성화
+    });
+
   return (
     <div>
         <header>
@@ -30,38 +52,46 @@ export default function Home() {
         <div className="container">
             <div className="container_inner">
                 <h3 className="headline_title">Trending New Hits</h3>
-                <div className="headline">
-                    <div className="img_area">
-                        <img src="/images/headline-1.webp" alt="헤드라인 배너이미지" />
-                    </div>
-                    <div className="txt_area">
-                        <div className="area_inner">
-                            <img className="icon_header" src="/images/header_txt.png" alt="히트작 아이콘" />
-                            <strong className="title">6th Mini Album : 퀸카(Queencard)</strong>
-                            <div className="info">(여자)아이들의 유쾌한 자아도취 있는 그대로의 '나'를 사랑할 수 있는 퀸카(Queencard)는 자신의 생각과 감정에 따라 변화하는 자존감'에 대한 메시지를 (여자)아이들의 솔직하고 유쾌한 매력으로 풀어내며, 누구나 쉽게 공감하고 즐길 수 있는 (여자)아이들만의 또 다른 오리지널 시리즈를 제공한다.</div>
-                            <div className="sub">
-                                <span className="item">
-                                    <em className="blind">아티스트</em>
-                                    <span>(G)IDLe</span>
-                                </span>
-                                <span className="item">
-                                    <em className="blind">발매일</em>
-                                    <span>2023.05.15</span>
-                                </span>
+                <SwiperReact className="hd-swiper" navigation modules={[Navigation]}>
+                    {/* 헤드라인배너 출력 */}
+                    { headlines.map((x,i) => (
+                    <SwiperSlide className="headline" key={i}>
+                        <div className="img_area">
+                            <img src={x.isrc} alt="헤드라인 배너이미지" />
+                        </div>
+                        <div className="txt_area">
+                            <div className="area_inner">
+                                <img className="icon_header" src="/images/header_txt.png" alt="히트작 아이콘" />
+                                <strong className="title">{x.tit.split("^")[0]}</strong>
+                                <br/>
+                                <strong className="title">{x.tit.split("^")[1]}</strong>
+                                <div className="info">{x.desc}</div>
+                                <div className="sub">
+                                    <span className="item">
+                                        <em className="blind">아티스트</em>
+                                        <span>(G)IDLe</span>
+                                    </span>
+                                    <span className="item">
+                                        <em className="blind">발매일</em>
+                                        <span>{x.date}</span>
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <a href="#" role="button" className="play_now_btn">
-                        <em className="blind">재생하기</em>
-                    </a>
-                </div>
+                        <a href="#" role="button" className="play_now_btn">
+                            <PlayArrowIcon/>
+                            <em className="blind">재생하기</em>
+                        </a>
+                    </SwiperSlide>
+                    ))}
+                </SwiperReact>
                 <div className="artists_bx">
                     <h3>Artists</h3>
                     <span>See all</span>
                     <ul>
                         {/* 멤버프로필 출력 */}
                         { artists.map((v,i) => (
-                        <li>
+                        <li key={i}>
                             <figure className="imgbx">
                                 <img src={v.isrc + '.jpeg'} alt={v.name} />
                                 <figcaption className="member_name">{v.name}</figcaption>
@@ -74,7 +104,11 @@ export default function Home() {
                 <div className="player_bx">
                     <div className="player_inner">
                         <div className="p_wrap">
-                            <h3>Player</h3>
+                            <h3>Player
+                                <span>
+                                    <QueueMusicIcon/>
+                                </span>
+                            </h3>
                             <div className="p_depth1">
                                 <div className="p_img">
                                 </div>
