@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link"
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 /* 더미데이터 불러오기 */
 import {artists, headlines} from "./data/hcode.js";
 /* Swiper 불러오기 */
 import { Swiper } from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper as SwiperReact, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import 'swiper/css/navigation';
@@ -23,14 +23,11 @@ import QueueMusicIcon from '@mui/icons-material/QueueMusic';
 
 export default function Home() {
 
-    // 스와이퍼
-    const mySwiper: Swiper = new Swiper('.hd-swiper', {
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        loop: true, // 무한 루프 활성화
-    });
+    // 헤드라인 재생버튼 클릭시 해당 음원 재생
+    const playSong = (img: string, audio: string) => {
+        console.log(img)
+        console.log(audio)
+    }
 
   return (
     <div>
@@ -52,7 +49,9 @@ export default function Home() {
         <div className="container">
             <div className="container_inner">
                 <h3 className="headline_title">Trending New Hits</h3>
-                <SwiperReact className="hd-swiper" navigation modules={[Navigation]}>
+                <SwiperReact className="hd-swiper"
+                pagination navigation modules={[Pagination, Navigation]}
+                loop={true}>
                     {/* 헤드라인배너 출력 */}
                     { headlines.map((x,i) => (
                     <SwiperSlide className="headline" key={i}>
@@ -78,7 +77,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <a href="#" role="button" className="play_now_btn">
+                        <a href="#" role="button" className="play_now_btn" onClick={() => playSong(x.albimg, x.msrc)}>
                             <PlayArrowIcon/>
                             <em className="blind">재생하기</em>
                         </a>
