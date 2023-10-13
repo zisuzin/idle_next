@@ -17,5 +17,5 @@ const imageSlice = createSlice({
     }
 });
 
-export const { setImg, setTit, setAudio} = imageSlice.actions;
+export const { setImg, setTit, setAudio } = imageSlice.actions;
 export default imageSlice.reducer;

@@ -15,6 +15,8 @@ import { Navigation, Pagination } from "swiper/modules";
 import { Swiper as SwiperReact, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import "swiper/css/navigation";
+/* Jquery */
+import $ from 'jquery';
 /* Material UI 컴포넌트 */
 import IconButton from "@mui/material/IconButton";
 import ShuffleIcon from "@mui/icons-material/Shuffle";
@@ -43,22 +45,23 @@ export default function Home() {
     const dispatch = useDispatch();
 
     // state hook
-    const [isCheck, setIsCheck] = useState(false);
+    const [isCheck, setIsCheck] = useState(Boolean);
 
     // 헤드라인 재생버튼 클릭시 앨범 데이터 셋업
-    const setAlb = (img: string, audio: string, tit: string) => {
+    const setAlb = (img: string, audio: string, tit: string, el: HTMLAnchorElement) => {
         dispatch(setImg(img));
         dispatch(setTit(tit));
         dispatch(setAudio(audio));
 
         // 플레이어 재생버튼 상태변경
-        setIsCheck(!isCheck);
+        $(el).toggleClass('on').parent().siblings().find(".play_now_btn").removeClass("on");
+        if ($(el).hasClass('on')) {
+            setIsCheck(true);
+        }
+        else {
+            setIsCheck(false);
+        }
     };
-
-    const btns = document.querySelectorAll('.play_now_btn');
-    btns.forEach(ele => {
-        ele.classList.remove('on');
-    })
 
     const playSong = () => {
 
@@ -110,9 +113,10 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#" role="button" className="play_now_btn" onClick={(e) => {
+                                <a href="#" role="button" className="play_now_btn"
+                                onClick={(e) => {
                                     e.preventDefault();
-                                    setAlb(x.albimg, x.msrc, x.mtit);
+                                    setAlb(x.albimg, x.msrc, x.mtit, e.currentTarget);
                                     }}>
                                     {isCheck ? <PauseIcon/> : <PlayArrowIcon/>}
                                     <em className="blind">재생하기</em>
