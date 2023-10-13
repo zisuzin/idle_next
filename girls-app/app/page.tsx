@@ -1,18 +1,21 @@
 "use client";
 
 import Link from "next/link";
-/* 더미데이터 불러오기 */
+/* 더미데이터 */
 import { artists, headlines } from "../data/hcode";
-/* Redux 모듈 불러오기 */
+/* Redux store hook */
 import { useSelector, useDispatch } from "react-redux";
 import { setImg, setTit } from "../ts/redux";
-import "../app/globals.css";
-/* Swiper 불러오기 */
+/* 메인 CSS */
+import "../css/main.css";
+/* 메인 ts */
+import "../ts/main";
+/* Swiper */
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper as SwiperReact, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import "swiper/css/navigation";
-/* Material UI 컴포넌트 불러오기 */
+/* Material UI 컴포넌트 */
 import IconButton from "@mui/material/IconButton";
 import ShuffleIcon from "@mui/icons-material/Shuffle";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
@@ -88,7 +91,10 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#" role="button" className="play_now_btn" onClick={() => playSong(x.albimg, x.msrc, x.mtit)}>
+                                <a href="#" role="button" className="play_now_btn" onClick={(e) => {
+                                    e.preventDefault();
+                                    playSong(x.albimg, x.msrc, x.mtit);
+                                    }}>
                                     <PlayArrowIcon />
                                     <em className="blind">재생하기</em>
                                 </a>
@@ -179,10 +185,3 @@ export default function Home() {
         </div>
     );
 }
-
-// ReactDOM.render(
-//     <Provider store={store}>
-//         <Home/>
-//     </Provider>,
-//     document.getElementById("root")
-// );
