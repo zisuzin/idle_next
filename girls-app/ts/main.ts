@@ -1,1 +1,0 @@
-console.log(document.querySelector('.play_now_btn'))

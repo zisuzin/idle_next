@@ -1,15 +1,15 @@
 "use client";
 
 import Link from "next/link";
+/* React hooks */
+import React, { useState } from 'react';
 /* 더미데이터 */
 import { artists, headlines } from "../data/hcode";
-/* Redux store hook */
-import { useSelector, useDispatch } from "react-redux";
-import { setImg, setTit } from "../ts/redux";
 /* 메인 CSS */
 import "../css/main.css";
-/* 메인 ts */
-import "../ts/main";
+/* Redux store 관련 */
+import { useSelector, useDispatch } from "react-redux";
+import { setImg, setTit, setAudio } from "../ts/redux";
 /* Swiper */
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper as SwiperReact, SwiperSlide } from "swiper/react";
@@ -25,25 +25,44 @@ import RepeatIcon from "@mui/icons-material/Repeat";
 import ExpandLessRoundedIcon from "@mui/icons-material/ExpandLessRounded";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import QueueMusicIcon from "@mui/icons-material/QueueMusic";
+import PauseIcon from '@mui/icons-material/Pause';
 
 // RootState 타입 정의
 type RootState = {
     ref: {
-        imgUrl: string;
+        imgSrc: string;
         alTit: string;
+        audSrc: string; 
     };
 };
 
 export default function Home() {
-    const imgUrl = useSelector((state: RootState) => state.ref.imgUrl);
+    const imgSrc = useSelector((state: RootState) => state.ref.imgSrc);
     const alTit = useSelector((state: RootState) => state.ref.alTit);
+    const audSrc = useSelector((state: RootState) => state.ref.audSrc);
     const dispatch = useDispatch();
 
-    // 헤드라인 재생버튼 클릭시 해당 음원 재생
-    const playSong = (img: string, audio: string, tit: string) => {
+    // state hook
+    const [isCheck, setIsCheck] = useState(false);
+
+    // 헤드라인 재생버튼 클릭시 앨범 데이터 셋업
+    const setAlb = (img: string, audio: string, tit: string) => {
         dispatch(setImg(img));
         dispatch(setTit(tit));
+        dispatch(setAudio(audio));
+
+        // 플레이어 재생버튼 상태변경
+        setIsCheck(!isCheck);
     };
+
+    const btns = document.querySelectorAll('.play_now_btn');
+    btns.forEach(ele => {
+        ele.classList.remove('on');
+    })
+
+    const playSong = () => {
+
+    }
 
     return (
         <div>
@@ -93,9 +112,9 @@ export default function Home() {
                                 </div>
                                 <a href="#" role="button" className="play_now_btn" onClick={(e) => {
                                     e.preventDefault();
-                                    playSong(x.albimg, x.msrc, x.mtit);
+                                    setAlb(x.albimg, x.msrc, x.mtit);
                                     }}>
-                                    <PlayArrowIcon />
+                                    {isCheck ? <PauseIcon/> : <PlayArrowIcon/>}
                                     <em className="blind">재생하기</em>
                                 </a>
                             </SwiperSlide>
@@ -128,7 +147,7 @@ export default function Home() {
                                 </h3>
                                 <div className="p_depth1">
                                     <div className="p_img">
-                                        <img src={imgUrl} alt={alTit}/>
+                                        <img src={imgSrc} alt={alTit}/>
                                     </div>
                                     <div className="p_info">
                                         <p className="name">{alTit}</p>
@@ -140,7 +159,7 @@ export default function Home() {
                                     <div className="p_progress p_depth2">
                                         <div className="bar">
                                             <span className="pin"></span>
-                                            <audio src="" id="audio"></audio>
+                                            <audio src={audSrc} id="audio"></audio>
                                         </div>
                                     </div>
                                     <span className="duration">0:00</span>
@@ -158,8 +177,8 @@ export default function Home() {
                                         <em className="blind">이전 버튼</em>
                                     </IconButton>
                                     {/* 중지/재생 버튼 */}
-                                    <IconButton id="play-pause" disableRipple>
-                                        <PlayCircleIcon />
+                                    <IconButton id="play-pause" disableRipple onClick={playSong}>
+                                        {isCheck ? <PauseIcon/> : <PlayArrowIcon/>}
                                         <em className="blind">재생/중지 버튼</em>
                                     </IconButton>
                                     {/* 다음 곡 재생버튼 */}

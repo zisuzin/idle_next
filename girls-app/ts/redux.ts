@@ -3,16 +3,19 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const imageSlice = createSlice({
     name: 'ref', // slice 식별 이름
-    initialState: { imgUrl: '', alTit: ''}, // 초기값
+    initialState: { imgSrc: '', alTit: '', audSrc: ''}, // 초기값
     reducers: {
         setImg: (state, action) => {
-            state.imgUrl = action.payload;
+            state.imgSrc = action.payload;
         },
         setTit: (state, action) => {
             state.alTit = action.payload;
+        },
+        setAudio: (state, action) => {
+            state.audSrc = action.payload;
         }
     }
 });
 
-export const { setImg, setTit} = imageSlice.actions;
+export const { setImg, setTit, setAudio} = imageSlice.actions;
 export default imageSlice.reducer;

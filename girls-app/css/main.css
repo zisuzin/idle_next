@@ -137,6 +137,7 @@
     font-weight: bold;
     margin-top: 10px;
 }
+
 /* 뮤직플레이어 */
 .player_inner {
     /* padding: 20px 15px; */
@@ -161,18 +162,20 @@
 .player_inner h3 > span {
     cursor: pointer;
 }
-
 .player_inner .p_depth1 {
     padding: 10% 15%;
 }
 .player_inner .p_info {
     margin: 30px 0;
-    font-size: 28px;
     text-align: center;
     color: #fff;
 }
+/* 플레이어 인포박스 */
+.p_info .name {
+    font-size: 25px;
+}
 .player_inner .artist {
-    font-size: 18px;
+    font-size: 16px;
 }
 .player_inner .p_wrap {
     padding: 5% 13%;
@@ -191,6 +194,7 @@
 .p_control {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 15px;
 }
 .p_control button {
     color: #fff;
@@ -199,8 +203,15 @@
     float: right;
     width: 37.3431%;
 }
+#play-pause {
+    width: 54px;
+    height: 54px;
+    color: #fff;
+    background: #fff;
+    border-radius: 50%;
+}
 #play-pause svg {
-    font-size: 60px;
+    color: #7e00e4;
 }
 .lyrics_info {
     color: #fff;
@@ -235,6 +246,7 @@
     border-radius: 3px;
     background: rgba(255,255,255,0.4);
 }
+
 /* 스와이퍼 네비게이션 */
 .swiper-button-prev {
     top: 70% !important;
@@ -274,3 +286,4 @@
 .swiper-slide {
     width: 100% !important;
 }
+
