@@ -50,6 +50,7 @@ export default function Home() {
     
     // 헤드라인 재생버튼 클릭시 앨범 데이터 셋업
     const setAlb = (img: string, audio: string, tit: string, el: HTMLAnchorElement) => {
+        const audBtn:any = document.querySelector("#audio");
         dispatch(setImg(img));
         dispatch(setTit(tit));
         dispatch(setAudio(audio));
@@ -58,19 +59,23 @@ export default function Home() {
         $(el).toggleClass('on').parent().siblings().find(".play_now_btn").removeClass("on");
         if ($(el).hasClass('on')) {
             setIsCheck(true);
+            audBtn.play()
+            .catch(() => {
+                console.log("음원 재생!");
+            });
         }
         else {
             setIsCheck(false);
-            console.log(audioRef.current)
+            audBtn.pause();
         }
     }; ///////// setAlb 함수 ////////
     
     const audioRef = useRef<HTMLAudioElement | null>(null);
-    const audioEl = audioRef.current;
     
     useEffect(() => {
         // 오디오 엘리먼트 가져오기
-
+        const audioEl = audioRef.current;
+        
         // 로드후 재생버튼 클릭시 조건 실행
         if(audSrc && audioEl) {
             // 오디오 재생
