@@ -99,7 +99,7 @@ export default function Home() {
         $("#audio").on("loadeddata", function() {
             const totTime =  $(".duration");
             const duration = crtAudio.duration || 0;
-
+            
             // 음원 총 재생시간 구하기
             const min = Math.floor(duration / 60);
             const sec = Math.floor(duration % 60);
@@ -107,18 +107,24 @@ export default function Home() {
             const totSec = sec.toString().padStart(2, "0");
             totTime.text(`${totMin}:${totSec}`);
         });
-
+        
         // 현재시간 표시
         $("#audio").on("timeupdate", function() {
-            let playTime =  $(".current");
+            const playTime =  $(".current");
+            const progress = $(".bar");
             let ctTime = crtAudio.currentTime;
+            const duration = crtAudio.duration || 0;
+
+            // 프로그레스 바 업데이트
+            const progBar = (ctTime / duration) * 100 + "%";
+            progress.css("width", `${progBar}`);
+
             let min = Math.floor(ctTime / 60);
             let sec = Math.floor(ctTime % 60);
             let ctMin = min.toString().padStart(2, "0");
             let ctSec = sec.toString().padStart(2, "0");
             playTime.text(`${ctMin}:${ctSec}`);
         });
-
     }
     
     useEffect(() => {
@@ -230,7 +236,7 @@ export default function Home() {
                                 </div>
                                 <div className="timer">
                                     <span className="current">00:00</span>
-                                    <div className="p_progress p_depth2">
+                                    <div className="progress p_depth2">
                                         <div className="bar">
                                             <span className="pin"></span>
                                             <audio ref={audioRef} src={audSrc} id="audio"></audio>

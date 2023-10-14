@@ -104,12 +104,16 @@
 }
 .artists_bx {
     float: left;
-    width: 62.6569%;
+    width: 63.6569%;
     padding: 20px;
+    background: rgb(43 43 43);
+    color: #fff;
+    margin-top: 10px;
+    border-radius: 12px;
 }
 .artists_bx ul {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     margin-top: 20px;
 }
 .artists_bx li {
@@ -128,7 +132,7 @@
 .artists_bx span {
     float: right;
     font-weight: 600;
-    color: #595757;
+    color: #d8d7d7;
 }
 .imgbx .member_name {
     text-align: center;
@@ -139,9 +143,9 @@
 
 /* 뮤직플레이어 */
 .player_inner {
-    /* padding: 20px 15px; */
     background: rgb(43 43 43);
     width: 100%;
+    border-radius: 12px;
 }
 .player_inner .p_img {
     height: auto;
@@ -151,6 +155,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
 }
 .player_inner h3 {
     color: #fff;
@@ -162,38 +167,38 @@
     cursor: pointer;
 }
 .player_inner .p_depth1 {
-    padding: 10% 15%;
+    padding: 8% 21% 0;
 }
 .player_inner .p_info {
-    margin: 30px 0;
+    padding: 15px 0 20px;
     text-align: center;
     color: #fff;
+    line-height: 30px;
 }
 /* 플레이어 인포박스 */
 .p_info .name {
     font-size: 25px;
+    font-weight: 600;
 }
 .player_inner .artist {
     font-size: 16px;
 }
 .player_inner .p_wrap {
-    padding: 5% 13%;
+    padding: 5% 7%;
 }
 .player_inner .timer {
     color: #fff;
     display: flex;
-    gap: 20px;
     justify-content: space-between;
     align-items: center;
     font-size: 14.5px;
-}
-.material-icons-outlined {
-    content: '/e043';
+    padding-bottom: 20px;
+    margin: 0 29px;
 }
 .p_control {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
+    padding-bottom: 25px;
 }
 .p_control button {
     color: #fff;
@@ -201,6 +206,7 @@
 .player_bx {
     float: right;
     width: 35%;
+    margin-top: 10px;
 }
 #play-pause {
     width: 54px;
@@ -233,17 +239,25 @@
     position: absolute;
     top: -5px;
     width: 16px;
+    left: 96.5%;
     height: 16px;
     border-radius: 50%;
     background: #fff;
     pointer-events: all;
     box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.3);
 }
-.p_progress {
-    width: 100%;
-    height: 6px;
+.progress {
+    width: 182px;
+    height: 3.2px;
     border-radius: 3px;
     background: rgba(255,255,255,0.4);
+}
+.bar {
+    position: relative;
+    background: #fff;
+    /* 처음엔 0 */
+    width: 0;
+    height: 100%;
 }
 
 /* 스와이퍼 네비게이션 */
