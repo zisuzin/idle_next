@@ -48,7 +48,7 @@ export default function Home() {
     // state hook
     const [isCheck, setIsCheck] = useState<number | boolean>(Number);
     
-    // 헤드라인 재생버튼 클릭시 앨범 데이터 셋업
+    // 헤드라인 재생버튼 클릭시 앨범 데이터 셋업 & 음원 재생/멈춤
     const setAlb = (img: string, audio: string, tit: string, el: HTMLAnchorElement) => {
         const audBtn:any = document.querySelector("#audio");
         dispatch(setImg(img));
@@ -74,6 +74,7 @@ export default function Home() {
     // 오디오 엘리먼트 가져오기
     const audioEl:any = audioRef.current;
 
+    // 플레이어 재생버튼 토글시 음원 재생/멈춤
     const playSong = () => {
         const playBtn:any = document.querySelector("#play-pause");
         playBtn.addEventListener("click", function() {
@@ -87,8 +88,38 @@ export default function Home() {
                 audioEl.pause();
             }
         });
-        console.log(audSrc)
     };
+
+    //재생시간, 전체시간 표시 및 재생바
+    const timeAudio = () => {
+        // 원본 오디오 선택
+        const crtAudio:any  = $("#audio")[0];
+
+        //전체시간 표시
+        $("#audio").on("loadeddata", function() {
+            const totTime =  $(".duration");
+            const duration = crtAudio.duration || 0;
+
+            // 음원 총 재생시간 구하기
+            const min = Math.floor(duration / 60);
+            const sec = Math.floor(duration % 60);
+            const totMin = min.toString().padStart(2, "0");
+            const totSec = sec.toString().padStart(2, "0");
+            totTime.text(`${totMin}:${totSec}`);
+        });
+
+        // 현재시간 표시
+        $("#audio").on("timeupdate", function() {
+            let playTime =  $(".current");
+            let ctTime = crtAudio.currentTime;
+            let min = Math.floor(ctTime / 60);
+            let sec = Math.floor(ctTime % 60);
+            let ctMin = min.toString().padStart(2, "0");
+            let ctSec = sec.toString().padStart(2, "0");
+            playTime.text(`${ctMin}:${ctSec}`);
+        });
+
+    }
     
     useEffect(() => {
         // 로드후 재생버튼 클릭시 조건 실행
@@ -100,6 +131,7 @@ export default function Home() {
 
         // 함수호출
         playSong();
+        timeAudio();
     }, [audSrc]);
     
     return (
@@ -197,14 +229,14 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className="timer">
-                                    <span className="current">0:00</span>
+                                    <span className="current">00:00</span>
                                     <div className="p_progress p_depth2">
                                         <div className="bar">
                                             <span className="pin"></span>
                                             <audio ref={audioRef} src={audSrc} id="audio"></audio>
                                         </div>
                                     </div>
-                                    <span className="duration">0:00</span>
+                                    <span className="duration">00:00</span>
                                 </div>
                             </div>
                             <div className="p_depth3">
