@@ -144,7 +144,7 @@
     width: 100%;
 }
 .player_inner .p_img {
-    height: 181px;
+    height: auto;
     border-radius: 15px;
 }
 .p_img img {
@@ -200,7 +200,7 @@
 }
 .player_bx {
     float: right;
-    width: 37.3431%;
+    width: 35%;
 }
 #play-pause {
     width: 54px;
