@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 /* React hooks */
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 /* 더미데이터 */
 import { artists, headlines } from "../data/hcode";
 /* 메인 CSS */
@@ -43,16 +43,16 @@ export default function Home() {
     const alTit = useSelector((state: RootState) => state.ref.alTit);
     const audSrc = useSelector((state: RootState) => state.ref.audSrc);
     const dispatch = useDispatch();
-
+    
     // state hook
     const [isCheck, setIsCheck] = useState<number | boolean>(Number);
-
+    
     // 헤드라인 재생버튼 클릭시 앨범 데이터 셋업
     const setAlb = (img: string, audio: string, tit: string, el: HTMLAnchorElement) => {
         dispatch(setImg(img));
         dispatch(setTit(tit));
         dispatch(setAudio(audio));
-
+        
         // 플레이어 재생버튼 상태변경
         $(el).toggleClass('on').parent().siblings().find(".play_now_btn").removeClass("on");
         if ($(el).hasClass('on')) {
@@ -61,12 +61,21 @@ export default function Home() {
         else {
             setIsCheck(false);
         }
-    };
+    }; ///////// setAlb 함수 ////////
+    
+    const audioRef = useRef<HTMLAudioElement | null>(null);
+    
+    useEffect(() => {
+        // 오디오 엘리먼트 가져오기
+        const audioEl = audioRef.current;
 
-    const playSong = () => {
-
-    }
-
+        // 로드후 재생버튼 클릭시 조건 실행
+        if(audSrc && audioEl) {
+            // 오디오 재생
+            audioEl.play();
+        }
+    }, [audSrc]);
+    
     return (
         <div>
             <header>
@@ -163,7 +172,7 @@ export default function Home() {
                                     <div className="p_progress p_depth2">
                                         <div className="bar">
                                             <span className="pin"></span>
-                                            <audio src={audSrc} id="audio"></audio>
+                                            <audio ref={audioRef} src={audSrc} id="audio"></audio>
                                         </div>
                                     </div>
                                     <span className="duration">0:00</span>
@@ -181,7 +190,7 @@ export default function Home() {
                                         <em className="blind">이전 버튼</em>
                                     </IconButton>
                                     {/* 중지/재생 버튼 */}
-                                    <IconButton id="play-pause" disableRipple onClick={playSong}>
+                                    <IconButton id="play-pause" disableRipple>
                                         {isCheck ? <PauseIcon/> : <PlayArrowIcon/>}
                                         <em className="blind">재생/중지 버튼</em>
                                     </IconButton>
