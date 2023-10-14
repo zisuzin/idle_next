@@ -69,18 +69,37 @@ export default function Home() {
             audBtn.pause();
         }
     }; ///////// setAlb 함수 ////////
-    
+
     const audioRef = useRef<HTMLAudioElement | null>(null);
+    // 오디오 엘리먼트 가져오기
+    const audioEl:any = audioRef.current;
+
+    const playSong = () => {
+        const playBtn:any = document.querySelector("#play-pause");
+        playBtn.addEventListener("click", function() {
+            playBtn.classList.toggle("on");
+            if(playBtn.classList.contains("on") && audSrc) {
+                setIsCheck(true);
+                audioEl.play();
+            }
+            else if (!playBtn.classList.contains("on") && audSrc) {
+                setIsCheck(false);
+                audioEl.pause();
+            }
+        });
+        console.log(audSrc)
+    };
     
     useEffect(() => {
-        // 오디오 엘리먼트 가져오기
-        const audioEl = audioRef.current;
-        
         // 로드후 재생버튼 클릭시 조건 실행
-        if(audSrc && audioEl) {
+        if (audSrc && audioEl) {
             // 오디오 재생
             audioEl.play();
+            console.log(audioEl)
         }
+
+        // 함수호출
+        playSong();
     }, [audSrc]);
     
     return (
@@ -200,7 +219,7 @@ export default function Home() {
                                         <em className="blind">이전 버튼</em>
                                     </IconButton>
                                     {/* 중지/재생 버튼 */}
-                                    <IconButton id="play-pause" disableRipple>
+                                    <IconButton id="play-pause" disableRipple onClick={playSong}>
                                         {isCheck ? <PauseIcon/> : <PlayArrowIcon/>}
                                         <em className="blind">재생/중지 버튼</em>
                                     </IconButton>
