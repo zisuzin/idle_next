@@ -61,14 +61,15 @@ export default function Home() {
         }
         else {
             setIsCheck(false);
+            console.log(audioRef.current)
         }
     }; ///////// setAlb 함수 ////////
     
     const audioRef = useRef<HTMLAudioElement | null>(null);
+    const audioEl = audioRef.current;
     
     useEffect(() => {
         // 오디오 엘리먼트 가져오기
-        const audioEl = audioRef.current;
 
         // 로드후 재생버튼 클릭시 조건 실행
         if(audSrc && audioEl) {
