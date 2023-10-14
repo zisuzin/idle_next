@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Head from 'next/head';
 /* React hooks */
 import React, { useEffect, useState, useRef } from 'react';
 /* 더미데이터 */
@@ -78,6 +79,9 @@ export default function Home() {
     
     return (
         <div>
+             <Head>
+        <title>홈 페이지 - 내 타이틀</title>
+      </Head>
             <header>
                 <div className="logowrap">
                     <Link href="/">
