@@ -45,7 +45,7 @@ export default function Home() {
     const dispatch = useDispatch();
 
     // state hook
-    const [isCheck, setIsCheck] = useState(Boolean);
+    const [isCheck, setIsCheck] = useState<number | boolean>(Number);
 
     // 헤드라인 재생버튼 클릭시 앨범 데이터 셋업
     const setAlb = (img: string, audio: string, tit: string, el: HTMLAnchorElement) => {

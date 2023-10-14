@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const imageSlice = createSlice({
     name: 'ref', // slice 식별 이름
-    initialState: { imgSrc: '', alTit: '', audSrc: ''}, // 초기값
+    initialState: { imgSrc: './images/logo.jpg', alTit: '', audSrc: ''}, // 초기값
     reducers: {
         setImg: (state, action) => {
             state.imgSrc = action.payload;
