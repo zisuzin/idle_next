@@ -101,7 +101,7 @@ export default function Home() {
 
         /************* 로컬스토리지 음반리스트 셋팅 *************/
         // 음반리스트 배열 새로고침 방지
-        const saveList = localStorage.getItem('setSong');
+        const saveList = localStorage.getItem('setSong') as string;
 
         if (saveList) {
             // 로컬스에 리스트 있을 경우
@@ -119,7 +119,13 @@ export default function Home() {
             el.addEventListener("click", function(this: HTMLElement) {
                 this.classList.toggle('active');
 
-                if (this.classList.contains('active')) {
+                // 중복데이터 선별 변수(true/false)
+                let isB = saveList.includes(records[i].tit);
+                console.log('중복여부검사:', isB);
+
+                if (this.classList.contains('active') && isB == false) {
+                    console.log('플레이리스트 추가');
+
                     const list = 
                     [   records[i].tit,
                         records[i].alb,
@@ -131,6 +137,10 @@ export default function Home() {
                     // 배열에 값 보내기
                     arr.push(list);
                     localStorage.setItem('setSong', JSON.stringify(arr));
+                }
+                else {
+                    console.log('중복');
+                    alert('이미 추가된 리스트입니다.');
                 }
             });
         });
