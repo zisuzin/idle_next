@@ -5,7 +5,7 @@ import Head from 'next/head';
 /* React hooks */
 import React, { useEffect, useState, useRef } from 'react';
 /* 더미데이터 */
-import { artists, headlines, genres } from "../data/hcode";
+import { artists, headlines, records } from "../data/hcode";
 /* 메인 CSS */
 import "../css/main.css";
 /* Redux store 관련 */
@@ -199,7 +199,7 @@ export default function Home() {
                         ))}
                     </SwiperReact>
                     <div className="artists_bx">
-                        <h3>Artists</h3>
+                        <h3>멤버</h3>
                         <span>See all</span>
                         <ul>
                             {/* 멤버프로필 출력 */}
@@ -218,7 +218,7 @@ export default function Home() {
                         <div className="player_inner">
                             <div className="p_wrap">
                                 <h3>
-                                    Player
+                                    플레이어
                                     <span>
                                         <QueueMusicIcon />
                                     </span>
@@ -279,12 +279,39 @@ export default function Home() {
                     </div>
                     {/* 음악 장르 */}
                     <div className="genre_bx">
-                        <h3>Genres</h3>
+                        <h3>장르</h3>
                         <span>See all</span>
                         <ul>
                             {/* 멤버프로필 출력 */}
-                            {genres.map((v, i) => (
-                                <li key={i}>{v}</li>
+                            <li className="beat">Dance<br/>Beat</li>
+                            <li className="electro">Electro<br/>Pop</li>
+                            <li className="indie">Alternative<br/>Indie</li>
+                            <li className="hiphop">Hip<br/>Hop</li>
+                            <li className="balad">Pop<br/>Ballad</li>
+                            <li className="jazz">Hip Hop<br/>Jazz</li>
+                        </ul>
+                    </div>
+                    {/* 전체 음반 */}
+                    <div className="record_bx">
+                        <h3>음반</h3>
+                        <span>See all</span>
+                        <ul>
+                            {/* 음반리스트 출력 */}
+                            {records.map((v, i) => (
+                            <li key={i}>
+                                <div className="alnum">0{i+1}</div>
+                                <div className="alimg">
+                                    <img src={v.isrc} alt={v.tit + '앨범이미지'} />
+                                </div>
+                                <div className="altit">
+                                    <h5>{v.tit}</h5>
+                                    <p>{v.alb}</p>
+                                </div>
+                                <div className="altime">{v.time}</div>
+                                <div className="playbtn"> 
+                                    <PlayArrowIcon/>
+                                </div>
+                            </li>
                             ))}
                         </ul>
                     </div>

@@ -108,7 +108,7 @@
     padding: 20px;
     background: rgb(43 43 43);
     color: #fff;
-    margin-top: 10px;
+    margin-top: 15px;
     border-radius: 12px;
 }
 .artists_bx ul {
@@ -126,10 +126,10 @@
     object-fit: cover;
     border-radius: 20px;
 }
-.artists_bx h3, .genre_bx h3 {
+.artists_bx h3, .genre_bx h3, .record_bx h3 {
     display: inline-block;
 }
-.artists_bx span, .genre_bx span {
+.artists_bx span, .genre_bx span, .record_bx span {
     float: right;
     font-weight: 600;
     color: #d8d7d7;
@@ -207,7 +207,7 @@
 .player_bx {
     float: right;
     width: 35%;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 #play-pause {
     width: 54px;
@@ -229,9 +229,9 @@
     font-weight: 600;
 }
 .p_depth3 {
-    background-color: #7e00e4;
+    background-color: var(--primary_color);
     border-radius: 5px;
-    padding: 20px 50px;
+    padding: 36px 50px 20px;
 }
 .bar {
     position: relative;
@@ -302,11 +302,11 @@
 }
 .genre_bx {
     float: left;
-    width: 30%;
+    width: 25%;
     padding: 20px;
     background: rgb(43 43 43);
     color: #fff;
-    margin-top: 10px;
+    margin-top: 15px;
     border-radius: 12px;
 }
 .genre_bx ul {
@@ -314,10 +314,107 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 20px;
-    gap: 12px;
+    gap: 15px;
 }
 .genre_bx li {
-    padding: 10px;
-    background: red;
+    padding: 20px;
     border-radius: 10px;
+    width: 120px;
+    cursor: pointer;
+}
+.genre_bx .beat {
+    background-color: #628d9f;
+}
+.genre_bx .electro {
+    background-color: #ab967a;
+}
+.genre_bx .hiphop {
+    width: 75px;
+    background-color: #3d583d;
+}
+.genre_bx .indie {
+    width: 165px;
+    background-color: #c04949;
+}
+.genre_bx .balad {
+    background-color: #cf7080;
+}
+.genre_bx .jazz {
+    background-color: #6060b0;
+}
+.record_bx {
+    float: left;
+    width: 37.2%;
+    padding: 20px;
+    background: rgb(43 43 43);
+    color: #fff;
+    margin: 15px 0 0 15px;
+    border-radius: 12px;
+}
+.record_bx ul {
+    height: 280px;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin-top: 20px;
+}
+.record_bx ul::-webkit-scrollbar {
+    width: 5px;  /* 스크롤바의 너비 */
+}
+.record_bx ul::-webkit-scrollbar-thumb {
+    height: 30%; /* 스크롤바의 길이 */
+    background: var(--primary_color); /* 스크롤바의 색상 */
+    border-radius: 10px;
+}
+.record_bx ul::-webkit-scrollbar-track {
+    background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
+}
+.record_bx li {
+    display: flex;
+    align-items: center;
+}
+.record_bx li+li {
+    margin-top: 26px;
+}
+.record_bx .alimg {
+    width: 50px;
+    height: 50px;
+}
+.record_bx .alimg img {
+    border-radius: 10px;
+}
+.record_bx .alnum {
+    width: 35px;
+    font-size: 14px;
+    color: #ccc;
+    font-weight: 600;
+}
+.record_bx .altit {
+    width: 200px;
+    margin-left: 15px;
+}
+.record_bx .altit p {
+    font-size: 13.5px;
+    color: #ccc;
+    font-weight: 600;
+    line-height: 20px;
+}
+.record_bx .altit h5 {
+    font-size: 15px;
+}
+.record_bx .altime {
+    font-size: 14px;
+    font-weight: 600;
+    color: #efefef;
+}
+.playbtn {
+    border: 1px solid #626262;
+    border-radius: 5px;
+    padding: 1px 4px;
+    margin-left: 15px;
+    background-color: #2e353ee0;
+    cursor: pointer;
+}
+.playbtn svg {
+    font-size: 15px;
+    color: #7e00bf;
 }

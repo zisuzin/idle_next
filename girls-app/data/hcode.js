@@ -91,7 +91,70 @@ const headlines = [
     },
 ]
 
-/* 메인 - 앨범 장르 */
-const genres = ["Dance Beat", "Electro Pop", "Alternative Indie", "Hip Hop", "Ballad", "Hip Hop Jazz"];
+const records = [
+    {
+        isrc: "/images/album/records/alb-0.webp",
+        tit: "Uh-Oh",
+        alb: "Oh My God",
+        time: "03:28",
+        msrc: "",
+    },
+    {
+        isrc: "/images/album/records/alb-1.webp",
+        tit: "I DO",
+        alb: "HEAT",
+        time: "03:11",
+        msrc: "",
+    },
+    {
+        isrc: "/images/album/records/alb-2.webp",
+        tit: "Senorita",
+        alb: "I made",
+        time: "03:17",
+        msrc: "",
+    },
+    {
+        isrc: "/images/album/alb-0.jpg",
+        tit: "Allergy",
+        alb: "I feel",
+        time: "02:42",
+        msrc: "",
+    },
+    {
+        isrc: "/images/album/records/alb-4.webp",
+        tit: "화(火花)",
+        alb: "I burn",
+        time: "03:17",
+        msrc: "",
+    },
+    {
+        isrc: "/images/album/records/alb-5.webp",
+        tit: "LION",
+        alb: "퀸덤 <Final 컴백 싱글>",
+        time: "03:31",
+        msrc: "",
+    },
+    {
+        isrc: "/images/album/records/alb-6.webp",
+        tit: "말리지 마",
+        alb: "I NEVER DIE",
+        time: "02:24",
+        msrc: "",
+    },
+    {
+        isrc: "/images/album/alb-6.jpg",
+        tit: "TOMBOY",
+        alb: "I NEVER DIE",
+        time: "02:54",
+        msrc: "/audios/tomboy.mp3",
+    },
+    {
+        isrc: "/images/album/alb-1.jpg",
+        tit: "Expectations",
+        alb: "앤마리X민니 <디지털 싱글>",
+        time: "03:09",
+        msrc: "/audios/Expectations.mp3",
+    },
+]
 
-export {artists, headlines, genres};
+export {artists, headlines, records};

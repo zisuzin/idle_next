@@ -7,6 +7,8 @@
 :root {
     /* 한글 폰트변수 */
     --primary_font: 'Pretendard-Regular';
+    /* 대표 색상 */
+    --primary_color: #7e00bf;
     /* h태그 폰트크기 */
     --h3_size: 23px;
 }
