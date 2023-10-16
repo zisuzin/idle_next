@@ -30,6 +30,7 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import QueueMusicIcon from "@mui/icons-material/QueueMusic";
 import PauseIcon from '@mui/icons-material/Pause';
 import AddBoxIcon from '@mui/icons-material/AddBox';
+import { json } from "stream/consumers";
 
 // RootState 타입 정의
 type RootState = {
@@ -91,6 +92,43 @@ export default function Home() {
         });
     };
 
+    // 음원 플레이리스트 추가
+    const addSong = () => {
+        const arr:any = [];
+        const addbtn = document.querySelectorAll(".addbtn");
+        const playList = document.querySelector("#play-list > ul");
+        addbtn.forEach(el => {
+            el.addEventListener("click", function(this: HTMLElement) {
+                this.classList.toggle('active');
+            });
+            for(let i=0; i<arr.length; i++) {
+                // 로컬스토리지에 선택 항목 추가
+
+                const items = 
+                [   records[i].tit,
+                    records[i].alb,
+                    records[i].isrc,
+                    records[i].time,
+                    records[i].msrc
+                ];
+
+                arr.push(items);
+                localStorage.setItem("setSong", JSON.stringify(arr));
+                // localStorage.getItem("setSong");
+                
+                let list = `
+                    <li data-index="${i}">
+                        <strong>${records[i].tit}</strong>
+                        <em>${records[i].alb}</em>
+                        <audio src=${records[i].msrc}></audio>
+                        <span>${records[i].time}</span>
+                    </li>
+                `;
+                // playList.insertAdjacentHTML("beforeend", )
+            }
+        });
+    };
+
     //재생시간, 전체시간 표시 및 재생바
     const timeAudio = () => {
         // 원본 오디오 선택
@@ -137,6 +175,7 @@ export default function Home() {
         // 함수호출
         playSong();
         timeAudio();
+        addSong();
     }, [audSrc]);
     
     return (
@@ -220,8 +259,11 @@ export default function Home() {
                             <div className="p_wrap">
                                 <h3>
                                     플레이어
-                                    <span>
+                                    <span className="list-btn">
                                         <QueueMusicIcon />
+                                        <div id="play-list">
+                                            <ul></ul>
+                                        </div>
                                     </span>
                                 </h3>
                                 <div className="p_depth1">
