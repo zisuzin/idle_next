@@ -139,6 +139,7 @@ export default function Home() {
             <li>
                 <strong>${arr[i][0]}</strong>   
                 <em>${arr[i][1]}</em>
+                <span>${arr[i][3]}</span>
             </li>
             `;
             playList.insertAdjacentHTML('beforeend', list);
