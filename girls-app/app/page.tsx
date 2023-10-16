@@ -5,7 +5,7 @@ import Head from 'next/head';
 /* React hooks */
 import React, { useEffect, useState, useRef } from 'react';
 /* 더미데이터 */
-import { artists, headlines } from "../data/hcode";
+import { artists, headlines, genres } from "../data/hcode";
 /* 메인 CSS */
 import "../css/main.css";
 /* Redux store 관련 */
@@ -132,9 +132,7 @@ export default function Home() {
         if (audSrc && audioEl) {
             // 오디오 재생
             audioEl.play();
-            console.log(audioEl)
         }
-
         // 함수호출
         playSong();
         timeAudio();
@@ -278,6 +276,17 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    {/* 음악 장르 */}
+                    <div className="genre_bx">
+                        <h3>Genres</h3>
+                        <span>See all</span>
+                        <ul>
+                            {/* 멤버프로필 출력 */}
+                            {genres.map((v, i) => (
+                                <li key={i}>{v}</li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </div>

@@ -126,10 +126,10 @@
     object-fit: cover;
     border-radius: 20px;
 }
-.artists_bx h3 {
+.artists_bx h3, .genre_bx h3 {
     display: inline-block;
 }
-.artists_bx span {
+.artists_bx span, .genre_bx span {
     float: right;
     font-weight: 600;
     color: #d8d7d7;
@@ -191,6 +191,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 8px;
     font-size: 14.5px;
     padding-bottom: 20px;
     margin: 0 29px;
@@ -299,4 +300,24 @@
 .swiper-slide {
     width: 100% !important;
 }
-
+.genre_bx {
+    float: left;
+    width: 30%;
+    padding: 20px;
+    background: rgb(43 43 43);
+    color: #fff;
+    margin-top: 10px;
+    border-radius: 12px;
+}
+.genre_bx ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 12px;
+}
+.genre_bx li {
+    padding: 10px;
+    background: red;
+    border-radius: 10px;
+}

@@ -1,6 +1,6 @@
 /* 더미데이터 - hcode.js */
 
-/* 1. 메인 - 멤버프로필 */
+/* 메인 - 멤버프로필 */
 const artists = [
     {
         isrc: "/images/profile/mindy",
@@ -24,6 +24,7 @@ const artists = [
     },
 ]
 
+/* 메인 - 헤드라인배너, 플레이어 */
 const headlines = [
     {
         isrc: "/images/headline/hd-1.webp",
@@ -90,4 +91,7 @@ const headlines = [
     },
 ]
 
-export {artists, headlines};
+/* 메인 - 앨범 장르 */
+const genres = ["Dance Beat", "Electro Pop", "Alternative Indie", "Hip Hop", "Ballad", "Hip Hop Jazz"];
+
+export {artists, headlines, genres};
