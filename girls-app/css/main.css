@@ -445,6 +445,7 @@
     bottom: 0;
     background: rgba(0,0,0,0.85);
     z-index: 1;
+    display: none;
 }
 #play-list li {
     color: rgba(255,255,255,0.6);

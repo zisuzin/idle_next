@@ -199,6 +199,20 @@ export default function Home() {
             // 오디오 재생
             audioEl.play();
         }
+
+        // 목록버튼 클릭시 플레이어리스트 보임/숨김
+        const listBtn = document.querySelector(".list-btn") as HTMLAnchorElement;
+        const playList = document.querySelector("#play-list") as HTMLAnchorElement;
+        listBtn.addEventListener("click", function() {
+            this.classList.toggle("on");
+            if (this.classList.contains("on")) {
+                playList.style.display = "block";
+            }
+            else {
+                playList.style.display = "none";
+            }
+        });
+
         // 함수호출
         playSong();
         timeAudio();
