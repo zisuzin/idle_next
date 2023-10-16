@@ -167,6 +167,7 @@
     cursor: pointer;
 }
 .player_inner .p_depth1 {
+    position: relative;
     padding: 8% 21% 0;
 }
 .player_inner .p_info {
@@ -427,4 +428,28 @@
 }
 .addbtn.active svg {
     color: var(--primary_color);
+}
+/* 플레이리스트 */
+#play-list {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 1;
+}
+#play-list li {
+    color: rgba(255,255,255,0.6);
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+#play-list ul {
+    padding: 20px;
+    overflow: hidden;
+}
+#play-list strong {
+    display: block;
+    margin-bottom: 4px;
 }

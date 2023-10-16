@@ -10,7 +10,7 @@ import { artists, headlines, records } from "../data/hcode";
 import "../css/main.css";
 /* Redux store 관련 */
 import { useSelector, useDispatch } from "react-redux";
-import { setImg, setTit, setAudio } from "../ts/redux";
+import { setImg, setTit, setAudio, setPlayer } from "../ts/redux";
 /* Swiper */
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper as SwiperReact, SwiperSlide } from "swiper/react";
@@ -30,7 +30,6 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import QueueMusicIcon from "@mui/icons-material/QueueMusic";
 import PauseIcon from '@mui/icons-material/Pause';
 import AddBoxIcon from '@mui/icons-material/AddBox';
-import { json } from "stream/consumers";
 
 // RootState 타입 정의
 type RootState = {
@@ -38,6 +37,7 @@ type RootState = {
         imgSrc: string;
         alTit: string;
         audSrc: string; 
+        setMp: any;
     };
 };
 
@@ -45,6 +45,7 @@ export default function Home() {
     const imgSrc = useSelector((state: RootState) => state.ref.imgSrc);
     const alTit = useSelector((state: RootState) => state.ref.alTit);
     const audSrc = useSelector((state: RootState) => state.ref.audSrc);
+    const setMp = useSelector((state: RootState) => state.ref.setMp);
     const dispatch = useDispatch();
     
     // state hook
@@ -94,39 +95,54 @@ export default function Home() {
 
     // 음원 플레이리스트 추가
     const addSong = () => {
-        const arr:any = [];
+        let arr:any = [];
         const addbtn = document.querySelectorAll(".addbtn");
-        const playList = document.querySelector("#play-list > ul");
-        addbtn.forEach(el => {
+        const playList = document.querySelector("#play-list > ul") as HTMLAnchorElement;
+
+        /************* 로컬스토리지 음반리스트 셋팅 *************/
+        // 음반리스트 배열 새로고침 방지
+        const saveList = localStorage.getItem('setSong');
+
+        if (saveList) {
+            // 로컬스에 리스트 있을 경우
+            const parseList = JSON.parse(saveList);
+            arr = parseList;
+            // dispatch(setPlayer(arr));
+        }
+        // 없을 경우 최초 초기 셋팅
+        else {
+            localStorage.setItem("setSong", JSON.stringify(arr));
+        }
+
+        ///////////////////////////////////////////////////////
+        addbtn.forEach((el,i) => {
             el.addEventListener("click", function(this: HTMLElement) {
                 this.classList.toggle('active');
+
+                if (this.classList.contains('active')) {
+                    const list = 
+                    [   records[i].tit,
+                        records[i].alb,
+                        records[i].isrc,
+                        records[i].time,
+                        records[i].msrc
+                    ];
+
+                    // 배열에 값 보내기
+                    arr.push(list);
+                    localStorage.setItem('setSong', JSON.stringify(arr));
+                }
             });
-            for(let i=0; i<arr.length; i++) {
-                // 로컬스토리지에 선택 항목 추가
-
-                const items = 
-                [   records[i].tit,
-                    records[i].alb,
-                    records[i].isrc,
-                    records[i].time,
-                    records[i].msrc
-                ];
-
-                arr.push(items);
-                localStorage.setItem("setSong", JSON.stringify(arr));
-                // localStorage.getItem("setSong");
-                
-                let list = `
-                    <li data-index="${i}">
-                        <strong>${records[i].tit}</strong>
-                        <em>${records[i].alb}</em>
-                        <audio src=${records[i].msrc}></audio>
-                        <span>${records[i].time}</span>
-                    </li>
-                `;
-                // playList.insertAdjacentHTML("beforeend", )
-            }
         });
+        for(let i=0; i<arr.length; i++) {
+            const list = `
+            <li>
+                <strong>${arr[i][0]}</strong>   
+                <em>${arr[i][1]}</em>
+            </li>
+            `;
+            playList.insertAdjacentHTML('beforeend', list);
+        }
     };
 
     //재생시간, 전체시간 표시 및 재생바
@@ -261,9 +277,6 @@ export default function Home() {
                                     플레이어
                                     <span className="list-btn">
                                         <QueueMusicIcon />
-                                        <div id="play-list">
-                                            <ul></ul>
-                                        </div>
                                     </span>
                                 </h3>
                                 <div className="p_depth1">
@@ -273,6 +286,9 @@ export default function Home() {
                                     <div className="p_info">
                                         <p className="name">{alTit}</p>
                                         <p className="artist">(G)IDLe</p>
+                                    </div>
+                                    <div id="play-list">
+                                        <ul></ul>
                                     </div>
                                 </div>
                                 <div className="timer">

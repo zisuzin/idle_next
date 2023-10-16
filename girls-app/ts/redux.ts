@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const imageSlice = createSlice({
     name: 'ref', // slice 식별 이름
-    initialState: { imgSrc: './images/init_bg.png', alTit: '재생 곡 없음', audSrc: ''}, // 초기값
+    initialState: { imgSrc: './images/init_bg.png', alTit: '재생 곡 없음', audSrc: '', setMp: []}, // 초기값
     reducers: {
         setImg: (state, action) => {
             state.imgSrc = action.payload;
@@ -13,9 +13,12 @@ const imageSlice = createSlice({
         },
         setAudio: (state, action) => {
             state.audSrc = action.payload;
-        }
+        },
+        setPlayer: (state, action) => {
+            state.setMp = action.payload;
+        } 
     }
 });
 
-export const { setImg, setTit, setAudio } = imageSlice.actions;
+export const { setImg, setTit, setAudio, setPlayer } = imageSlice.actions;
 export default imageSlice.reducer;
