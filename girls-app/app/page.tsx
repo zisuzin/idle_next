@@ -29,6 +29,7 @@ import ExpandLessRoundedIcon from "@mui/icons-material/ExpandLessRounded";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import QueueMusicIcon from "@mui/icons-material/QueueMusic";
 import PauseIcon from '@mui/icons-material/Pause';
+import AddBoxIcon from '@mui/icons-material/AddBox';
 
 // RootState 타입 정의
 type RootState = {
@@ -310,6 +311,9 @@ export default function Home() {
                                 <div className="altime">{v.time}</div>
                                 <div className="playbtn"> 
                                     <PlayArrowIcon/>
+                                </div>
+                                <div className="addbtn"> 
+                                    <AddBoxIcon/>
                                 </div>
                             </li>
                             ))}

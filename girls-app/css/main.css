@@ -389,7 +389,7 @@
     font-weight: 600;
 }
 .record_bx .altit {
-    width: 200px;
+    width: 180px;
     margin-left: 15px;
 }
 .record_bx .altit p {
@@ -417,4 +417,11 @@
 .playbtn svg {
     font-size: 15px;
     color: #7e00bf;
+}
+.addbtn {
+    margin-left: 10px;
+    cursor: pointer;
+}
+.addbtn svg {
+    font-size: 15px;
 }
