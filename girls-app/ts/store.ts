@@ -4,9 +4,15 @@ import imageReducer from './redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
+// 특정 데이터 타입 정의
+interface locData {
+    key: string;
+    value: string;
+}
+
 const persistConfig = {
     key: 'root',
-    storage,
+    storage, // localStorage에 저장
 }
 
 const persistedReducer = persistReducer(persistConfig, imageReducer);

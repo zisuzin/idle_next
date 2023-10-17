@@ -27,6 +27,7 @@ const artists = [
 /* 메인 - 헤드라인배너, 플레이어 */
 const headlines = [
     {
+        idx: 0,
         isrc: "/images/headline/hd-1.webp",
         tit: "6th Mini Album :^Queencard",
         mtit: "Queencard",
@@ -36,6 +37,7 @@ const headlines = [
         msrc: "/audios/Queencard.mp4",
     },
     {
+        idx: 1,
         isrc: "/images/headline/hd-2.jfif",
         tit: "2nd Single Album :^Expectations",
         mtit: "Expectations",
@@ -45,6 +47,7 @@ const headlines = [
         msrc: "/audios/Expectations.mp3",
     },
     {
+        idx: 2,
         isrc: "/images/headline/hd-3.jpg",
         tit: "Steve Aoki Remix^X (G)IDLe : Nxde",
         mtit: "Nxde",
@@ -54,6 +57,7 @@ const headlines = [
         msrc: "/audios/Nxde.mp3",
     },
     {
+        idx: 3,
         isrc: "/images/headline/hd-4.jpg",
         tit: "5th Mini Album :^LOVE",
         mtit: "LOVE",
@@ -63,6 +67,7 @@ const headlines = [
         msrc: "/audios/LOVE.mp4",
     },
     {
+        idx: 4,
         isrc: "/images/headline/hd-5.jfif",
         tit: "1st Single Album :^DUMDi DUMDi",
         mtit: "DUMDi DUMDi",
@@ -72,6 +77,7 @@ const headlines = [
         msrc: "/audios/dumdi dumdi.mp3",
     },
     {
+        idx: 5,
         isrc: "/images/headline/hd-6.jpg",
         tit: "1st Mini Album :^LATATA",
         mtit: "LATATA",
@@ -81,6 +87,7 @@ const headlines = [
         msrc: "/audios/latata.mp4",
     },
     {
+        idx: 6,
         isrc: "/images/headline/hd-7.jpg",
         tit: "R3HAB X (G)IDLe :^TOMBOY",
         mtit: "TOMBOY",

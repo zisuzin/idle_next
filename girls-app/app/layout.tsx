@@ -1,9 +1,9 @@
 "use client" 
 import { Provider } from "react-redux"; 
 import "../app/globals.css";
-import {store} from "../ts/store"; 
+import { store, persistor } from "../ts/store"; 
 import type { Metadata } from 'next';
-import Head from 'next/head'
+import { PersistGate } from "redux-persist/integration/react";
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -19,7 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Provider store={store}>
-            {children}
+            <PersistGate loading={null} persistor={persistor}>
+                {children}
+            </PersistGate>
         </Provider>
       </body>
     </html>

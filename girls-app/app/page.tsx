@@ -48,6 +48,7 @@ export default function Home() {
     const setMp = useSelector((state: RootState) => state.ref.setMp);
     let song_index = 0;
     const dispatch = useDispatch();
+    console.log(imgSrc)
     
     // state hook
     const [isCheck, setIsCheck] = useState<number | boolean>(Number);
