@@ -115,24 +115,17 @@ export default function Home() {
 
         /************* 로컬스토리지 음반리스트 셋팅 *************/
         // 음반리스트 배열 새로고침 방지
-        const saveList = localStorage.getItem('song_item') as string;
-        const saveNum = localStorage.getItem('song_num') as string;
+        const saveList:any = localStorage.getItem('song_item');
 
         if (saveList) {
             // 로컬스에 리스트 있을 경우
-            const parseList = JSON.parse(saveList);
+            const parseList:Array<{ tit: string, alb: string, img: string, time: string, song: string }> = JSON.parse(saveList);
             arr = parseList;
-
-            const parseNum = JSON.parse(saveNum);
-            arrNum = parseNum;
-            // dispatch(setPlayer(arr));
         }
         // 없을 경우 최초 초기 셋팅
         else {
             localStorage.setItem("song_item", JSON.stringify(arr));
-            localStorage.setItem("song_num", JSON.stringify(arrNum));
         }
-
         ///////////////////////////////////////////////////////
         addbtn.forEach((el,i) => {
             el.addEventListener("click", function(this: HTMLElement) {
@@ -140,26 +133,29 @@ export default function Home() {
 
                 // 중복데이터 선별 변수(true/false)
                 let isB = saveList.includes(records[i].tit);
+                saveList.map(item => item.tit)
+                console.log(records[i].tit)
                 console.log('중복여부검사:', isB);
 
+                // 버튼 클래스 on & 데이터 중복 아닐시
                 if (this.classList.contains('active') && isB == false) {
                     console.log('플레이리스트 추가');
 
                     const list = 
-                    [   records[i].tit,
-                        records[i].alb,
-                        records[i].isrc,
-                        records[i].time,
-                        records[i].msrc
-                    ];
+                    {   tit: records[i].tit,
+                        alb: records[i].alb,
+                        img: records[i].isrc,
+                        time: records[i].time,
+                        song: records[i].msrc
+                    };
 
                     // 배열에 값 보내기
                     arr.push(list);
                     arrNum.push(cnt);
                     localStorage.setItem('song_item', JSON.stringify(arr));
-                    localStorage.setItem('song_num', JSON.stringify(cnt));
                 }
-                else {
+                // 데이터 중복시
+                else if (this.classList.contains('active')  && isB == true) {
                     console.log('중복');
                     alert('이미 추가된 리스트입니다.');
                     this.classList.remove('active');

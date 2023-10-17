@@ -27,7 +27,6 @@ const artists = [
 /* 메인 - 헤드라인배너, 플레이어 */
 const headlines = [
     {
-        idx: 0,
         isrc: "/images/headline/hd-1.webp",
         tit: "6th Mini Album :^Queencard",
         mtit: "Queencard",
@@ -37,7 +36,6 @@ const headlines = [
         msrc: "/audios/Queencard.mp4",
     },
     {
-        idx: 1,
         isrc: "/images/headline/hd-2.jfif",
         tit: "2nd Single Album :^Expectations",
         mtit: "Expectations",
@@ -47,7 +45,6 @@ const headlines = [
         msrc: "/audios/Expectations.mp3",
     },
     {
-        idx: 2,
         isrc: "/images/headline/hd-3.jpg",
         tit: "Steve Aoki Remix^X (G)IDLe : Nxde",
         mtit: "Nxde",
@@ -57,7 +54,6 @@ const headlines = [
         msrc: "/audios/Nxde.mp3",
     },
     {
-        idx: 3,
         isrc: "/images/headline/hd-4.jpg",
         tit: "5th Mini Album :^LOVE",
         mtit: "LOVE",
@@ -67,7 +63,6 @@ const headlines = [
         msrc: "/audios/LOVE.mp4",
     },
     {
-        idx: 4,
         isrc: "/images/headline/hd-5.jfif",
         tit: "1st Single Album :^DUMDi DUMDi",
         mtit: "DUMDi DUMDi",
@@ -77,7 +72,6 @@ const headlines = [
         msrc: "/audios/dumdi dumdi.mp3",
     },
     {
-        idx: 5,
         isrc: "/images/headline/hd-6.jpg",
         tit: "1st Mini Album :^LATATA",
         mtit: "LATATA",
@@ -87,7 +81,6 @@ const headlines = [
         msrc: "/audios/latata.mp4",
     },
     {
-        idx: 6,
         isrc: "/images/headline/hd-7.jpg",
         tit: "R3HAB X (G)IDLe :^TOMBOY",
         mtit: "TOMBOY",
@@ -100,6 +93,7 @@ const headlines = [
 
 const records = [
     {
+        idx: 0,
         isrc: "/images/album/records/alb-0.webp",
         tit: "Uh-Oh",
         alb: "Oh My God",
@@ -107,6 +101,7 @@ const records = [
         msrc: "",
     },
     {
+        idx: 1,
         isrc: "/images/album/records/alb-1.webp",
         tit: "I DO",
         alb: "HEAT",
@@ -114,6 +109,7 @@ const records = [
         msrc: "",
     },
     {
+        idx: 2,
         isrc: "/images/album/records/alb-2.webp",
         tit: "Senorita",
         alb: "I made",
@@ -121,6 +117,7 @@ const records = [
         msrc: "",
     },
     {
+        idx: 3,
         isrc: "/images/album/alb-0.jpg",
         tit: "Allergy",
         alb: "I feel",
@@ -128,6 +125,7 @@ const records = [
         msrc: "",
     },
     {
+        idx: 4,
         isrc: "/images/album/records/alb-4.webp",
         tit: "화(火花)",
         alb: "I burn",
@@ -135,6 +133,7 @@ const records = [
         msrc: "",
     },
     {
+        idx: 5,
         isrc: "/images/album/records/alb-5.webp",
         tit: "LION",
         alb: "퀸덤 <Final 컴백 싱글>",
@@ -142,6 +141,7 @@ const records = [
         msrc: "",
     },
     {
+        idx: 6,
         isrc: "/images/album/records/alb-6.webp",
         tit: "말리지 마",
         alb: "I NEVER DIE",
@@ -149,6 +149,7 @@ const records = [
         msrc: "",
     },
     {
+        idx: 7,
         isrc: "/images/album/alb-6.jpg",
         tit: "TOMBOY",
         alb: "I NEVER DIE",
@@ -156,6 +157,7 @@ const records = [
         msrc: "/audios/tomboy.mp3",
     },
     {
+        idx: 8,
         isrc: "/images/album/alb-1.jpg",
         tit: "Expectations",
         alb: "앤마리X민니 <디지털 싱글>",
