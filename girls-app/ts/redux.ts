@@ -1,9 +1,5 @@
 /* Redux toolkit 불러오기 */
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-// 'persist:root' 키로 로컬스 데이터 가져오기
-// const saveDta:any = localStorage.getItem("persist:root");
-// const parseDta = JSON.parse(saveDta);
+import { createSlice } from '@reduxjs/toolkit';
 
 const imageSlice = createSlice({
     name: 'ref', // slice 식별 이름
@@ -23,13 +19,8 @@ const imageSlice = createSlice({
         setAudio: (state, action) => {
             state.audSrc = action.payload;
         },
-        setPlayer: (state, action) => {
-            state.setMp.push(action.payload);
-        } 
     },
 });
 
-console.log(imageSlice.reducer)
-
-export const { setImg, setTit, setAudio, setPlayer } = imageSlice.actions;
+export const { setImg, setTit, setAudio } = imageSlice.actions;
 export default imageSlice.reducer;

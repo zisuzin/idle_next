@@ -10,7 +10,7 @@ import { artists, headlines, records } from "../data/hcode";
 import "../css/main.css";
 /* Redux store 관련 */
 import { useSelector, useDispatch } from "react-redux";
-import { setImg, setTit, setAudio, setPlayer } from "../ts/redux";
+import { setImg, setTit, setAudio } from "../ts/redux";
 /* Swiper */
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper as SwiperReact, SwiperSlide } from "swiper/react";
@@ -48,7 +48,6 @@ export default function Home() {
     const setMp = useSelector((state: RootState) => state.ref.setMp);
     let song_index = 0;
     const dispatch = useDispatch();
-    console.log(imgSrc)
     
     // state hook
     const [isCheck, setIsCheck] = useState<number | boolean>(Number);
@@ -76,21 +75,32 @@ export default function Home() {
     }; ///////// setAlb 함수 ////////
 
     const audioRef = useRef<HTMLAudioElement | null>(null);
-    // 오디오 엘리먼트 가져오기
     const audioEl:any = audioRef.current;
-
-    // 플레이어 재생버튼 토글시 음원 재생/멈춤
+    
+    // 플레이어 재생버튼 토글시 아이콘 변경
     const playSong = () => {
         const playBtn = document.querySelector("#play-pause") as HTMLAnchorElement;
         playBtn.addEventListener("click", function() {
             playBtn.classList.toggle("on");
             if(playBtn.classList.contains("on") && audSrc) {
-                setIsCheck(true);
-                audioEl.play();
+                try {
+                    setIsCheck(true);
+                    // 오디오 재생
+                    audioEl.play();
+                }
+                catch {
+                    console.log("음원 재생");
+                }
             }
             else if (!playBtn.classList.contains("on") && audSrc) {
-                setIsCheck(false);
-                audioEl.pause();
+                try {
+                    setIsCheck(false);
+                    // 오디오 중지
+                    audioEl.pause()
+                }
+                catch {
+                    console.log("음원 중지");
+                }
             }
         });
     };
@@ -115,7 +125,7 @@ export default function Home() {
 
             const parseNum = JSON.parse(saveNum);
             arrNum = parseNum;
-            dispatch(setPlayer(arr));
+            // dispatch(setPlayer(arr));
         }
         // 없을 경우 최초 초기 셋팅
         else {
@@ -238,7 +248,7 @@ export default function Home() {
         timeAudio();
         // addSong();
         nextSong();
-    }, [audSrc]);
+    }, [audSrc, audioEl]);
     
     return (
         <div>
