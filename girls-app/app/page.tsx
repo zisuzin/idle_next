@@ -37,7 +37,7 @@ type RootState = {
         imgSrc: string;
         alTit: string;
         audSrc: string; 
-        setMp: any;
+        setMp: string[];
     };
 };
 
@@ -80,7 +80,7 @@ export default function Home() {
 
     // 플레이어 재생버튼 토글시 음원 재생/멈춤
     const playSong = () => {
-        const playBtn:any = document.querySelector("#play-pause");
+        const playBtn = document.querySelector("#play-pause") as HTMLAnchorElement;
         playBtn.addEventListener("click", function() {
             playBtn.classList.toggle("on");
             if(playBtn.classList.contains("on") && audSrc) {
@@ -95,79 +95,79 @@ export default function Home() {
     };
 
     // 음원 플레이리스트 추가
-    // const addSong = () => {
-    //     let arr:any = [];
-    //     let arrNum:any = [];
-    //     let cnt = 1;
-    //     const addbtn = document.querySelectorAll(".addbtn");
-    //     const playList = document.querySelector("#play-list > ul") as HTMLAnchorElement;
+    const addSong = () => {
+        let arr:any = [];
+        let arrNum:any = [];
+        let cnt = 1;
+        const addbtn = document.querySelectorAll(".addbtn");
+        const playList = document.querySelector("#play-list > ul") as HTMLAnchorElement;
 
-    //     /************* 로컬스토리지 음반리스트 셋팅 *************/
-    //     // 음반리스트 배열 새로고침 방지
-    //     const saveList = localStorage.getItem('song_item') as string;
-    //     const saveNum = localStorage.getItem('song_num') as string;
+        /************* 로컬스토리지 음반리스트 셋팅 *************/
+        // 음반리스트 배열 새로고침 방지
+        const saveList = localStorage.getItem('song_item') as string;
+        const saveNum = localStorage.getItem('song_num') as string;
 
-    //     if (saveList) {
-    //         // 로컬스에 리스트 있을 경우
-    //         const parseList = JSON.parse(saveList);
-    //         arr = parseList;
+        if (saveList) {
+            // 로컬스에 리스트 있을 경우
+            const parseList = JSON.parse(saveList);
+            arr = parseList;
 
-    //         const parseNum = JSON.parse(saveNum);
-    //         arrNum = parseNum;
-    //         // dispatch(setPlayer(arr));
-    //     }
-    //     // 없을 경우 최초 초기 셋팅
-    //     else {
-    //         localStorage.setItem("song_item", JSON.stringify(arr));
-    //         localStorage.setItem("song_num", JSON.stringify(arrNum));
-    //     }
+            const parseNum = JSON.parse(saveNum);
+            arrNum = parseNum;
+            dispatch(setPlayer(arr));
+        }
+        // 없을 경우 최초 초기 셋팅
+        else {
+            localStorage.setItem("song_item", JSON.stringify(arr));
+            localStorage.setItem("song_num", JSON.stringify(arrNum));
+        }
 
-    //     ///////////////////////////////////////////////////////
-    //     addbtn.forEach((el,i) => {
-    //         el.addEventListener("click", function(this: HTMLElement) {
-    //             this.classList.toggle('active');
+        ///////////////////////////////////////////////////////
+        addbtn.forEach((el,i) => {
+            el.addEventListener("click", function(this: HTMLElement) {
+                this.classList.toggle('active');
 
-    //             // 중복데이터 선별 변수(true/false)
-    //             let isB = saveList.includes(records[i].tit);
-    //             console.log('중복여부검사:', isB);
+                // 중복데이터 선별 변수(true/false)
+                let isB = saveList.includes(records[i].tit);
+                console.log('중복여부검사:', isB);
 
-    //             if (this.classList.contains('active') && isB == false) {
-    //                 console.log('플레이리스트 추가');
+                if (this.classList.contains('active') && isB == false) {
+                    console.log('플레이리스트 추가');
 
-    //                 const list = 
-    //                 [   records[i].tit,
-    //                     records[i].alb,
-    //                     records[i].isrc,
-    //                     records[i].time,
-    //                     records[i].msrc
-    //                 ];
+                    const list = 
+                    [   records[i].tit,
+                        records[i].alb,
+                        records[i].isrc,
+                        records[i].time,
+                        records[i].msrc
+                    ];
 
-    //                 // 배열에 값 보내기
-    //                 arr.push(list);
-    //                 arrNum.push(cnt);
-    //                 localStorage.setItem('song_item', JSON.stringify(arr));
-    //                 localStorage.setItem('song_num', JSON.stringify(cnt));
-    //             }
-    //             else {
-    //                 console.log('중복');
-    //                 alert('이미 추가된 리스트입니다.');
-    //                 this.classList.remove('active');
-    //                 return;
-    //             }
-    //         });
-    //     });
-    //     for(let i=0; i<arr.length; i++) {
-    //         const list = `
-    //         <li>
-    //             <strong>${arr[i][0]}</strong>   
-    //             <em>${arr[i][1]}</em>
-    //             <span>${arr[i][3]}</span>
-    //             <audio src=${arr[i].msrc}></audio>
-    //         </li>
-    //         `;
-    //         playList.insertAdjacentHTML('beforeend', list);
-    //     }
-    // };
+                    // 배열에 값 보내기
+                    arr.push(list);
+                    arrNum.push(cnt);
+                    localStorage.setItem('song_item', JSON.stringify(arr));
+                    localStorage.setItem('song_num', JSON.stringify(cnt));
+                }
+                else {
+                    console.log('중복');
+                    alert('이미 추가된 리스트입니다.');
+                    this.classList.remove('active');
+                    return;
+                }
+            });
+        });
+        for(let i=0; i<arr.length; i++) {
+            const list = `
+            <li>
+                <strong>${arr[i][0]}</strong>   
+                <em>${arr[i][1]}</em>
+                <span>${arr[i][3]}</span>
+                <audio src=${arr[i].msrc}></audio>
+            </li>
+            `;
+            playList.insertAdjacentHTML('beforeend', list);
+        }
+    };
 
     // 다음 곡 버튼 클릭시
     const nextSong = () => {
@@ -236,7 +236,7 @@ export default function Home() {
         playSong();
         timeAudio();
         // addSong();
-        nextSong()
+        nextSong();
     }, [audSrc]);
     
     return (

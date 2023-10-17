@@ -1,7 +1,7 @@
 "use client" 
 import { Provider } from "react-redux"; 
 import "../app/globals.css";
-import store from "../ts/store"; 
+import {store} from "../ts/store"; 
 import type { Metadata } from 'next';
 import Head from 'next/head'
 
@@ -17,10 +17,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-        <Head>
-        <title>My page title</title>
-        <meta property="og:title" content="My page title" key="title" />
-      </Head>
       <body>
         <Provider store={store}>
             {children}
