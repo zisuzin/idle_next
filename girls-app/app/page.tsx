@@ -180,6 +180,23 @@ export default function Home() {
         }
     };
 
+    // 전체 곡 목록 보기
+    const showList = () => {
+        const listBtn = document.querySelector(".list-btn") as HTMLAnchorElement;
+        const playList = document.querySelector("#play-list") as HTMLAnchorElement;
+        // 목록버튼 클릭시 플레이어리스트 보임/숨김
+        listBtn.addEventListener("click", function() {
+            listBtn.classList.toggle("on");
+    
+            if (listBtn.classList.contains("on")) {
+                playList.style.display = "block";
+            }
+            else {
+                playList.style.display = "none";
+            }
+        });
+    };
+
     // 다음 곡 버튼 클릭시
     const nextSong = () => {
         song_index++;
@@ -230,23 +247,11 @@ export default function Home() {
             audioEl.play();
         }
 
-        // 목록버튼 클릭시 플레이어리스트 보임/숨김
-        const listBtn = document.querySelector(".list-btn") as HTMLAnchorElement;
-        const playList = document.querySelector("#play-list") as HTMLAnchorElement;
-        listBtn.addEventListener("click", function() {
-            this.classList.toggle("on");
-            if (this.classList.contains("on")) {
-                playList.style.display = "block";
-            }
-            else {
-                playList.style.display = "none";
-            }
-        });
-
         // 함수호출
         playSong();
         timeAudio();
-        // addSong();
+        addSong();
+        showList();
         nextSong();
     }, [audSrc, audioEl]);
     
