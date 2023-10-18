@@ -41,9 +41,9 @@ type RootState = {
 };
 
 export default function Home() {
-    const imgSrc = useSelector((state: RootState) => state.ref.imgSrc);
-    const alTit = useSelector((state: RootState) => state.ref.alTit);
-    const audSrc = useSelector((state: RootState) => state.ref.audSrc);
+    let imgSrc = useSelector((state: RootState) => state.ref.imgSrc);
+    let alTit = useSelector((state: RootState) => state.ref.alTit);
+    let audSrc = useSelector((state: RootState) => state.ref.audSrc);
     let song_index = 0;
     const dispatch = useDispatch();
     
@@ -186,6 +186,7 @@ export default function Home() {
     
             if (listBtn.classList.contains("on")) {
                 playList.style.display = "block";
+                clkList();
             }
             else {
                 playList.style.display = "none";
@@ -198,11 +199,16 @@ export default function Home() {
         const listAll = document.querySelectorAll("#play-list li");
         listAll.forEach((list, i) => {
             list.addEventListener("click", function(this: HTMLElement) {
-                this.classList.toggle("on");
-
+                const listImg = list.querySelector("#play-list img") as HTMLElement;
+                let listSrc = listImg.getAttribute("src");
+                
                 // 클릭시 클래스 on
-                if (Number(list.getAttribute('data-index')) === i && list.classList.contains("on")) {
-                    console.log()
+                if (Number(list.getAttribute('data-index')) === i && !list.classList.contains("on")) {
+                    list.classList.add("on");
+
+                    // redux 상태 업데이트
+                    // dispatch(setImg(listSrc));
+
                     for(let x of listAll) {
                         if (x !== list) {
                             x.classList.remove("on");
@@ -212,12 +218,6 @@ export default function Home() {
             });
         })
     };
-
-    // const clicked = (ele) => {
-    //     let getIndex = ele.getAttribute('data-index');
-    //     console.log(getIndex)
-    //     clkList();
-    // }
 
     // 다음 곡 버튼 클릭시
     const nextSong = () => {
@@ -273,8 +273,8 @@ export default function Home() {
         timeAudio();
         addSong();
         showList();
-        clkList();
         nextSong();
+        clkList();
 
     }, [audSrc, audioEl]);
     
