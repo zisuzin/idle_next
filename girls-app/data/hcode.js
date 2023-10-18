@@ -93,7 +93,6 @@ const headlines = [
 
 const records = [
     {
-        idx: 0,
         isrc: "/images/album/records/alb-0.webp",
         tit: "Uh-Oh",
         alb: "Oh My God",
@@ -101,7 +100,6 @@ const records = [
         msrc: "/audios/uhuh.mp4",
     },
     {
-        idx: 1,
         isrc: "/images/album/records/alb-1.webp",
         tit: "I DO",
         alb: "HEAT",
@@ -109,7 +107,6 @@ const records = [
         msrc: "/audios/i_do.mp4",
     },
     {
-        idx: 2,
         isrc: "/images/album/records/alb-2.webp",
         tit: "Senorita",
         alb: "I made",
@@ -117,7 +114,6 @@ const records = [
         msrc: "/audios/Senorita.mp4",
     },
     {
-        idx: 3,
         isrc: "/images/album/alb-0.jpg",
         tit: "Allergy",
         alb: "I feel",
@@ -125,7 +121,6 @@ const records = [
         msrc: "/audios/Allergy.mp4",
     },
     {
-        idx: 4,
         isrc: "/images/album/records/alb-4.webp",
         tit: "화(火花)",
         alb: "I burn",
@@ -133,7 +128,6 @@ const records = [
         msrc: "/audios/HWAA.mp4",
     },
     {
-        idx: 5,
         isrc: "/images/album/records/alb-5.webp",
         tit: "LION",
         alb: "퀸덤 <Final 컴백 싱글>",
@@ -141,7 +135,6 @@ const records = [
         msrc: "/audios/LION.mp4",
     },
     {
-        idx: 6,
         isrc: "/images/album/records/alb-6.webp",
         tit: "말리지 마",
         alb: "I NEVER DIE",
@@ -149,7 +142,6 @@ const records = [
         msrc: "/audios/don't_stop_me.mp4",
     },
     {
-        idx: 7,
         isrc: "/images/album/alb-6.jpg",
         tit: "TOMBOY",
         alb: "I NEVER DIE",
@@ -157,7 +149,6 @@ const records = [
         msrc: "/audios/tomboy.mp3",
     },
     {
-        idx: 8,
         isrc: "/images/album/alb-1.jpg",
         tit: "Expectations",
         alb: "앤마리X민니 <디지털 싱글>",

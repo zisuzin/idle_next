@@ -159,9 +159,14 @@ export default function Home() {
             saveList.forEach((item, i) => {
                 const listItem = `
                     <li data-index=${i}>
-                        <strong>${item.tit}</strong>
-                        <em>${item.alb}</em>
-                        <span class="aud-dur" data-duration=${item.time}>${item.time}</span>
+                        <div class="imgarea">
+                            <img src=${item.img} alt=${item.tit}>
+                        </div>
+                        <div class="txtarea">
+                            <strong>${item.tit}</strong>
+                            <em>${item.alb}</em>
+                        </div>
+                        <span data-duration=${item.time}>${item.time}</span>
                         <audio src=${item.song}></audio>
                     </li>
                 `;
@@ -192,17 +197,17 @@ export default function Home() {
     const clkList = () => {
         const listAll = document.querySelectorAll("#play-list li");
         listAll.forEach((list, i) => {
-            list.addEventListener("click", function() {
-                let audEl = list.querySelector(".aud-dur") as HTMLElement;
+            list.addEventListener("click", function(this: HTMLElement) {
+                this.classList.toggle("on");
+
                 // 클릭시 클래스 on
-                if (list.classList.contains("on")) {
-                    list.classList.remove("on");
-                    let audDur = audEl.getAttribute('data-duration') as string;
-                    audEl.innerHTML = audDur;
-                }
-                else if (Number(list.getAttribute('data-index')) === i) {
-                    list.classList.add('on');
-                    audEl.innerHTML = 'Playing';
+                if (Number(list.getAttribute('data-index')) === i && list.classList.contains("on")) {
+                    console.log()
+                    for(let x of listAll) {
+                        if (x !== list) {
+                            x.classList.remove("on");
+                        }
+                    }
                 }
             });
         })
@@ -275,9 +280,6 @@ export default function Home() {
     
     return (
         <div>
-             <Head>
-        <title>홈 페이지 - 내 타이틀</title>
-      </Head>
             <header>
                 <div className="logowrap">
                     <Link href="/">

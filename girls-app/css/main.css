@@ -429,6 +429,7 @@
 .addbtn.active svg {
     color: var(--primary_color);
 }
+
 /* 플레이리스트 */
 #play-list {
     position: absolute;
@@ -460,6 +461,19 @@
     height: 100%;
     overflow-y: scroll;
 }
+#play-list .imgarea {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+#play-list img {
+    width: 50px;
+    border-radius: 10px;
+}
+#play-list .txtarea {
+    display: inline-block;
+    vertical-align: middle;
+}
 #play-list strong {
     display: block;
     margin-bottom: 4px;
@@ -474,10 +488,11 @@
     position: absolute;
     right: 0;
     top: 5px;
+    font-size: 17px;
+    font-weight: 600;
 }
 
 /* 플레이리스트 재생 목록 */
 #play-list li.on {
     color: #f8b6b6;
-    font-weight: 600;
 }
