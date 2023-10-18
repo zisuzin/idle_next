@@ -147,6 +147,17 @@ export default function Home() {
                     alert('이미 추가된 리스트입니다.');
                     this.classList.remove('active');
                 }
+                // 버튼 클래스 off시
+                else if (!this.classList.contains('active')) {
+                    console.log('플레이리스트 삭제');
+                    const removeIndex = saveList.findIndex(item => item.tit === records[i].tit);
+                    // 해당 곡 로컬스에서 제거
+                    if (removeIndex !== -1) {
+                        saveList.splice(removeIndex, 1);
+                        localStorage.setItem('song_item', JSON.stringify(saveList));
+                    }
+                    updateList();
+                }
             });
         });
 
