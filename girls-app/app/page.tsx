@@ -37,7 +37,6 @@ type RootState = {
         imgSrc: string;
         alTit: string;
         audSrc: string; 
-        setMp: string[];
     };
 };
 
@@ -45,12 +44,12 @@ export default function Home() {
     const imgSrc = useSelector((state: RootState) => state.ref.imgSrc);
     const alTit = useSelector((state: RootState) => state.ref.alTit);
     const audSrc = useSelector((state: RootState) => state.ref.audSrc);
-    const setMp = useSelector((state: RootState) => state.ref.setMp);
     let song_index = 0;
     const dispatch = useDispatch();
     
     // state hook
     const [isCheck, setIsCheck] = useState<number | boolean>(Number);
+    const [isNumber, setIsNumber] = useState(Number);
     
     // 헤드라인 재생버튼 클릭시 앨범 데이터 셋업 & 음원 재생/멈춤
     const setAlb = (img: string, audio: string, tit: string, el: HTMLAnchorElement) => {
@@ -108,8 +107,6 @@ export default function Home() {
     // 음원 플레이리스트 추가
     const addSong = () => {
         let arr:any = [];
-        let arrNum:any = [];
-        let cnt = 1;
         const addbtn = document.querySelectorAll(".addbtn");
         const playList = document.querySelector("#play-list > ul") as HTMLElement;
 
@@ -141,17 +138,12 @@ export default function Home() {
                     localStorage.setItem('song_item', JSON.stringify(saveList));
                     updateList();
                 }
-                // 데이터 중복시
-                else if (this.classList.contains('active') && isB) {
-                    console.log('중복');
-                    alert('이미 추가된 리스트입니다.');
-                    this.classList.remove('active');
-                }
                 // 버튼 클래스 off시
                 else if (!this.classList.contains('active')) {
                     console.log('플레이리스트 삭제');
-                    const removeIndex = saveList.findIndex(item => item.tit === records[i].tit);
+
                     // 해당 곡 로컬스에서 제거
+                    const removeIndex = saveList.findIndex(item => item.tit === records[i].tit);
                     if (removeIndex !== -1) {
                         saveList.splice(removeIndex, 1);
                         localStorage.setItem('song_item', JSON.stringify(saveList));
@@ -170,6 +162,7 @@ export default function Home() {
                         <strong>${item.tit}</strong>
                         <em>${item.alb}</em>
                         <span>${item.time}</span>
+                        <span className="state"></span>
                         <audio src=${item.msrc}></audio>
                     </li>
                 `;
@@ -193,6 +186,17 @@ export default function Home() {
             else {
                 playList.style.display = "none";
             }
+        });
+    };
+
+    // 곡 선택시 해당 음원 재생
+    const clkList = () => {
+        const list = document.querySelectorAll("#play-list li");
+        const state = document.querySelector(".state");
+        list.forEach((ele, idx) => {
+            ele.addEventListener("click", function() {
+                ele.classList.toggle("on");
+            });
         });
     };
 
@@ -250,6 +254,7 @@ export default function Home() {
         timeAudio();
         addSong();
         showList();
+        clkList();
         nextSong();
 
     }, [audSrc, audioEl]);
@@ -430,7 +435,7 @@ export default function Home() {
                                 <div className="playbtn"> 
                                     <PlayArrowIcon/>
                                 </div>
-                                <div className="addbtn"> 
+                                <div className= "addbtn"> 
                                     <AddBoxIcon/>
                                 </div>
                             </li>

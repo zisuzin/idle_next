@@ -7,7 +7,6 @@ const imageSlice = createSlice({
         imgSrc: './images/init_bg.png',
         alTit: '재생 곡 없음',
         audSrc: '',
-        setMp: [],
     }, 
     reducers: {
         setImg: (state, action) => {

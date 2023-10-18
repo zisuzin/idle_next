@@ -98,7 +98,7 @@ const records = [
         tit: "Uh-Oh",
         alb: "Oh My God",
         time: "03:28",
-        msrc: "",
+        msrc: "/audios/uhuh.mp4",
     },
     {
         idx: 1,
@@ -106,7 +106,7 @@ const records = [
         tit: "I DO",
         alb: "HEAT",
         time: "03:11",
-        msrc: "",
+        msrc: "/audios/i do.mp4",
     },
     {
         idx: 2,
@@ -114,7 +114,7 @@ const records = [
         tit: "Senorita",
         alb: "I made",
         time: "03:17",
-        msrc: "",
+        msrc: "/audios/Senorita.mp4",
     },
     {
         idx: 3,
@@ -122,7 +122,7 @@ const records = [
         tit: "Allergy",
         alb: "I feel",
         time: "02:42",
-        msrc: "",
+        msrc: "/audios/Allergy.mp4",
     },
     {
         idx: 4,
@@ -130,7 +130,7 @@ const records = [
         tit: "화(火花)",
         alb: "I burn",
         time: "03:17",
-        msrc: "",
+        msrc: "/audios/HWAA.mp4",
     },
     {
         idx: 5,
@@ -138,7 +138,7 @@ const records = [
         tit: "LION",
         alb: "퀸덤 <Final 컴백 싱글>",
         time: "03:31",
-        msrc: "",
+        msrc: "/audios/LION.mp4",
     },
     {
         idx: 6,
@@ -146,7 +146,7 @@ const records = [
         tit: "말리지 마",
         alb: "I NEVER DIE",
         time: "02:24",
-        msrc: "",
+        msrc: "/audios/말리지 마.mp4",
     },
     {
         idx: 7,
