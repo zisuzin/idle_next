@@ -10,7 +10,7 @@ import { artists, headlines, records } from "../data/hcode";
 import "../css/main.css";
 /* Redux store 관련 */
 import { useSelector, useDispatch } from "react-redux";
-import { setImg, setTit, setAudio } from "../ts/redux";
+import { setImg, setTit, setAudio, updateImg } from "../ts/redux";
 /* Swiper */
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper as SwiperReact, SwiperSlide } from "swiper/react";
@@ -49,7 +49,6 @@ export default function Home() {
     
     // state hook
     const [isCheck, setIsCheck] = useState<number | boolean>(Number);
-    const [isNumber, setIsNumber] = useState(Number);
     
     // 헤드라인 재생버튼 클릭시 앨범 데이터 셋업 & 음원 재생/멈춤
     const setAlb = (img: string, audio: string, tit: string, el: HTMLAnchorElement) => {
@@ -199,7 +198,7 @@ export default function Home() {
         const listAll = document.querySelectorAll("#play-list li");
         listAll.forEach((list, i) => {
             list.addEventListener("click", function(this: HTMLElement) {
-                const listImg = list.querySelector("#play-list img") as HTMLElement;
+                const listImg = list.querySelector("#play-list img") as HTMLImageElement;
                 let listSrc = listImg.getAttribute("src");
                 
                 // 클릭시 클래스 on
@@ -207,7 +206,7 @@ export default function Home() {
                     list.classList.add("on");
 
                     // redux 상태 업데이트
-                    // dispatch(setImg(listSrc));
+                    dispatch(updateImg(listSrc));
 
                     for(let x of listAll) {
                         if (x !== list) {

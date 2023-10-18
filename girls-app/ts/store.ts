@@ -3,6 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import imageReducer from './redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import thunk from 'redux-thunk';
 
 const persistConfig = {
     key: 'root',
@@ -15,7 +16,7 @@ const store = configureStore({
     reducer: {
         ref: persistedReducer,
     },
-    middleware: getDefaultMiddleware => getDefaultMiddleware({ serializableCheck: false })
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
 });
 
 const persistor = persistStore(store);
