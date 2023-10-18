@@ -158,12 +158,11 @@ export default function Home() {
             playList.innerHTML = "";
             saveList.forEach((item, i) => {
                 const listItem = `
-                    <li>
+                    <li data-index=${i}>
                         <strong>${item.tit}</strong>
                         <em>${item.alb}</em>
-                        <span>${item.time}</span>
-                        <span className="state"></span>
-                        <audio src=${item.msrc}></audio>
+                        <span class="aud-dur" data-duration=${item.time}>${item.time}</span>
+                        <audio src=${item.song}></audio>
                     </li>
                 `;
                 playList.insertAdjacentHTML('beforeend', listItem);
@@ -191,18 +190,33 @@ export default function Home() {
 
     // 곡 선택시 해당 음원 재생
     const clkList = () => {
-        const list = document.querySelectorAll("#play-list li");
-        const state = document.querySelector(".state");
-        list.forEach((ele, idx) => {
-            ele.addEventListener("click", function() {
-                ele.classList.toggle("on");
+        const listAll = document.querySelectorAll("#play-list li");
+        listAll.forEach((list, i) => {
+            list.addEventListener("click", function() {
+                let audEl = list.querySelector(".aud-dur") as HTMLElement;
+                // 클릭시 클래스 on
+                if (list.classList.contains("on")) {
+                    list.classList.remove("on");
+                    let audDur = audEl.getAttribute('data-duration') as string;
+                    audEl.innerHTML = audDur;
+                }
+                else if (Number(list.getAttribute('data-index')) === i) {
+                    list.classList.add('on');
+                    audEl.innerHTML = 'Playing';
+                }
             });
-        });
+        })
     };
+
+    // const clicked = (ele) => {
+    //     let getIndex = ele.getAttribute('data-index');
+    //     console.log(getIndex)
+    //     clkList();
+    // }
 
     // 다음 곡 버튼 클릭시
     const nextSong = () => {
-        song_index++;
+        // song_index++;
         // song_index = song_index%
     };
 

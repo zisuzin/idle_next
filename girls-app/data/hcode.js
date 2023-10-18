@@ -106,7 +106,7 @@ const records = [
         tit: "I DO",
         alb: "HEAT",
         time: "03:11",
-        msrc: "/audios/i do.mp4",
+        msrc: "/audios/i_do.mp4",
     },
     {
         idx: 2,
@@ -146,7 +146,7 @@ const records = [
         tit: "말리지 마",
         alb: "I NEVER DIE",
         time: "02:24",
-        msrc: "/audios/말리지 마.mp4",
+        msrc: "/audios/don't_stop_me.mp4",
     },
     {
         idx: 7,

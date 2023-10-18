@@ -450,6 +450,7 @@
     cursor: pointer;
     position: relative;
     padding: 11px 0;
+    user-select: none;
 }
 #play-list li:first-child {
     padding-top: 0;
@@ -473,4 +474,10 @@
     position: absolute;
     right: 0;
     top: 5px;
+}
+
+/* 플레이리스트 재생 목록 */
+#play-list li.on {
+    color: #f8b6b6;
+    font-weight: 600;
 }
