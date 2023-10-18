@@ -106,75 +106,67 @@ export default function Home() {
     };
 
     // 음원 플레이리스트 추가
-    // const addSong = () => {
-    //     let arr:any = [];
-    //     let arrNum:any = [];
-    //     let cnt = 1;
-    //     const addbtn = document.querySelectorAll(".addbtn");
-    //     const playList = document.querySelector("#play-list > ul") as HTMLAnchorElement;
+    const addSong = () => {
+        let arr:any = [];
+        let arrNum:any = [];
+        let cnt = 1;
+        const addbtn = document.querySelectorAll(".addbtn");
+        const playList = document.querySelector("#play-list > ul") as HTMLElement;
 
-    //     /************* 로컬스토리지 음반리스트 셋팅 *************/
-    //     // 음반리스트 배열 새로고침 방지
-    //     const saveList:any = localStorage.getItem('song_item');
+        // 로컬스토리지 음반리스트 셋팅
+        const saveList:any[] = JSON.parse(localStorage.getItem('song_item') || '[]');
 
-    //     if (saveList) {
-    //         // 로컬스에 리스트 있을 경우
-    //         const parseList = JSON.parse(saveList);
-    //         arr = parseList;
-    //     }
-    //     // 없을 경우 최초 초기 셋팅
-    //     else {
-    //         localStorage.setItem("song_item", JSON.stringify(arr));
-    //     }
-    //     ///////////////////////////////////////////////////////
-    //     addbtn.forEach((el,i) => {
-    //         el.addEventListener("click", function(this: HTMLElement) {
-    //             this.classList.toggle('active');
+        addbtn.forEach((el,i) => {
+            el.addEventListener("click", function(this: HTMLElement) {
+                this.classList.toggle('active');
 
-    //             // 중복데이터 선별 변수(true/false)
-    //             let isB = saveList.includes(records[i].tit);
-    //             console.log(saveList)
-    //             console.log(records[i].tit)
-    //             console.log('중복여부검사:', isB);
+                // 중복데이터 선별 변수(true/false)
+                const isB = saveList.some(item => item.tit === records[i].tit);
+                console.log("중복 판별 여부:", isB);
 
-    //             // 버튼 클래스 on & 데이터 중복 아닐시
-    //             if (this.classList.contains('active') && isB == false) {
-    //                 console.log('플레이리스트 추가');
+                // 버튼 클래스 on & 데이터 중복 아닐시
+                if (this.classList.contains('active') && !isB) {
+                    console.log('플레이리스트 추가');
 
-    //                 const list = 
-    //                 {   tit: records[i].tit,
-    //                     alb: records[i].alb,
-    //                     img: records[i].isrc,
-    //                     time: records[i].time,
-    //                     song: records[i].msrc
-    //                 };
+                    const list = 
+                    {   tit: records[i].tit,
+                        alb: records[i].alb,
+                        img: records[i].isrc,
+                        time: records[i].time,
+                        song: records[i].msrc
+                    };
 
-    //                 // 배열에 값 보내기
-    //                 arr.push(list);
-    //                 arrNum.push(cnt);
-    //                 localStorage.setItem('song_item', JSON.stringify(arr));
-    //             }
-    //             // 데이터 중복시
-    //             else if (this.classList.contains('active') && isB == true) {
-    //                 console.log('중복');
-    //                 alert('이미 추가된 리스트입니다.');
-    //                 this.classList.remove('active');
-    //                 return;
-    //             }
-    //         });
-    //     });
-    //     for(let i=0; i<arr.length; i++) {
-    //         const list = `
-    //         <li>
-    //             <strong>${arr[i]['tit']}</strong>   
-    //             <em>${arr[i]['alb']}</em>
-    //             <span>${arr[i]['time']}</span>
-    //             <audio src=${arr[i].msrc}></audio>
-    //         </li>
-    //         `;
-    //         playList.insertAdjacentHTML('beforeend', list);
-    //     }
-    // };
+                    // 배열에 값 보내기
+                    saveList.push(list);
+                    localStorage.setItem('song_item', JSON.stringify(saveList));
+                    updateList();
+                }
+                // 데이터 중복시
+                else if (this.classList.contains('active') && isB) {
+                    console.log('중복');
+                    alert('이미 추가된 리스트입니다.');
+                    this.classList.remove('active');
+                }
+            });
+        });
+
+        // 음원 목록 업데이트
+        const updateList = () => {
+            playList.innerHTML = "";
+            saveList.forEach((item, i) => {
+                const listItem = `
+                    <li>
+                        <strong>${item.tit}</strong>
+                        <em>${item.alb}</em>
+                        <span>${item.time}</span>
+                        <audio src=${item.msrc}></audio>
+                    </li>
+                `;
+                playList.insertAdjacentHTML('beforeend', listItem);
+            });
+        }
+        updateList();
+    };
 
     // 전체 곡 목록 보기
     const showList = () => {
@@ -242,13 +234,13 @@ export default function Home() {
             // 오디오 재생
             audioEl.play();
         }
-
         // 함수호출
         playSong();
         timeAudio();
-        // addSong();
+        addSong();
         showList();
         nextSong();
+
     }, [audSrc, audioEl]);
     
     return (
