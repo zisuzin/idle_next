@@ -73,9 +73,21 @@ export default function Home() {
         }
     }; ///////// setAlb 함수 ////////
 
+    //음악 및 음악 정보 불러오기
     const loadMusic = (num: number) => {
+        const listAll = document.querySelectorAll("#play-list li");
+        
+        // 이미지 변경
         let newSrc = `/images/album/records/alb-${num}.webp`;
         dispatch(setImg(newSrc));
+        
+        // 타이틀 변경
+        let listTit = (listAll[num].querySelector(".txtarea strong") as HTMLElement).innerText;
+        dispatch(setTit(listTit));
+        
+        // 오디오 변경
+        let listAud = listAll[num].querySelector("audio")?.getAttribute("src");
+        dispatch(setAudio(listAud));
     };
     
     // 플레이어 재생버튼 토글시 아이콘 변경
@@ -252,13 +264,13 @@ export default function Home() {
         // 현재시간 표시
         $("#audio").on("timeupdate", function() {
             const playTime = $(".current");
-            const progress = $(".bar");
-            let ctTime = crtAudio.currentTime;
             const duration = crtAudio.duration || 0;
+            let ctTime = crtAudio.currentTime;
+            const progressBar = $(".bar");
 
             // 프로그레스 바 업데이트
             const progBar = (ctTime / duration) * 100 + "%";
-            progress.css("width", `${progBar}`);
+            progressBar.css("width", `${progBar}`);
 
             let min = Math.floor(ctTime / 60);
             let sec = Math.floor(ctTime % 60);
@@ -270,13 +282,26 @@ export default function Home() {
 
     useEffect(() => {
         // 로드후 재생버튼 클릭시 조건 실행
+        const prevBtn = document.querySelector("#prev-btn") as HTMLElement;
+        const nextBtn = document.querySelector("#next-btn") as HTMLElement;
+        const crtAudio:any = $("#audio")[0];
+        const progress = $(".progress");
+        const duration = crtAudio.duration || 0;
+        
         if (audSrc && audioEl) {
             // 오디오 재생
             audioEl.play();
         }
+        
+        // 재생바 특정 위치 클릭시
+        progress.on("click", function(e) {
+            let maxWidth = progress.width() as number;
+            let clickXpos = e.offsetX;
+            let newDur = (clickXpos / maxWidth) * duration;
+            // 오디오 재생 시점 재설정
+            crtAudio.currentTime = newDur;
+        });
 
-        const prevBtn = document.querySelector("#prev-btn") as HTMLElement;
-        const nextBtn = document.querySelector("#next-btn") as HTMLElement;
         prevBtn.addEventListener("click", prevMusic);
         nextBtn.addEventListener("click", nextMusic);
 
