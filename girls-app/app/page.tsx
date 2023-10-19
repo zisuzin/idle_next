@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Head from 'next/head';
 /* React hooks */
 import React, { useEffect, useState, useRef } from 'react';
 /* 더미데이터 */
@@ -10,9 +9,7 @@ import { artists, headlines, records } from "../data/hcode";
 import "../css/main.css";
 /* Redux store 관련 */
 import { useSelector, useDispatch } from "react-redux";
-import { setImg, setTit, setAudio, updateImg } from "../ts/redux";
-import { unwrapResult } from '@reduxjs/toolkit';
-import { AnyAction } from 'redux';
+import { setImg, setTit, setAudio } from "../ts/redux";
 /* Swiper */
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper as SwiperReact, SwiperSlide } from "swiper/react";
@@ -24,7 +21,6 @@ import $ from 'jquery';
 import IconButton from "@mui/material/IconButton";
 import ShuffleIcon from "@mui/icons-material/Shuffle";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
-import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import RepeatIcon from "@mui/icons-material/Repeat";
 import ExpandLessRoundedIcon from "@mui/icons-material/ExpandLessRounded";
@@ -39,16 +35,18 @@ type RootState = {
         imgSrc: string;
         alTit: string;
         audSrc: string; 
-        loading: string,
     };
 };
+
 
 export default function Home() {
     let imgSrc = useSelector((state: RootState) => state.ref.imgSrc);
     let alTit = useSelector((state: RootState) => state.ref.alTit);
     let audSrc = useSelector((state: RootState) => state.ref.audSrc);
-    let song_index = 0;
     const dispatch = useDispatch();
+    let song_index = 0;
+    const audioRef = useRef<HTMLAudioElement | null>(null);
+    const audioEl:any = audioRef.current;
     
     // state hook
     const [isCheck, setIsCheck] = useState<number | boolean>(Number);
@@ -75,8 +73,10 @@ export default function Home() {
         }
     }; ///////// setAlb 함수 ////////
 
-    const audioRef = useRef<HTMLAudioElement | null>(null);
-    const audioEl:any = audioRef.current;
+    const loadMusic = (num: number) => {
+        let newSrc = `/images/album/records/alb-${num}.webp`;
+        dispatch(setImg(newSrc));
+    };
     
     // 플레이어 재생버튼 토글시 아이콘 변경
     const playSong = () => {
@@ -182,13 +182,11 @@ export default function Home() {
     const showList = () => {
         const listBtn = document.querySelector(".list-btn") as HTMLAnchorElement;
         const playList = document.querySelector("#play-list") as HTMLAnchorElement;
-        // 목록버튼 클릭시 플레이어리스트 보임/숨김
         listBtn.addEventListener("click", function() {
             listBtn.classList.toggle("on");
     
             if (listBtn.classList.contains("on")) {
                 playList.style.display = "block";
-                clkList();
             }
             else {
                 playList.style.display = "none";
@@ -198,33 +196,30 @@ export default function Home() {
 
     // 곡 선택시 해당 음원 재생
     const clkList = () => {
-        const listAll = document.querySelectorAll("#play-list li");
-        listAll.forEach((list, i) => {
-            list.addEventListener("click", function(this: HTMLElement) {
-                const listImg = list.querySelector("#play-list img") as HTMLImageElement;
-                let listSrc = listImg.getAttribute("src");
-                
-                // 클릭시 클래스 on
-                if (Number(list.getAttribute('data-index')) === i && !list.classList.contains("on")) {
-                    list.classList.add("on");
+        const listAll = $("#play-list li");
+        $(listAll).on("click", function() {
+            $(this).toggleClass("on").siblings().removeClass("on");
+            // 리스트 이미지
+            let listImg = $(this).find(".imgarea > img").attr("src");
+            // 리스트 타이틀
+            let listTxt = $(this).find(".txtarea > strong").text();
+            // 리스트 곡
+            let listAud = $(this).find("audio").attr("src");
 
-                    // redux 상태 업데이트
-                    dispatch(updateImg(listSrc) as AnyAction);
-
-                    for(let x of listAll) {
-                        if (x !== list) {
-                            x.classList.remove("on");
-                        }
-                    }
-                }
-            });
-        })
-    };
-
+            // redux 상태 업데이트
+            dispatch(setImg(listImg));
+            dispatch(setTit(listTxt));
+            dispatch(setAudio(listAud));
+        });
+    }
+    
     // 다음 곡 버튼 클릭시
     const nextSong = () => {
-        // song_index++;
-        // song_index = song_index%
+        const listAll = document.querySelectorAll("#play-list li")
+
+        song_index++;
+        song_index = song_index%listAll.length;
+        loadMusic(song_index);
     };
 
     //재생시간, 전체시간 표시 및 재생바
@@ -270,12 +265,15 @@ export default function Home() {
             // 오디오 재생
             audioEl.play();
         }
+
+        const nextBtn = document.querySelector("#next-btn") as HTMLElement;
+        nextBtn.addEventListener("click", nextSong);
+
         // 함수호출
         playSong();
         timeAudio();
         addSong();
         showList();
-        nextSong();
         clkList();
 
     }, [audSrc, audioEl]);
