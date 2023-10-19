@@ -11,6 +11,8 @@ import "../css/main.css";
 /* Redux store 관련 */
 import { useSelector, useDispatch } from "react-redux";
 import { setImg, setTit, setAudio, updateImg } from "../ts/redux";
+import { unwrapResult } from '@reduxjs/toolkit';
+import { AnyAction } from 'redux';
 /* Swiper */
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper as SwiperReact, SwiperSlide } from "swiper/react";
@@ -37,6 +39,7 @@ type RootState = {
         imgSrc: string;
         alTit: string;
         audSrc: string; 
+        loading: string,
     };
 };
 
@@ -206,7 +209,7 @@ export default function Home() {
                     list.classList.add("on");
 
                     // redux 상태 업데이트
-                    dispatch(updateImg(listSrc));
+                    dispatch(updateImg(listSrc) as AnyAction);
 
                     for(let x of listAll) {
                         if (x !== list) {

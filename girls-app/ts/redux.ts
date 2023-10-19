@@ -4,9 +4,13 @@ import { AnyAction } from 'redux';
 
 /* 액션 생성자 함수에서 비동기 처리 */
 export const updateImg = createAsyncThunk('ref/updateImage', async(imgSrc: string) => {
-    // const response = await fetchSomeData(imgSrc);
-    // return response;
+    const response = await fetchSomeData(imgSrc);
+    return response;
 });
+
+// function fetchSomeData(imgSrc) {
+//     return imgSrc;
+// }
 
 const imageSlice = createSlice({
     name: 'ref', // slice 식별 이름
@@ -14,6 +18,7 @@ const imageSlice = createSlice({
         imgSrc: './images/init_bg.png',
         alTit: '재생 곡 없음',
         audSrc: '',
+        loading: '',
     }, 
     reducers: {
         setImg: (state, action) => {
@@ -26,6 +31,21 @@ const imageSlice = createSlice({
             state.audSrc = action.payload;
         },
     },
+    extraReducers: (builder) => {
+        // 통신 중
+        builder.addCase(updateImg.pending, (state) => {
+            state.loading = 'pending';
+        });
+        // 통신 성공
+        builder.addCase(updateImg.fulfilled, (state, action) => {
+            state.loading = 'succeeded';
+            state.imgSrc = action.payload;
+        });
+        // 통신 에러
+        builder.addCase(updateImg.rejected, (state) => {
+            state.loading = 'failed';
+        });
+    }
 });
 
 export const { setImg, setTit, setAudio } = imageSlice.actions;
