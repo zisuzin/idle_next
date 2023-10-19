@@ -1,5 +1,6 @@
 /* Redux toolkit 불러오기 */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { AnyAction } from 'redux';
 
 /* 액션 생성자 함수에서 비동기 처리 */
 export const updateImg = createAsyncThunk('ref/updateImage', async(imgSrc: string) => {

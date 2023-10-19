@@ -260,7 +260,7 @@ export default function Home() {
             playTime.text(`${ctMin}:${ctSec}`);
         });
     }
-    
+
     useEffect(() => {
         // 로드후 재생버튼 클릭시 조건 실행
         if (audSrc && audioEl) {
