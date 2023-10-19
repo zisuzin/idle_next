@@ -212,10 +212,19 @@ export default function Home() {
             dispatch(setAudio(listAud));
         });
     }
+
+    // 이전 곡 버튼 클릭시
+    const prevMusic = () => {
+        const listAll = document.querySelectorAll("#play-list li");
+
+        song_index--;
+        if (song_index < 0) { song_index = listAll.length-1}; 
+        loadMusic(song_index);
+    }
     
     // 다음 곡 버튼 클릭시
-    const nextSong = () => {
-        const listAll = document.querySelectorAll("#play-list li")
+    const nextMusic = () => {
+        const listAll = document.querySelectorAll("#play-list li");
 
         song_index++;
         song_index = song_index%listAll.length;
@@ -266,8 +275,10 @@ export default function Home() {
             audioEl.play();
         }
 
+        const prevBtn = document.querySelector("#prev-btn") as HTMLElement;
         const nextBtn = document.querySelector("#next-btn") as HTMLElement;
-        nextBtn.addEventListener("click", nextSong);
+        prevBtn.addEventListener("click", prevMusic);
+        nextBtn.addEventListener("click", nextMusic);
 
         // 함수호출
         playSong();
