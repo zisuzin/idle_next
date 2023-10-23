@@ -7,6 +7,8 @@ import React, { useEffect, useState, useRef } from 'react';
 import { artists, headlines, records } from "../data/hcode";
 /* 메인 CSS */
 import "../css/main.css";
+/* 미디어 CSS */
+import "../css/mediaQuery/main_media.css";
 /* Redux store 관련 */
 import { useSelector, useDispatch } from "react-redux";
 import { setImg, setTit, setAudio } from "../ts/redux";
@@ -338,7 +340,8 @@ export default function Home() {
             <div className="container">
                 <div className="container_inner">
                     <h3 className="headline_title">Trending New Hits</h3>
-                    <SwiperReact className="hd-swiper" pagination navigation modules={[Pagination, Navigation]} loop={true}>
+                    <SwiperReact className="hd-swiper" pagination navigation modules={[Pagination, Navigation]}
+                    loop={true} observer={true}>
                         {/* 헤드라인배너 출력 */}
                         {headlines.map((x, i) => (
                             <SwiperSlide className="headline" key={i}>

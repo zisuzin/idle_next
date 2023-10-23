@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+/* 메인 미디어쿼리 SCSS - main_media.css */
+@media screen and (max-width: 1290px) {
+    .genre_bx {
+        width: 64% !important;
+        height: 330px !important;
+    }
+    .record_bx {
+        width: 100% !important;
+        margin: 15px 0 0 0 !important;
+    }
+    .record_bx li {
+        justify-content: space-evenly;
+    }
+    .genre_bx li {
+        padding: 15px !important;
+        width: 100% !important;
+    }
+    .genre_bx ul {
+        overflow-y: scroll;
+        height: 245px;
+        padding-right: 20px;
+    }
+}
+
+@media screen and (max-width: 1230px) {
+    .img_area {
+        width: 370px !important;
+        height: 258px !important;
+    }
+    .txt_area {
+        width: calc(100% - 370px) !important;
+        height: 258px !important;
+        padding: 32px 40px 0 36px !important;
+    }
+    .title {
+        font-size: 30px !important;
+        line-height: 35px !important;
+    }
+    .sub {
+        margin-top: 10px !important;
+    }
+    .info {
+        margin-top: 15px !important;
+    }
+    .swiper-pagination {
+        display: none !important;
+    }
+    .swiper-button-prev {
+        display: none !important;
+    }
+    .swiper-button-next {
+        display: none !important;
+    }
+}
