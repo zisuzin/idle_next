@@ -222,6 +222,10 @@ export default function Home() {
             dispatch(setImg(listImg));
             dispatch(setTit(listTxt));
             dispatch(setAudio(listAud));
+
+            if ($(this).hasClass("on")) {
+                showList();
+            }
         });
     }
 
