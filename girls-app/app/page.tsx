@@ -54,8 +54,9 @@ export default function Home() {
     const [isCheck, setIsCheck] = useState<number | boolean>(Number);
     
     // 헤드라인 재생버튼 클릭시 앨범 데이터 셋업 & 음원 재생/멈춤
-    const setAlb = (img: string, audio: string, tit: string, el: HTMLAnchorElement) => {
+    const setAlb = (img: string, audio: string, tit: string, el: HTMLAnchorElement, i:number) => {
         const audBtn:any = document.querySelector("#audio");
+        const lyrics = document.querySelector(".p_lyrics") as HTMLElement;
         dispatch(setImg(img));
         dispatch(setTit(tit));
         dispatch(setAudio(audio));
@@ -63,6 +64,9 @@ export default function Home() {
         // 플레이어 재생버튼 상태변경
         $(el).toggleClass('on').parent().siblings().find(".play_now_btn").removeClass("on");
         if ($(el).hasClass('on')) {
+            // 가사 변경
+            lyrics.innerHTML = headlines[i].lyrics;
+            // 오디오 재생
             setIsCheck(true);
             audBtn.play()
             .catch(() => {
@@ -70,6 +74,7 @@ export default function Home() {
             });
         }
         else {
+            // 오디오 중지
             setIsCheck(false);
             audBtn.pause();
         }
@@ -388,7 +393,7 @@ export default function Home() {
                                 <a href="#" role="button" className="play_now_btn"
                                 onClick={(e) => {
                                     e.preventDefault();
-                                    setAlb(x.albimg, x.msrc, x.mtit, e.currentTarget);
+                                    setAlb(x.albimg, x.msrc, x.mtit, e.currentTarget, i);
                                     }}>
                                     {isCheck ? <PauseIcon/> : <PlayArrowIcon/>}
                                     <em className="blind">재생하기</em>
