@@ -78,7 +78,7 @@ export default function Home() {
     //음악 및 음악 정보 불러오기
     const loadMusic = (num: number) => {
         const listAll = document.querySelectorAll("#play-list li");
-        const lyrics = document.querySelector(".p_lyrics") as HTMLElement;
+        const lyrics = $(".p_lyrics");
         
         // 이미지 변경
         let newSrc = `/images/album/records/alb-${num}.webp`;
@@ -92,12 +92,14 @@ export default function Home() {
         let listAud = listAll[num].querySelector("audio")?.getAttribute("src");
         dispatch(setAudio(listAud));
 
-
-        lyrics.addEventListener("drag", function() {
-            $(this).addClass("on");
-            // 가사 변경
-            lyrics.innerHTML = records[num].lyrics;
-        });
+        // lyrics.addEventListener("draggable", function() {
+        //     $(this).addClass("on");
+        //     // 가사 변경
+        //     lyrics.innerHTML = records[num].lyrics;
+        // });
+        lyrics.draggable({
+            axis: "x",
+        })
     };
     
     // 플레이어 재생버튼 토글시 아이콘 변경

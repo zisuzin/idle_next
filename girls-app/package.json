@@ -30,5 +30,8 @@
     "styled-components": "^6.0.7",
     "swiper": "^10.3.1",
     "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@types/jqueryui": "^1.12.19"
   }
 }
