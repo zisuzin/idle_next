@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 /* React hooks */
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from "react";
 /* 더미데이터 */
 import { artists, headlines, records } from "../data/hcode";
 /* 컴포넌트 */
-import HeaderComp from "../app/components/HeaderComp";
+import HeaderComp from "./components/HeaderComp";
 /* 메인 CSS */
 import "../css/main.css";
 /* 미디어 CSS */
@@ -20,7 +20,7 @@ import { Swiper as SwiperReact, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import "swiper/css/navigation";
 /* Jquery */
-import $ from 'jquery';
+import $ from "jquery";
 /* Material UI 컴포넌트 */
 import IconButton from "@mui/material/IconButton";
 import ShuffleIcon from "@mui/icons-material/Shuffle";
@@ -30,15 +30,15 @@ import RepeatIcon from "@mui/icons-material/Repeat";
 import ExpandLessRoundedIcon from "@mui/icons-material/ExpandLessRounded";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import QueueMusicIcon from "@mui/icons-material/QueueMusic";
-import PauseIcon from '@mui/icons-material/Pause';
-import AddBoxIcon from '@mui/icons-material/AddBox';
+import PauseIcon from "@mui/icons-material/Pause";
+import AddBoxIcon from "@mui/icons-material/AddBox";
 
 // RootState 타입 정의
 type RootState = {
     ref: {
         imgSrc: string;
         alTit: string;
-        audSrc: string; 
+        audSrc: string;
     };
 };
 
@@ -49,32 +49,30 @@ export default function Home() {
     const dispatch = useDispatch();
     let song_index = 0;
     const audioRef = useRef<HTMLAudioElement | null>(null);
-    const audioEl:any = audioRef.current;
-    
+    const audioEl: any = audioRef.current;
+
     // state hook
     const [isCheck, setIsCheck] = useState<number | boolean>(Number);
-    
+
     // 헤드라인 재생버튼 클릭시 앨범 데이터 셋업 & 음원 재생/멈춤
-    const setAlb = (img: string, audio: string, tit: string, el: HTMLAnchorElement, i:number) => {
-        const audBtn:any = document.querySelector("#audio");
+    const setAlb = (img: string, audio: string, tit: string, el: HTMLAnchorElement, i: number) => {
+        const audBtn: any = document.querySelector("#audio");
         const lyrics = document.querySelector(".p_lyrics") as HTMLElement;
         dispatch(setImg(img));
         dispatch(setTit(tit));
         dispatch(setAudio(audio));
-        
+
         // 플레이어 재생버튼 상태변경
-        $(el).toggleClass('on').parent().siblings().find(".play_now_btn").removeClass("on");
-        if ($(el).hasClass('on')) {
+        $(el).toggleClass("on").parent().siblings().find(".play_now_btn").removeClass("on");
+        if ($(el).hasClass("on")) {
             // 가사 변경
             lyrics.innerHTML = headlines[i].lyrics;
             // 오디오 재생
             setIsCheck(true);
-            audBtn.play()
-            .catch(() => {
+            audBtn.play().catch(() => {
                 console.log("음원 재생!");
             });
-        }
-        else {
+        } else {
             // 오디오 중지
             setIsCheck(false);
             audBtn.pause();
@@ -90,11 +88,11 @@ export default function Home() {
         // 이미지 변경
         let newSrc = `/images/album/records/alb-${num}.webp`;
         dispatch(setImg(newSrc));
-        
+
         // 타이틀 변경
         let listTit = records[num].tit;
         dispatch(setTit(listTit));
-        
+
         // 오디오 변경
         let listAud = records[num].msrc;
         dispatch(setAudio(listAud));
@@ -102,38 +100,35 @@ export default function Home() {
         // 가사 변경
         lyrics.innerHTML = records[num].lyrics;
 
-        lyricImg.addEventListener("click", function(this: HTMLElement) {
+        lyricImg.addEventListener("click", function (this: HTMLElement) {
             lyrics.style.display = "block";
         });
 
         // 가사창 숨김
-        lyrics.addEventListener("click", function(this: HTMLElement) {
+        lyrics.addEventListener("click", function (this: HTMLElement) {
             this.style.display = "none";
-        })
+        });
     };
-    
+
     // 플레이어 재생버튼 토글시 아이콘 변경
     const playSong = () => {
         const playBtn = document.querySelector("#play-pause") as HTMLAnchorElement;
-        playBtn.addEventListener("click", function() {
+        playBtn.addEventListener("click", function () {
             playBtn.classList.toggle("on");
             if (playBtn.classList.contains("on") && audSrc) {
                 try {
                     setIsCheck(true);
                     // 오디오 재생
                     audioEl.play();
-                }
-                catch {
+                } catch {
                     console.log("음원 재생");
                 }
-            }
-            else if (!playBtn.classList.contains("on") && audSrc) {
+            } else if (!playBtn.classList.contains("on") && audSrc) {
                 try {
                     setIsCheck(false);
                     // 오디오 중지
-                    audioEl.pause()
-                }
-                catch {
+                    audioEl.pause();
+                } catch {
                     console.log("음원 중지");
                 }
             }
@@ -142,47 +137,41 @@ export default function Home() {
 
     // 음원 플레이리스트 추가
     const addSong = () => {
-        let arr:any = [];
+        let arr: any = [];
         const addbtn = document.querySelectorAll(".addbtn");
         const playList = document.querySelector("#play-list > ul") as HTMLElement;
 
         // 로컬스토리지 음반리스트 셋팅
-        const saveList:any[] = JSON.parse(localStorage.getItem('song_item') || '[]');
+        const saveList: any[] = JSON.parse(localStorage.getItem("song_item") || "[]");
 
-        addbtn.forEach((el,i) => {
-            el.addEventListener("click", function(this: HTMLElement) {
-                this.classList.toggle('active');
+        addbtn.forEach((el, i) => {
+            el.addEventListener("click", function (this: HTMLElement) {
+                this.classList.toggle("active");
 
                 // 중복데이터 선별 변수(true/false)
                 const isB = saveList.some(item => item.tit === records[i].tit);
                 console.log("중복 판별 여부:", isB);
 
                 // 버튼 클래스 on & 데이터 중복 아닐시
-                if (this.classList.contains('active') && !isB) {
-                    console.log('플레이리스트 추가');
+                if (this.classList.contains("active") && !isB) {
+                    console.log("플레이리스트 추가");
 
-                    const list = 
-                    {   tit: records[i].tit,
-                        alb: records[i].alb,
-                        img: records[i].isrc,
-                        time: records[i].time,
-                        song: records[i].msrc
-                    };
+                    const list = { tit: records[i].tit, alb: records[i].alb, img: records[i].isrc, time: records[i].time, song: records[i].msrc };
 
                     // 배열에 값 보내기
                     saveList.push(list);
-                    localStorage.setItem('song_item', JSON.stringify(saveList));
+                    localStorage.setItem("song_item", JSON.stringify(saveList));
                     updateList();
                 }
                 // 버튼 클래스 off시
-                else if (!this.classList.contains('active')) {
-                    console.log('플레이리스트 삭제');
+                else if (!this.classList.contains("active")) {
+                    console.log("플레이리스트 삭제");
 
                     // 해당 곡 로컬스에서 제거
                     const removeIndex = saveList.findIndex(item => item.tit === records[i].tit);
                     if (removeIndex !== -1) {
                         saveList.splice(removeIndex, 1);
-                        localStorage.setItem('song_item', JSON.stringify(saveList));
+                        localStorage.setItem("song_item", JSON.stringify(saveList));
                     }
                     updateList();
                 }
@@ -206,9 +195,9 @@ export default function Home() {
                         <audio src=${item.song}></audio>
                     </li>
                 `;
-                playList.insertAdjacentHTML('beforeend', listItem);
+                playList.insertAdjacentHTML("beforeend", listItem);
             });
-        }
+        };
         updateList();
     };
 
@@ -216,13 +205,12 @@ export default function Home() {
     const showList = () => {
         const listBtn = document.querySelector(".list-btn") as HTMLAnchorElement;
         const playList = document.querySelector("#play-list") as HTMLAnchorElement;
-        listBtn.addEventListener("click", function() {
+        listBtn.addEventListener("click", function () {
             listBtn.classList.toggle("on");
-    
+
             if (listBtn.classList.contains("on")) {
                 playList.style.display = "block";
-            }
-            else {
+            } else {
                 playList.style.display = "none";
             }
         });
@@ -231,7 +219,7 @@ export default function Home() {
     // 곡 선택시 해당 음원 재생
     const clkList = () => {
         const listAll = $("#play-list li");
-        $(listAll).on("click", function() {
+        $(listAll).on("click", function () {
             $(this).toggleClass("on").siblings().removeClass("on");
             // 리스트 이미지
             let listImg = $(this).find(".imgarea > img").attr("src");
@@ -249,36 +237,38 @@ export default function Home() {
                 showList();
             }
         });
-    }
+    };
 
     // 이전 곡 버튼 클릭시
     const prevMusic = () => {
         const listAll = document.querySelectorAll("#play-list li");
 
         song_index--;
-        if (song_index < 0) { song_index = listAll.length-1}; 
+        if (song_index < 0) {
+            song_index = listAll.length - 1;
+        }
         loadMusic(song_index);
-    }
-    
+    };
+
     // 다음 곡 버튼 클릭시
     const nextMusic = () => {
         const listAll = document.querySelectorAll("#play-list li");
 
         song_index++;
-        song_index = song_index%listAll.length;
+        song_index = song_index % listAll.length;
         loadMusic(song_index);
     };
 
     //재생시간, 전체시간 표시 및 재생바
     const timeAudio = () => {
         // 원본 오디오 선택
-        const crtAudio:any = $("#audio")[0];
+        const crtAudio: any = $("#audio")[0];
 
         //전체시간 표시
-        $("#audio").on("loadeddata", function() {
-            const totTime =  $(".duration");
+        $("#audio").on("loadeddata", function () {
+            const totTime = $(".duration");
             const duration = crtAudio.duration || 0;
-            
+
             // 음원 총 재생시간 구하기
             const min = Math.floor(duration / 60);
             const sec = Math.floor(duration % 60);
@@ -286,9 +276,9 @@ export default function Home() {
             const totSec = sec.toString().padStart(2, "0");
             totTime.text(`${totMin}:${totSec}`);
         });
-        
+
         // 현재시간 표시
-        $("#audio").on("timeupdate", function() {
+        $("#audio").on("timeupdate", function () {
             const playTime = $(".current");
             const duration = crtAudio.duration || 0;
             let ctTime = crtAudio.currentTime;
@@ -304,23 +294,23 @@ export default function Home() {
             let ctSec = sec.toString().padStart(2, "0");
             playTime.text(`${ctMin}:${ctSec}`);
         });
-    }
+    };
 
     useEffect(() => {
         // 로드후 재생버튼 클릭시 조건 실행
         const prevBtn = document.querySelector("#prev-btn") as HTMLElement;
         const nextBtn = document.querySelector("#next-btn") as HTMLElement;
-        const crtAudio:any = $("#audio")[0];
+        const crtAudio: any = $("#audio")[0];
         const progress = $(".progress");
         const duration = crtAudio.duration || 0;
-        
+
         if (audSrc && audioEl) {
             // 오디오 재생
             audioEl.play();
         }
-        
+
         // 재생바 특정 위치 클릭시
-        progress.on("click", function(e) {
+        progress.on("click", function (e) {
             let maxWidth = progress.width() as number;
             let clickXpos = e.offsetX;
             let newDur = (clickXpos / maxWidth) * duration;
@@ -337,21 +327,19 @@ export default function Home() {
         addSong();
         showList();
         clkList();
-
     }, [audSrc, audioEl]);
 
     useEffect(() => {
         loadMusic(song_index);
-    }, [])
+    }, []);
 
     return (
         <div>
-            <HeaderComp/>
+            <HeaderComp />
             <div className="container">
                 <div className="container_inner">
                     <h3 className="headline_title">Trending New Hits</h3>
-                    <SwiperReact className="hd-swiper" pagination navigation modules={[Pagination, Navigation]}
-                    loop={true} observer={true}>
+                    <SwiperReact className="hd-swiper" pagination navigation modules={[Pagination, Navigation]} loop={true} observer={true}>
                         {/* 헤드라인배너 출력 */}
                         {headlines.map((x, i) => (
                             <SwiperSlide className="headline" key={i}>
@@ -377,12 +365,16 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#" role="button" className="play_now_btn"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    setAlb(x.albimg, x.msrc, x.mtit, e.currentTarget, i);
-                                    }}>
-                                    {isCheck ? <PauseIcon/> : <PlayArrowIcon/>}
+                                <a
+                                    href="#"
+                                    role="button"
+                                    className="play_now_btn"
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        setAlb(x.albimg, x.msrc, x.mtit, e.currentTarget, i);
+                                    }}
+                                >
+                                    {isCheck ? <PauseIcon /> : <PlayArrowIcon />}
                                     <em className="blind">재생하기</em>
                                 </a>
                             </SwiperSlide>
@@ -417,7 +409,7 @@ export default function Home() {
                                 </h3>
                                 <div className="p_depth1">
                                     <div className="p_img">
-                                        <img src={imgSrc} alt={alTit}/>
+                                        <img src={imgSrc} alt={alTit} />
                                     </div>
                                     <div className="p_info">
                                         <p className="name">{alTit}</p>
@@ -452,7 +444,7 @@ export default function Home() {
                                     </IconButton>
                                     {/* 중지/재생 버튼 */}
                                     <IconButton id="play-pause" disableRipple onClick={playSong}>
-                                        {isCheck ? <PauseIcon/> : <PlayArrowIcon/>}
+                                        {isCheck ? <PauseIcon /> : <PlayArrowIcon />}
                                         <em className="blind">재생/중지 버튼</em>
                                     </IconButton>
                                     {/* 다음 곡 재생버튼 */}
@@ -479,12 +471,36 @@ export default function Home() {
                         <span>See all</span>
                         <ul>
                             {/* 멤버프로필 출력 */}
-                            <li className="beat">Dance<br/>Beat</li>
-                            <li className="electro">Electro<br/>Pop</li>
-                            <li className="indie">Alternative<br/>Indie</li>
-                            <li className="hiphop">Hip<br/>Hop</li>
-                            <li className="balad">Pop<br/>Ballad</li>
-                            <li className="jazz">Hip Hop<br/>Jazz</li>
+                            <li className="beat">
+                                Dance
+                                <br />
+                                Beat
+                            </li>
+                            <li className="electro">
+                                Electro
+                                <br />
+                                Pop
+                            </li>
+                            <li className="indie">
+                                Alternative
+                                <br />
+                                Indie
+                            </li>
+                            <li className="hiphop">
+                                Hip
+                                <br />
+                                Hop
+                            </li>
+                            <li className="balad">
+                                Pop
+                                <br />
+                                Ballad
+                            </li>
+                            <li className="jazz">
+                                Hip Hop
+                                <br />
+                                Jazz
+                            </li>
                         </ul>
                     </div>
                     {/* 전체 음반 */}
@@ -494,23 +510,23 @@ export default function Home() {
                         <ul>
                             {/* 음반리스트 출력 */}
                             {records.map((v, i) => (
-                            <li key={i}>
-                                <div className="alnum">0{i+1}</div>
-                                <div className="alimg">
-                                    <img src={v.isrc} alt={v.tit + '앨범이미지'} />
-                                </div>
-                                <div className="altit">
-                                    <h5>{v.tit}</h5>
-                                    <p>{v.alb}</p>
-                                </div>
-                                <div className="altime">{v.time}</div>
-                                <div className="playbtn"> 
-                                    <PlayArrowIcon/>
-                                </div>
-                                <div className= "addbtn"> 
-                                    <AddBoxIcon/>
-                                </div>
-                            </li>
+                                <li key={i}>
+                                    <div className="alnum">0{i + 1}</div>
+                                    <div className="alimg">
+                                        <img src={v.isrc} alt={v.tit + "앨범이미지"} />
+                                    </div>
+                                    <div className="altit">
+                                        <h5>{v.tit}</h5>
+                                        <p>{v.alb}</p>
+                                    </div>
+                                    <div className="altime">{v.time}</div>
+                                    <div className="playbtn">
+                                        <PlayArrowIcon />
+                                    </div>
+                                    <div className="addbtn">
+                                        <AddBoxIcon />
+                                    </div>
+                                </li>
                             ))}
                         </ul>
                     </div>

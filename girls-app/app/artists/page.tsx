@@ -4,7 +4,7 @@ import { useEffect } from "react";
 // 더미데이터
 import { artists } from "../../data/hcode.js";
 /* 컴포넌트 */
-import HeaderComp from "../../app/components/HeaderComp";
+import HeaderComp from "../components/HeaderComp";
 /* Jquery */
 import $ from "jquery";
 // 서브 CSS
