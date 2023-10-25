@@ -78,7 +78,8 @@ export default function Home() {
     //음악 및 음악 정보 불러오기
     const loadMusic = (num: number) => {
         const listAll = document.querySelectorAll("#play-list li");
-        const lyrics = $(".p_lyrics");
+        const lyrics = document.querySelector(".p_lyrics") as HTMLElement;
+        const lyricImg = document.querySelector(".p_img") as HTMLElement;
         
         // 이미지 변경
         let newSrc = `/images/album/records/alb-${num}.webp`;
@@ -92,13 +93,17 @@ export default function Home() {
         let listAud = listAll[num].querySelector("audio")?.getAttribute("src");
         dispatch(setAudio(listAud));
 
-        // lyrics.addEventListener("draggable", function() {
-        //     $(this).addClass("on");
-        //     // 가사 변경
-        //     lyrics.innerHTML = records[num].lyrics;
-        // });
-        lyrics.draggable({
-            axis: "x",
+        // 가사창 나타남
+        lyricImg.addEventListener("click", function(this: HTMLElement) {
+            lyrics.style.display = "block";
+            
+            // 가사 변경
+            lyrics.innerHTML = records[num].lyrics;
+        });
+
+        // 가사창 숨김
+        lyrics.addEventListener("click", function(this: HTMLElement) {
+            this.style.display = "none";
         })
     };
     
@@ -107,7 +112,7 @@ export default function Home() {
         const playBtn = document.querySelector("#play-pause") as HTMLAnchorElement;
         playBtn.addEventListener("click", function() {
             playBtn.classList.toggle("on");
-            if(playBtn.classList.contains("on") && audSrc) {
+            if (playBtn.classList.contains("on") && audSrc) {
                 try {
                     setIsCheck(true);
                     // 오디오 재생
@@ -327,6 +332,7 @@ export default function Home() {
         addSong();
         showList();
         clkList();
+        loadMusic(song_index);
 
     }, [audSrc, audioEl]);
     

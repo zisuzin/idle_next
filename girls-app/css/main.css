@@ -153,6 +153,7 @@
 .player_inner .p_img {
     height: auto;
     border-radius: 15px;
+    cursor: grab;
 }
 .p_img img {
     width: 100%;
