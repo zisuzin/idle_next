@@ -4,7 +4,7 @@ import Link from "next/link";
 // 더미데이터
 import { artists } from "../../data/hcode.js";
 /* 컴포넌트 */
-import HeaderComp from "../components/HeaderComp.jsx";
+import HeaderComp from "../components/HeaderComp";
 // 서브 CSS
 import "../../css/sub.css";
 
