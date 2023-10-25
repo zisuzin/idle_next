@@ -1,28 +1,38 @@
 /* 더미데이터 - hcode.js */
 
 /* 메인 - 멤버프로필 */
-const artists = [
-    {
-        isrc: "/images/profile/mindy",
-        name: "민디",
-    },
-    {
-        isrc: "/images/profile/miyeon",
-        name: "미연",
-    },
-    {
-        isrc: "/images/profile/soyeon",
-        name: "소연",
-    },
-    {
-        isrc: "/images/profile/wugi",
-        name: "우기",
-    },
-    {
-        isrc: "/images/profile/shuwha",
-        name: "슈화",
-    },
-]
+const artists = {
+    misrc: "/images/profile/member.jpg",
+    mtit: "ABOUT (G)I-DLE",
+    stit: "2018년 5인조 다국적 걸그룹으로 데뷔해 국내 신인상을 휩쓴 여자아이들은 명실상부 한국을 대표하는 최정상 걸그룹으로 성장했다. 데뷔 초부터 흔치 않은 콘셉트로 인기몰이를 하며 데뷔 후 활동 20일 만에 음악 방송 1위, 음원 차트 상위권 신인상 7관왕을 차지하며 괴물 신인으로 불렸고, 탄탄한 해외 팬덤을 가지고 있다. 또한 퀸덤에서 보여준 막내 걸그룹답지 않은 존재감과 무대 퍼포먼스, 뛰어난 실력을 기점으로 대세 걸그룹으로서의 확고한 입지를 다져나가고 있다.",
+    det: [
+        {
+            isrc: "/images/profile/mindy.jpeg",
+            name: "민디",
+            birth: "생일: 1997년 10월 23일",
+        },
+        {
+            isrc: "/images/profile/miyeon.jpeg",
+            name: "미연",
+            birth: "생일: 1997년 1월 31일",
+        },
+        {
+            isrc: "/images/profile/soyeon.jpeg",
+            name: "소연",
+            birth: "생일: 1998년 8월 26일",
+        },
+        {
+            isrc: "/images/profile/wugi.jpeg",
+            name: "우기",
+            birth: "생일: 1999년 9월 23일",
+        },
+        {
+            isrc: "/images/profile/shuwha.jpeg",
+            name: "슈화",
+            birth: "생일: 2000년 1월 6일",
+        },
+    ],
+}
 
 /* 메인 - 헤드라인배너, 플레이어 */
 const headlines = [
@@ -80,7 +90,7 @@ const headlines = [
         isrc: "/images/headline/hd-6.jpg",
         tit: "1st Mini Album :^LATATA",
         mtit: "LATATA",
-        desc: "(여자)아이들 데뷔곡 \"LATATA\"! 사랑에 빠져 이 밤을 불태우도록 신나게 춤을! 여자아이들의 당찬 포부가 담긴 이번 데뷔 앨범은 여자아이들의 아이(I)에 뜻을 담아 팀과 멤버들에 대해 소개하는 의미로 [I am]으로 지었다. 멤버 여섯 명의 환상적인 하모니는 앨범의 타이틀곡인 ‘LATATA’를 필두로 여섯 트랙으로 나누어 보여준다. 뭄바톤부터 발라드까지, 장르의 스펙트럼을 넘나들며 신인그룹에게서 찾아보기 힘든 완성도 높은 미니앨범 [I am]은 여자아이들의 무궁무진한 성장 가능성과 앞으로의 방향성을 기대해 볼 수 있다. 2018년 가요계를 뒤흔들 여자아이들을 주목해보자. 각자의 매력이 하나로 뭉쳐 그 누구도 쉽게 따라 할 수 없는 아이들만의 개성 있고 재미있는 아이덴티티를 정립하는 여정이 기대된다.",
+        desc: '(여자)아이들 데뷔곡 "LATATA"! 사랑에 빠져 이 밤을 불태우도록 신나게 춤을! 여자아이들의 당찬 포부가 담긴 이번 데뷔 앨범은 여자아이들의 아이(I)에 뜻을 담아 팀과 멤버들에 대해 소개하는 의미로 [I am]으로 지었다. 멤버 여섯 명의 환상적인 하모니는 앨범의 타이틀곡인 ‘LATATA’를 필두로 여섯 트랙으로 나누어 보여준다. 뭄바톤부터 발라드까지, 장르의 스펙트럼을 넘나들며 신인그룹에게서 찾아보기 힘든 완성도 높은 미니앨범 [I am]은 여자아이들의 무궁무진한 성장 가능성과 앞으로의 방향성을 기대해 볼 수 있다. 2018년 가요계를 뒤흔들 여자아이들을 주목해보자. 각자의 매력이 하나로 뭉쳐 그 누구도 쉽게 따라 할 수 없는 아이들만의 개성 있고 재미있는 아이덴티티를 정립하는 여정이 기대된다.',
         date: "2018.05.02",
         albimg: "/images/album/alb-5.jpg",
         msrc: "/audios/latata.mp4",
@@ -96,7 +106,7 @@ const headlines = [
         msrc: "/audios/tomboy.mp3",
         lyrics: "Look at you (yeah) 넌 못 감당해 날 (uh)<br/>You took (umm) off hook (yah)<br/>기분은 coke like, brr (brr)<br/>Look at my toe 나의 ex 이름 tattoo<br/>I got to drink up now 니가 싫다 해도 좋아 (ah)<br/><br/>Why are you cranky, boy?<br/>뭘 그리 찡그려, 너?<br/>Do you want a blond Barbie doll?<br/>It's not here, I'm not a doll (like this if you can)<br/>미친년이라 말해 what's the loss to me? Ya<br/>사정없이 까보라고 you'll lose to me, ya<br/>사랑 그깟 거 따위 내 몸에 상처 하나도 어림없지<br/>너의 썩은내 나는 향수나 뿌릴 바엔<br/><br/>Yeah, I'm fu- tomboy<br/>(Uh-uh, ah-ah, uh-uh)<br/>Yeah, I'll be the tomboy<br/><br/>(Uh-uh, ah-ah)<br/>This is my attitude<br/>Yeah, I'll be the tomboy<br/>SY<br/>I don't wanna play this ping pong<br/>I would rather film a TikTok<br/>Your mom raised you as a prince, but<br/>This is queendom, right?<br/>I like to dance, I love my friends<br/>Sometimes we swear without cigarettes<br/>I like to eh, on drinking whiskey<br/>I won't change it, what the hell?<br/><br/>미친 척이라 말해 what's the loss to me? Ya<br/>사정없이 씹으라고 you're lost to me, ya<br/>사랑 그깟 거 따위 내 눈에 눈물 한 방울 어림없지<br/>너의 하찮은 말에 미소나 지을 바엔<br/><br/>Yeah, I'm fu- tomboy<br/>(Uh-uh, ah-ah, uh-uh)<br/>Yeah, I'll be the tomboy<br/>(Uh-uh, ah-ah)<br/>This is my attitude<br/>Yeah, I'll be the tomboy<br/>Said you get up?<br/>Uh, you get the song right<br/>You'll get what I mean 'Tomboy', uh<br/><br/>La-la-la, la-la, la-la-la-la, la-la<br/>La-la-la-la, la-la-la<br/>(Umm, umm, you're brand new)<br/><br/>La-la-la, la-la, la-la-la-la, la-la<br/>La-la-la-la, la-la-la<br/>(Three, two, one)<br/><br/>It's neither man nor woman<br/>Man nor woman<br/>It's neither man nor woman<br/>Just me, I-DLE<br/><br/>It's neither man nor woman<br/>Man nor woman<br/>It's neither man nor woman<br/>Just me, loving tomboy",
     },
-]
+];
 
 const records = [
     {
@@ -113,7 +123,7 @@ const records = [
         alb: "HEAT",
         time: "03:11",
         msrc: "/audios/i_do.mp4",
-        lyrics: "Oh-oh-oh<br/>Hit me like a shot in the heart<br/>Never shoulda played you so hard<br/>Guess I played myself, that's my fault<br/>Ooh-ooh-ooh<br/><br/>I don't even know how to think<br/>'Cause now she got your heart so I feel<br/>Stupid, foolish, afraid, I'm losing<br/>Everything I thought I couldn't<br/>My whole world is falling apart<br/><br/>Don't you go falling in love<br/>Trust me she's not the one<br/>She won't ever<br/>Love you like I do<br/>Hold you like I do<br/>Know you like I do<br/>Don't you go fallin' in love<br/>'Cause I'ma break that shit up<br/>I won't let her<br/>Love you like I do<br/>Touch you like I do<br/>Nothing like I do<br/>Nothing like I do<br/><br/>Hit me like a poisonous dart<br/>You were trouble right from the start<br/>Should have ran, I guess it's my fault<br/>Mm-mm-mm<br/><br/>I don't even know how to think<br/>'Cause now she got your heart so I feel<br/>Stupid, foolish, afraid, I'm losing<br/>Everything I thought I couldn't<br/>My whole world is falling apart<br/><br/>Don't you go falling in love<br/>Trust me she's not the one<br/>She won't ever<br/>Love you like I do<br/>Hold you like I do<br/>Know you like I do<br/>Don't you go fallin' in love<br/>'Cause I'ma break that shit up<br/>I won't let her<br/>Love you like I do<br/>Touch you like I do<br/>Nothing like I do<br/>Nothing like I do"
+        lyrics: "Oh-oh-oh<br/>Hit me like a shot in the heart<br/>Never shoulda played you so hard<br/>Guess I played myself, that's my fault<br/>Ooh-ooh-ooh<br/><br/>I don't even know how to think<br/>'Cause now she got your heart so I feel<br/>Stupid, foolish, afraid, I'm losing<br/>Everything I thought I couldn't<br/>My whole world is falling apart<br/><br/>Don't you go falling in love<br/>Trust me she's not the one<br/>She won't ever<br/>Love you like I do<br/>Hold you like I do<br/>Know you like I do<br/>Don't you go fallin' in love<br/>'Cause I'ma break that shit up<br/>I won't let her<br/>Love you like I do<br/>Touch you like I do<br/>Nothing like I do<br/>Nothing like I do<br/><br/>Hit me like a poisonous dart<br/>You were trouble right from the start<br/>Should have ran, I guess it's my fault<br/>Mm-mm-mm<br/><br/>I don't even know how to think<br/>'Cause now she got your heart so I feel<br/>Stupid, foolish, afraid, I'm losing<br/>Everything I thought I couldn't<br/>My whole world is falling apart<br/><br/>Don't you go falling in love<br/>Trust me she's not the one<br/>She won't ever<br/>Love you like I do<br/>Hold you like I do<br/>Know you like I do<br/>Don't you go fallin' in love<br/>'Cause I'ma break that shit up<br/>I won't let her<br/>Love you like I do<br/>Touch you like I do<br/>Nothing like I do<br/>Nothing like I do",
     },
     {
         isrc: "/images/album/records/alb-2.webp",
@@ -171,6 +181,6 @@ const records = [
         msrc: "/audios/Expectations.mp3",
         lyrics: "There was a time when I couldn't<br/>Stop loving you so much<br/>Haven't seen that me for so long<br/>Forgot I shouldn't care<br/>I sang 'Dum di di'<br/>Who I used to be<br/>Is not who I am look at me<br/>These dreams of mine<br/>Do not need your advice or cheap blessing<br/>Here's my crown you couldn't lift<br/><br/>You want me to act a certain way<br/>I'm no one's toy no more it hurts them<br/>To know they can't control me each day<br/>Enjoy the pain<br/><br/>I don't need your expectations<br/>Made the bricks to pave my way<br/>Fuck that Grammy nomination<br/>Happiness cannot be bought<br/>One summer day we just might meet up again<br/>Hey look at you sitting here all on your own<br/>Lost in your expectations<br/>I can't help you with that<br/><br/>I can't ever hate you<br/>But had to let you go<br/>Changing myself for your ego<br/>and selfish pride stops there<br/>I sang 'Karate'<br/>Who I used to be<br/>Is not who I am look at me<br/>These dreams of mine<br/>Do not need your advice or cheap blessing<br/>Here's my crown you couldn't lift<br/><br/>You want me to act a certain way<br/>I'm no one's toy no more it hurts them<br/>To know they can't control me each day<br/>Enjoy the pain<br/><br/>I don't need your expectations<br/>Made the bricks to pave my way<br/>Fuck that Grammy nomination<br/>Happiness cannot be bought<br/>One summer day we just might meet up again<br/>Hey look at you sitting here all on your own<br/>Lost in your expectations<br/>I can't help you with that<br/><br/>I can't lie say it was easy<br/>each day alone filled me with fear<br/>But here I stand tall<br/>My face to the crowd<br/><br/>I don't need your expectations<br/>Made the bricks to pave my way<br/>Fuck that Grammy nomination<br/>Happiness cannot be bought<br/>One summer day we just might meet up again<br/>Hey look at you sitting here all on your own<br/>Lost in your expectations<br/>I can't help you with that",
     },
-]
+];
 
-export {artists, headlines, records};
+export { artists, headlines, records };

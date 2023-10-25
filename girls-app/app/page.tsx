@@ -5,6 +5,8 @@ import Link from "next/link";
 import React, { useEffect, useState, useRef } from 'react';
 /* 더미데이터 */
 import { artists, headlines, records } from "../data/hcode";
+/* 컴포넌트 */
+import HeaderComp from "../app/components/HeaderComp";
 /* 메인 CSS */
 import "../css/main.css";
 /* 미디어 CSS */
@@ -39,7 +41,6 @@ type RootState = {
         audSrc: string; 
     };
 };
-
 
 export default function Home() {
     let imgSrc = useSelector((state: RootState) => state.ref.imgSrc);
@@ -345,21 +346,7 @@ export default function Home() {
 
     return (
         <div>
-            <header>
-                <div className="logowrap">
-                    <Link href="/">
-                        <img src="./images/logo.jpg" alt="로고" />
-                    </Link>
-                </div>
-                <div className="menuwrap">
-                    <nav className="navbar">
-                        <Link href="/artists">프로필</Link>
-                        <Link href="/albums">앨범</Link>
-                        <Link href="/gallery">갤러리</Link>
-                        <Link href="/videos">비디오</Link>
-                    </nav>
-                </div>
-            </header>
+            <HeaderComp/>
             <div className="container">
                 <div className="container_inner">
                     <h3 className="headline_title">Trending New Hits</h3>
@@ -403,13 +390,15 @@ export default function Home() {
                     </SwiperReact>
                     <div className="artists_bx">
                         <h3>멤버</h3>
-                        <span>See all</span>
+                        <Link href="/artists">
+                            <span>See all</span>
+                        </Link>
                         <ul>
                             {/* 멤버프로필 출력 */}
-                            {artists.map((v, i) => (
+                            {artists["det"].map((v, i) => (
                                 <li key={i}>
                                     <figure className="imgbx">
-                                        <img src={v.isrc + ".jpeg"} alt={v.name} />
+                                        <img src={v.isrc} alt={v.name} />
                                         <figcaption className="member_name">{v.name}</figcaption>
                                     </figure>
                                 </li>
