@@ -78,6 +78,7 @@ export default function Home() {
     //음악 및 음악 정보 불러오기
     const loadMusic = (num: number) => {
         const listAll = document.querySelectorAll("#play-list li");
+        const lyrics = document.querySelector(".p_lyrics") as HTMLElement;
         
         // 이미지 변경
         let newSrc = `/images/album/records/alb-${num}.webp`;
@@ -90,6 +91,13 @@ export default function Home() {
         // 오디오 변경
         let listAud = listAll[num].querySelector("audio")?.getAttribute("src");
         dispatch(setAudio(listAud));
+
+
+        lyrics.addEventListener("drag", function() {
+            $(this).addClass("on");
+            // 가사 변경
+            lyrics.innerHTML = records[num].lyrics;
+        });
     };
     
     // 플레이어 재생버튼 토글시 아이콘 변경
@@ -411,6 +419,7 @@ export default function Home() {
                                         <p className="name">{alTit}</p>
                                         <p className="artist">(G)IDLe</p>
                                     </div>
+                                    <div className="p_lyrics"></div>
                                     <div id="play-list">
                                         <ul></ul>
                                     </div>
