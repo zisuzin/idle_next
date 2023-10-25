@@ -366,19 +366,22 @@
 }
 .record_bx ul::-webkit-scrollbar,
 #play-list ul::-webkit-scrollbar,
-.genre_bx ul::-webkit-scrollbar {
+.genre_bx ul::-webkit-scrollbar,
+.p_lyrics::-webkit-scrollbar {
     width: 5px;  /* 스크롤바의 너비 */
 }
 .record_bx ul::-webkit-scrollbar-thumb,
 #play-list ul::-webkit-scrollbar-thumb,
-.genre_bx ul::-webkit-scrollbar-thumb {
+.genre_bx ul::-webkit-scrollbar-thumb,
+.p_lyrics::-webkit-scrollbar-thumb {
     height: 30%; /* 스크롤바의 길이 */
     background: var(--primary_color); /* 스크롤바의 색상 */
     border-radius: 10px;
 }
 .record_bx ul::-webkit-scrollbar-track,
 #play-list ul::-webkit-scrollbar-track,
-.genre_bx ul::-webkit-scrollbar-track {
+.genre_bx ul::-webkit-scrollbar-track,
+.p_lyrics::-webkit-scrollbar-track {
     background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
 }
 .record_bx li {
@@ -521,6 +524,8 @@
     overflow-y: scroll;
     user-select: none;
     text-align: center;
+    padding: 20px;
+    font-size: 15.5px;
 }
 
 /* 플레이리스트 재생 목록 */

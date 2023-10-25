@@ -80,31 +80,30 @@ export default function Home() {
         const listAll = document.querySelectorAll("#play-list li");
         const lyrics = document.querySelector(".p_lyrics") as HTMLElement;
         const lyricImg = document.querySelector(".p_img") as HTMLElement;
-        
+
         // 이미지 변경
         let newSrc = `/images/album/records/alb-${num}.webp`;
         dispatch(setImg(newSrc));
         
         // 타이틀 변경
-        let listTit = (listAll[num].querySelector(".txtarea strong") as HTMLElement).innerText;
+        let listTit = records[num].tit;
         dispatch(setTit(listTit));
         
         // 오디오 변경
-        let listAud = listAll[num].querySelector("audio")?.getAttribute("src");
+        let listAud = records[num].msrc;
         dispatch(setAudio(listAud));
 
-        // 가사창 나타남
-        // lyricImg.addEventListener("click", function(this: HTMLElement) {
-        //     lyrics.style.display = "block";
-            
-        //     // 가사 변경
-        //     lyrics.innerHTML = records[num].lyrics;
-        // });
+        // 가사 변경
+        lyrics.innerHTML = records[num].lyrics;
 
-        // // 가사창 숨김
-        // lyrics.addEventListener("click", function(this: HTMLElement) {
-        //     this.style.display = "none";
-        // })
+        lyricImg.addEventListener("click", function(this: HTMLElement) {
+            lyrics.style.display = "block";
+        });
+
+        // 가사창 숨김
+        lyrics.addEventListener("click", function(this: HTMLElement) {
+            this.style.display = "none";
+        })
     };
     
     // 플레이어 재생버튼 토글시 아이콘 변경
@@ -332,10 +331,13 @@ export default function Home() {
         addSong();
         showList();
         clkList();
-        loadMusic(song_index);
 
     }, [audSrc, audioEl]);
-    
+
+    useEffect(() => {
+        loadMusic(song_index);
+    }, [])
+
     return (
         <div>
             <header>
