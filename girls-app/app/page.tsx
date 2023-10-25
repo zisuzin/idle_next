@@ -94,17 +94,17 @@ export default function Home() {
         dispatch(setAudio(listAud));
 
         // 가사창 나타남
-        lyricImg.addEventListener("click", function(this: HTMLElement) {
-            lyrics.style.display = "block";
+        // lyricImg.addEventListener("click", function(this: HTMLElement) {
+        //     lyrics.style.display = "block";
             
-            // 가사 변경
-            lyrics.innerHTML = records[num].lyrics;
-        });
+        //     // 가사 변경
+        //     lyrics.innerHTML = records[num].lyrics;
+        // });
 
-        // 가사창 숨김
-        lyrics.addEventListener("click", function(this: HTMLElement) {
-            this.style.display = "none";
-        })
+        // // 가사창 숨김
+        // lyrics.addEventListener("click", function(this: HTMLElement) {
+        //     this.style.display = "none";
+        // })
     };
     
     // 플레이어 재생버튼 토글시 아이콘 변경

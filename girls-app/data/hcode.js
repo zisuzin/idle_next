@@ -98,7 +98,6 @@ const records = [
         alb: "Oh My God",
         time: "03:28",
         msrc: "/audios/uhuh.mp4",
-        lyrics: "Hey, there's someone trying to be close to me<br/>Yeah, I'm talking about you<br/><br/>Uh-oh, 거기 누군가요<br/>Uh-oh, 나를 안다고요<br/>Uh-oh, 난 잊어버렸죠, 버렸죠<br/><br/>너도 웃기지 않나요<br/>난 좀 당황스럽네요<br/>Uh-oh, 친한 척 말아줘 말하고 다녀<br/><br/>Uh-uh-oh, 만지지 말고 저기 떨어져요<br/>내게 뭐를 원하나요 다 똑같죠 너처럼<br/>너 같은 거는 이제 전혀 모르겠네요<br/>Uh-uh-oh, 나 변했나요 다 똑같죠 너처럼<br/><br/>베풀거나 내주거나 천사 같은 hello<br/>달콤하게 사탕 발린 말도<br/>예의 없어 착한 척 말고 꺼져<br/>이제 와 가식 따위 떨지 말아<br/><br/>맴돌거나 말 걸거나 박쥐 같은 follower<br/>내 성공을 점쳤다는 liar<br/>어이없어 친한 척 말고 꺼져<br/>널 위한 가식 따윈 기대 말아<br/><br/>엉망진창 only see now<br/>몰랐지 오리 속 swan<br/>황홀한 케이크 위 blow out<br/>내 머리 위에 crown<br/><br/>Yo, 말했지 이곳의 보석은 나야 투자해 어서<br/>넌 번쩍거린 것만 찾느라<br/>여길 번쩍 들어 올릴 난 못 찾았어<br/><br/>Uh-uh-uh-uh-uh-uh<br/>No, no, no, no, no, no<br/>너 별로 더 별로야 됐으니 꺼져<br/><br/>Uh-uh-oh, 만지지 말고 저기 떨어져요<br/>내게 뭐를 원하나요 다 똑같죠 너처럼<br/><br/>너 같은 거는 이제 전혀 모르겠네요<br/>Uh-uh-oh, 나 변했나요 다 똑같죠 너처럼<br/><br/>베풀거나 내주거나 천사 같은 hello<br/>달콤하게 사탕 발린 말도<br/>예의 없어 착한 척 말고 꺼져<br/>이제 와 가식 따위 떨지 말아<br/><br/>맴돌거나 말 걸거나 박쥐 같은 follower<br/>내 성공을 점쳤다는 liar<br/>어이없어 친한 척 말고 꺼져<br/>널 위한 가식 따윈 기대 말아<br/><br/>Uh-oh, 믿을 수 없게<br/>Uh-oh, 손댈 수 없게<br/>Uh-oh, 잘못된 것 같은 얘기, 음<br/><br/>Yo, you got it?<br/>Don't mess with me<br/>Umm, I'm not finished<br/>OK, let's go!<br/><br/>아무도 몰랐지 이 masterpiece, 이 masterpiece<br/>입가에 반복되는 melody, oh melody<br/>너무나 완벽한 내 A to Z, oh A to Z<br/>팬들은 사랑해, yeah L-O-V-E, yeah L-O-V-E<br/><br/>Uh-oh",
     },
     {
         isrc: "/images/album/records/alb-1.webp",
@@ -106,7 +105,6 @@ const records = [
         alb: "HEAT",
         time: "03:11",
         msrc: "/audios/i_do.mp4",
-        lyrics: "Oh-oh-oh<br/>Hit me like a shot in the heart<br/>Never shoulda played you so hard<br/>Guess I played myself, that's my fault<br/>Ooh-ooh-ooh<br/>I don't even know how to think<br/>'Cause now she got your heart so I feel<br/>Stupid, foolish, afraid, I'm losing<br/>Everything I thought I couldn't<br/>My whole world is falling apart<br/>Don't you go falling in love<br/>Trust me she's not the one<br/>She won't ever<br/>Love you like I do<br/>Hold you like I do<br/>Know you like I do<br/>Don't you go fallin' in love<br/>'Cause I'ma break that shit up<br/>I won't let her<br/>Love you like I do<br/>Touch you like I do<br/>Nothing like I do<br/>Nothing like I do<br/>Hit me like a poisonous dart<br/>You were trouble right from the start<br/>Should have ran, I guess it's my fault<br/>Mm-mm-mm<br/>I don't even know how to think<br/>'Cause now she got your heart so I feel<br/>Stupid, foolish, afraid, I'm losing<br/>Everything I thought I couldn't<br/>My whole world is falling apart<br/>Don't you go falling in love<br/>Trust me she's not the one<br/>She won't ever<br/>Love you like I do<br/>Hold you like I do<br/>Know you like I do<br/>Don't you go fallin' in love<br/>'Cause I'ma break that shit up<br/>I won't let her<br/>Love you like I do<br/>Touch you like I do<br/>Nothing like I do<br/>Nothing like I do"
     },
     {
         isrc: "/images/album/records/alb-2.webp",
@@ -114,7 +112,6 @@ const records = [
         alb: "I made",
         time: "03:17",
         msrc: "/audios/Senorita.mp4",
-        lyrics: "그대여, 왜 그렇게 쳐다보나요?<br/>아무 말도 건네주지 않고<br/>나의 눈을 피하지도 않고 oh<br/>그대여, 왜 그렇게 가까이 와요?<br/>아직 우린 모르는 게 많죠<br/>나 그댈 뭐라 불러야 하죠?<br/>조금 빠르게, 어쩜 바쁘게<br/>뭐든 I don't care, I don't care, I don't care<br/>뭔가 다르게, 더 나쁘게<br/>뭐든 I'm ok, I'm ok, I'm ok<br/>나 어떡하죠?<br/>워어어워어어<br/>워어어워어어<br/>워어어워어어<br/>이리 와, 이리 와, 이리 와, 이리 와<br/>워어어워어어<br/>워어어워어어<br/>워어어워어어 (hey senor)<br/>다가와 줘요 내게로, 안아줘 세게 더<br/>알고 싶어 about you-u-u-u-u<br/>I fell in love with you, 몰라요 it is true<br/>그냥 love you so, love you so<br/>Love you so 불러줘요 나를<br/>Senorita<br/>Senorita<br/>Senorita<br/>Senorita<br/>그대여, 왜 그렇게 웃고 있나요?<br/>자꾸 마음이 그대에게 가죠<br/>나 그댈 어찌 보내야 하죠?<br/>그냥 넌 나에게만 집중해봐<br/>남들 눈이 중요한가?<br/>가득 품에 안아줘 봐<br/>이름 따위 몰라도 돼<br/>갖고 싶다 말해 봐봐 사랑해봐<br/>워어어워어어 (um'mm)<br/>워어어워어어 (um'mm)<br/>워어어워어어 (hey senor)<br/>다가와 줘요 내게로, 안아줘 세게 더<br/>알고 싶어 about you-u-u-u-u<br/>I fell in love with you, 몰라요 it is true<br/>그냥 love you so, love you so<br/>Love you so 불러줘요 나를<br/>Senorita<br/>Senorita<br/>Senorita<br/>Senorita<br/>유후후후후후후후후<br/>유후후후후후후후후<br/>유후후후후후후후후<br/>유후후후후후후후후<br/>유후후후후후후후후",
     },
     {
         isrc: "/images/album/alb-0.jpg",
@@ -122,7 +119,6 @@ const records = [
         alb: "I feel",
         time: "02:42",
         msrc: "/audios/Allergy.mp4",
-        lyrics: "얼굴 없는 feed<br/>파리 날리는 followers<br/>I'm a hater of Instagram<br/>Hater of TikTok<br/>Lock 걸린 gallery<br/>볼품없는 fit<br/>뭔데 운동도 안 하고<br/>메이크업 하나도 못하고<br/>그래 난 내가 봐도 별로인걸<br/>매일 밤 in 탐색 tab 나만 없는 Chanel<br/>왠지 나보다 성숙한 요즘 십대<br/>MZ 해시태그 what the Y2K<br/>세상은 나 빼고 잘 돌아가<br/>Please give me the hate button<br/>난 내가 너무 싫거든 (거든)<br/>Alright (alright), yeah<br/>Oh my, oh my 빌어먹을 my name<br/>Why ain't I pretty? why ain't I lovely?<br/>Why ain't I sexy? why am I me?<br/>Love me, love me, love me, love me, love me, want<br/>Love me, love me, love me, love me, love me, want<br/>She's so pretty, yeah, so lovely<br/>Shе got everything, why am I not her?<br/>Lovе me, love me, love me, love me, love me but<br/>빌어먹을 huh 내 거울 알러지<br/>나도 want to dance 'Hype Boy'<br/>But 화면 속엔 like 'TOMBOY'<br/>비웃을 거야 그래 그 boy, oh<br/>Oh, God, it's so funny<br/>말투는 왜 too much dope?<br/>내가 뭔데 성격까지 좋지 않어<br/>그래 맞아, 나는 평생 혼자일지도<br/>Please give me your like button<br/>나도 사랑받고 싶거든 (거든)<br/>Alright (alright), yeah<br/>Oh my, oh my 빌어먹을 my name<br/>Why ain't I pretty? Why ain't I lovely?<br/>Why ain't I sexy? Why am I me?<br/>Love me, love me, love me, love me, love me, want<br/>Love me, love me, love me, love me, love me, want<br/>She's so pretty, yeah, so lovely<br/>She got everything, why am I not her?<br/>Love me, love me, love me, love me, love me but<br/>빌어먹을 huh 내 거울 알러지<br/>La-la-la-la-la, la-la-la, la-la-la<br/>La-la-la-la-la, la-la-la, la<br/>La-la-la-la-la, la-la-la, la-la-la<br/>La-la-la-la-la, la-la-la, la<br/>빌어먹을 huh 내 거울 알러지",
     },
     {
         isrc: "/images/album/records/alb-4.webp",
@@ -130,7 +126,6 @@ const records = [
         alb: "I burn",
         time: "03:17",
         msrc: "/audios/HWAA.mp4",
-        lyrics: "차디찬 한겨울이 덮친 듯, yeah<br/>시간은 다 얼어버리고<br/>잔인한 그 바람이 남긴 듯한<br/>어둠은 더 깊어 버리고<br/>끝없이 펼쳐진 기약 없는 계절을<br/>(지워내리오)<br/>뜨겁지 못한 날들에 홀로 데인 흉터를<br/>큰불을 내리오<br/>이 내 안에 눈물이 더는 못 살게<br/>난 화를 내리오, 더 화를 내리오<br/>잃었던 봄을 되찾게<br/>차갑게 부는 바람이<br/>눈이 하얗게 덮인 마음이<br/>아침이 오면 부디 모두 녹을 수 있게, ooh<br/>불을 지펴라<br/>火 (타올라, 타올라)<br/>火 (꽃피우리라)<br/>火 (타올라, 타올라)<br/>火 (꽃피우리라)<br/>Yeah, 내 너의 흔적 남지 않게 하리 (yeah, yeah)<br/>못다 한 원망도 훨훨 타리 (yeah, yeah)<br/>쓸쓸한 추위를 거둬 가길<br/>남겨진 시들은 꽃길을 즈려 밟지<br/>한을 풀리라 다시금 봄을 누리라<br/>추억은 모조리 불이 나 거름이 돼<br/>찬란한 꽃을 피우리라<br/>난 화를 내리오, 더 화를 내리오<br/>잃었던 봄을 되찾게<br/>차갑게 부는 바람이<br/>눈이 하얗게 덮인 마음이<br/>아침이 오면 부디 모두 녹을 수 있게, ooh<br/>불을 지펴라<br/>火 (타올라, 타올라)<br/>火 (꽃피우리라)<br/>火 (타올라, 타올라)<br/>火 (꽃피우리라)<br/>끊어진 인연의 미련을 품에 안고, 안고<br/>시렸던 시간을 나를 태워간다, 火<br/>花<br/>花 (불을 지펴라)<br/>꽃피우리라",
     },
     {
         isrc: "/images/album/records/alb-5.webp",
@@ -138,7 +133,6 @@ const records = [
         alb: "퀸덤 <Final 컴백 싱글>",
         time: "03:31",
         msrc: "/audios/LION.mp4",
-        lyrics: "Ooh, I'm a lion, I'm a queen 아무도<br/>그래 ooh 날 가둘 수 없어 아픔도<br/>붉은 태양 아래 fire<br/>파랗게 타는 flower<br/>미지근한 너의 애를 태우게<br/>살짝 드러내는 sharp claw<br/>달아오르는 상처<br/>발자국은 내 왕관을 맴돌게<br/>난 나의 눈을 가리고 이 음악에 몸을 맡기고<br/>뻔한 리듬을 망치고 사자의 춤을 바치고<br/>넌 나의 눈을 살피고 이 음악에 몸이 말리고<br/>뜨거운 리듬에 갇히고 사자에 춤을 바치고<br/>Papapa, papapa, papapa<br/>It looks like a lion<br/>I'm a queen like a lion<br/>Papapa, papapa, papapa<br/>It looks like a lion<br/>I'm a queen like a lion, eh-oh<br/>그 강인한 울음은 너의 발을 내게 돌려<br/>이 넓은 황야 속 크고 단단한 씨를 뿌려<br/>그 웅장한 부름은 너의 맘을 내게 돌려<br/>이 깊은 바닷속까지 거친 멜로딜 꽂아<br/>더 탐을 내지 말어 자릴 지키는 lion<br/>때로는 사나워 질지 모르니<br/>이제 환호의 음을 높여<br/>모두 고개를 올려<br/>어린 사자의 왕관을 씌우니<br/>난 나의 눈을 가리고 이 음악에 몸을 맡기고<br/>뻔한 리듬을 망치고 사자의 춤을 바치고<br/>넌 나의 눈을 살피고 이 음악에 몸이 말리고<br/>뜨거운 리듬에 갇히고 사자에 춤을 바치고<br/>Papapa, papapa, papapa<br/>It looks like a lion<br/>I'm a queen like a lion<br/>Papapa, papapa, papapa<br/>It looks like a lion<br/>I'm a queen like a lion, eh-oh<br/>쓸데없는 예의 따윈 물어뜯어<br/>편견이란 답답한 우리는 무너뜨려<br/>감히 또 누가 날 막고 또 누가 날 조종해<br/>조심해 다듬지 못한 발톱으로<br/>아무도 가본 적이 없는 개척하는 길<br/>뻔해 빠진 꼰대들은 혀를 차던 짓<br/>그걸 해내고서야 받는 박수는 더 짜릿한 맛이지<br/>그걸 맛봤고 이제 부정할 수 없어 I'm a queen (queen)<br/>Papapa, papapa, papapa<br/>It looks like a lion<br/>I'm a queen like a lion<br/>Papapa, papapa, papapa<br/>It looks like a lion<br/>I'm a queen like a lion, eh-oh<br/>Ooh, I'm a lion, I'm a queen 아무도<br/>그래 ooh 길들일 수 없어 사랑도",
     },
     {
         isrc: "/images/album/records/alb-6.webp",
@@ -146,7 +140,6 @@ const records = [
         alb: "I NEVER DIE",
         time: "02:24",
         msrc: "/audios/don't_stop_me.mp4",
-        lyrics: "약에 취해버린 feel, 널브러진 luxury bag<br/>크게 찢어지는 lip 두 눈은 번져 like smoky, yeah<br/>Yeah, baby, I knew it 떠나니 잘 가라지 not crazy<br/>예쁜 입에서 이런 욕이 뭐? I'm always nasty<br/>바랐니 끝까지 내가 멍청한 천사였길<br/>You broke my heart, you locked my love<br/>어이없어 눈물이 다 나네<br/>아니 전혀 난 안 괜찮아<br/>Let me put on leather jacket<br/>Mama, don't ever, ever stop me<br/>내가 그 어떤 짓을 벌였든<br/>Ayo mama, don't ever, ever stuck me<br/>말리지 마 ooh-woah-oh-oh, ooh-woah-oh-oh<br/>La, la, la-la, la-la, la-la-la<br/>La, la, la-la, la-la-la, surprise<br/>Your pants, I bought it, 검은 양말 벗어 주길<br/>Her gift, mini-pill 원하고 조절 못 하니?<br/>Hell no, does he know that? any bed, the red car<br/>Scolded by daddy, out of company<br/>Looking forward to your wedding<br/>You broke my heart, you locked my love<br/>뻔뻔해서 소름이 다 돋네<br/>아직 전혀 난 안 괜찮아<br/>Let me fire last rocket<br/>Mama, don't ever, ever stop me<br/>내가 그 어떤 짓을 벌였든<br/>Ayo mama, don't ever, ever stuck me<br/>말리지 마 ooh-woah-oh-oh, ooh-woah-oh-oh<br/>때려치워 좋은 끝 그까짓 거<br/>알아 이불 발로 차며 후회하지 뭐<br/>원래 이래 너는 몰랐겠지만 (screw you, dummy)<br/>Now you know (look forward to it)<br/>La, la, la-la, la-la, la-la-la, la<br/>La, la, la-la-la (I know I'm too emotional)<br/>La, la, la-la, la-la, la-la-la, 아무도 말리지 마<br/>넋이 나가버린 feel, 엎질러진 ice coffee<br/>휘어지는 red lip and 네가 싫어했던 smoky, yeah",
     },
     {
         isrc: "/images/album/alb-6.jpg",
@@ -154,7 +147,6 @@ const records = [
         alb: "I NEVER DIE",
         time: "02:54",
         msrc: "/audios/tomboy.mp3",
-        lyrics: "Look at you (yeah) 넌 못 감당해 날 (uh)<br/>You took (umm) off hook (yah)<br/>기분은 coke like, brr (brr)<br/>Look at my toe 나의 ex 이름 tattoo<br/>I got to drink up now 니가 싫다 해도 좋아 (ah)<br/>Why are you cranky, boy?<br/>뭘 그리 찡그려, 너?<br/>Do you want a blond Barbie doll?<br/>It's not here, I'm not a doll (like this if you can)<br/>미친년이라 말해 what's the loss to me? Ya<br/>사정없이 까보라고 you'll lose to me, ya<br/>사랑 그깟 거 따위 내 몸에 상처 하나도 어림없지<br/>너의 썩은내 나는 향수나 뿌릴 바엔<br/>Yeah, I'm fu- tomboy<br/>(Uh-uh, ah-ah, uh-uh)<br/>Yeah, I'll be the tomboy<br/>(Uh-uh, ah-ah)<br/>This is my attitude<br/>Yeah, I'll be the tomboy<br/>SY<br/>I don't wanna play this ping pong<br/>I would rather film a TikTok<br/>Your mom raised you as a prince, but<br/>This is queendom, right?<br/>I like to dance, I love my friends<br/>Sometimes we swear without cigarettes<br/>I like to eh, on drinking whiskey<br/>I won't change it, what the hell?<br/>미친 척이라 말해 what's the loss to me? Ya<br/>사정없이 씹으라고 you're lost to me, ya<br/>사랑 그깟 거 따위 내 눈에 눈물 한 방울 어림없지<br/>너의 하찮은 말에 미소나 지을 바엔<br/>Yeah, I'm fu- tomboy<br/>(Uh-uh, ah-ah, uh-uh)<br/>Yeah, I'll be the tomboy<br/>(Uh-uh, ah-ah)<br/>This is my attitude<br/>Yeah, I'll be the tomboy<br/>Said you get up?<br/>Uh, you get the song right<br/>You'll get what I mean 'Tomboy', uh<br/>La-la-la, la-la, la-la-la-la, la-la<br/>La-la-la-la, la-la-la<br/>(Umm, umm, you're brand new)<br/>La-la-la, la-la, la-la-la-la, la-la<br/>La-la-la-la, la-la-la<br/>(Three, two, one)<br/>It's neither man nor woman<br/>Man nor woman<br/>It's neither man nor woman<br/>Just me, I-DLE<br/>It's neither man nor woman<br/>Man nor woman<br/>It's neither man nor woman<br/>Just me, loving tomboy",
     },
     {
         isrc: "/images/album/alb-1.jpg",
@@ -162,7 +154,6 @@ const records = [
         alb: "앤마리X민니 <디지털 싱글>",
         time: "03:09",
         msrc: "/audios/Expectations.mp3",
-        lyrics: "There was a time when I couldn't<br/>Stop loving you so much<br/>Haven't seen that me for so long<br/>Forgot I shouldn't care<br/>I sang 'Dum di di'<br/>Who I used to be<br/>Is not who I am look at me<br/>These dreams of mine<br/>Do not need your advice or cheap blessing<br/>Here's my crown you couldn't lift<br/>You want me to act a certain way<br/>I'm no one's toy no more it hurts them<br/>To know they can't control me each day<br/>Enjoy the pain<br/>I don't need your expectations<br/>Made the bricks to pave my way<br/>Fuck that Grammy nomination<br/>Happiness cannot be bought<br/>One summer day we just might meet up again<br/>Hey look at you sitting here all on your own<br/>Lost in your expectations<br/>I can't help you with that<br/>I can't ever hate you<br/>But had to let you go<br/>Changing myself for your ego<br/>and selfish pride stops there<br/>I sang 'Karate'<br/>Who I used to be<br/>Is not who I am look at me<br/>These dreams of mine<br/>Do not need your advice or cheap blessing<br/>Here's my crown you couldn't lift<br/><br/>You want me to act a certain way<br/>I'm no one's toy no more it hurts them<br/>To know they can't control me each day<br/>Enjoy the pain<br/><br/>I don't need your expectations<br/>Made the bricks to pave my way<br/>Fuck that Grammy nomination<br/>Happiness cannot be bought<br/>One summer day we just might meet up again<br/>Hey look at you sitting here all on your own<br/>Lost in your expectations<br/>I can't help you with that<br/><br/>I can't lie say it was easy<br/>each day alone filled me with fear<br/>But here I stand tall<br/>My face to the crowd<br/><br/>I don't need your expectations<br/>Made the bricks to pave my way<br/>Fuck that Grammy nomination<br/>Happiness cannot be bought<br/>One summer day we just might meet up again<br/>Hey look at you sitting here all on your own<br/>Lost in your expectations<br/>I can't help you with that",
     },
 ]
 
