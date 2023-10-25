@@ -6,7 +6,7 @@ import { artists } from "../../data/hcode.js";
 /* 컴포넌트 */
 import HeaderComp from "../../app/components/HeaderComp";
 /* Jquery */
-import $ from 'jquery';
+import $ from "jquery";
 // 서브 CSS
 import "../../css/sub.css";
 
@@ -30,11 +30,16 @@ export default function Profile() {
             $(".gimgDetail > dt").text(mname);
             $(".gimgDetail > dd").text(mbirth);
         });
+
+        // 5. 닫기버튼 클릭시 큰이미지박스 숨기기
+        $(".close_btn").click(function () {
+            $("#imbx").css({ display: "none" });
+        });
     };
 
     useEffect(() => {
         showPfbx();
-    }, [])
+    }, []);
 
     return (
         <>

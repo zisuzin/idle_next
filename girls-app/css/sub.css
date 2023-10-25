@@ -133,7 +133,7 @@
     width: 90px;
     height: 90px;
     right: 0;
-    /* background: url(../../public/images/profile/btn-close.png); */
+    background: url(../public/images/profile/btn-close.png);
     cursor: pointer;
 }
 #imbx img {
