@@ -34,7 +34,7 @@ const artists = {
     ],
     alb: [
         {
-            isrc: "/images/album/alb-0.jpg",
+            isrc: "./images/album/alb-0.jpg",
             vsrc: "./audios/i feel.mp3",
             mtit: "I feel",
             stit: "Queencard",
