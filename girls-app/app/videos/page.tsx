@@ -8,6 +8,8 @@ import HeaderComp from "../components/HeaderComp";
 import { artists } from "../../data/hcode.js";
 /* Material UI 컴포넌트 */
 import SearchIcon from "@mui/icons-material/Search";
+/* Jquery */
+import $ from "jquery";
 // 서브 CSS
 import "../../css/sub.css";
 

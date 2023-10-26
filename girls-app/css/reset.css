@@ -56,3 +56,8 @@ img {
 em {
     font-style: normal;
 }
+
+select, input:focus {
+    outline: none;
+    font-family: var(--primary_font);
+}

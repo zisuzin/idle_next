@@ -6,7 +6,7 @@ import { artists } from "../../../data/hcode.js";
 // 서브 CSS
 import "../../../css/sub.css";
 
-function AlbumDetail(props: any) {
+export default function AlbumDetail(props: any) {
     // 반환된 id 객체
     const id = props.params.id;
     // 배열 순번 데이터 접근용 변수
