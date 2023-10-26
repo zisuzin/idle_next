@@ -1,7 +1,7 @@
 "use client";
 
 /* React hooks */
-import React, { useEffect, useState, useRef, ReactNode } from "react";
+import React, { useEffect, useState, ReactNode } from "react";
 /* 컴포넌트 */
 import HeaderComp from "../components/HeaderComp";
 // 더미데이터
@@ -34,6 +34,9 @@ export default function Video() {
 
     // 비디오리스트 타이틀 출력 상태변수
     const [vidTit, setVidTit] = useState<ReactNode>(<h3 className="mv_item_tit">Video Clip</h3>);
+
+    // 디스플레이 상태변수
+    const [visible, setVisible] = useState(true);
 
     // 데이터 검색 출력 함수
     const schList = () => {
@@ -71,7 +74,6 @@ export default function Video() {
         let userInp = inputEl.value;
         // 입력창에서 텍스트 입력시 자동완성 데이터 업데이트
         // 검색어 입력시 관련 값이 있을 경우만 css 적용!
-        console.log("텍스트입력");
         $(".panels").css({ display: "block" });
 
         // 입력한 검색어와 관련된 데이터가 있을 경우에만 값을 출력
@@ -107,28 +109,24 @@ export default function Video() {
                     </>
                 );
 
-                setVidTit(<h3 className="mv_item_tit">Video Clip</h3>);
-
                 $(".sortbx").css({ display: "block" });
+                setVidTit(<h3 className="mv_item_tit">Video Clip</h3>);
+                setVisible(true);
+
                 // 검색 데이터가 하나만 있는 경우
                 if (completeList.length === 1) {
                     $(".sortbx").css({ display: "none" });
+                    setVisible(true);
                 }
             }
             // 검색결과 없는 경우
             else if (completeList.length == 0) {
                 setResultTit("검색 결과가 없습니다");
                 $(".sortbx").css({ display: "none" });
+                $(".listbx").css({ width: "100%"});
+                setVisible(false);
                 setVidTit(null);
             }
-            // 초기화면 구성 - 위 두 조건을 만족하지 않으면 null값 반환
-            else {
-                setResultTit(null);
-                setVidTit(<h3 className="mv_item_tit">Video Clip</h3>);
-                $(".sortbx").css({ display: "block" });
-            }
-            // 검색박스 가로크기
-            let cid = $(".sortbx label input.on").attr("id");
         } else {
             searchAuto();
         }
@@ -243,7 +241,7 @@ export default function Video() {
 
     const CatList = () => {
         return (
-            <main className="video_wrap">
+            <main className="video_wrap" style={{ display: visible ? 'block' : 'none'}}>
                 <div className="contents_inner">
                     {vidTit && <>{vidTit}</>}
                     <section id="sub_mv">

@@ -301,6 +301,7 @@
 .contents_wrap {
     position: relative;
     width: 100%;
+    height: 100vh;
     padding: 40px 180px 25px;
     margin: 0 auto;
 }
@@ -417,13 +418,13 @@
 }
 .listbx .restit {
     font-size: 1.5em;
-    font-family: KOTRA_GOTHIC;
     font-weight: 600;
     border-bottom: 1px solid #b1b1b1;
     text-align: center;
 }
 .listbx .restit .inputVal {
     color: #d7266d;
+    margin-right: 5px;
 }
 .mv_item_tit {
     padding: 20px 0 15px 0;
@@ -482,6 +483,29 @@
     font-family: var(--primary_font);
     display: flex;
     padding: 20px;
+}
+#keyword_collection {
+    width: 250px;
+    position: absolute;
+}
+#keyword_collection .panels {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #111;
+    margin-top: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 9;
+    display: none;
+}
+#keyword_collection .panels li:hover span {
+    background: #f3f3f3;
+}
+#keyword_collection .panels span {
+    display: block;
+    cursor: pointer;
+    padding: 7px;
 }
 /* 검색옵션박스 */
 .schopt {
