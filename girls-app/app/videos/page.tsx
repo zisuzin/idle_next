@@ -15,7 +15,7 @@ import "../../css/sub.css";
 
 export default function Video() {
     // 데이터 셋팅
-    const vdata = artists.video;
+    let vdata = artists.video;
 
     // 데이터 정렬 상태변수
     // -> 데이터 정렬을 반영하기 위해 정렬상태값을 아래같이 설정함!
@@ -35,8 +35,11 @@ export default function Video() {
     // 비디오리스트 타이틀 출력 상태변수
     const [vidTit, setVidTit] = useState<ReactNode>(<h3 className="mv_item_tit">Video Clip</h3>);
 
-    // 디스플레이 상태변수
+    // 디스플레이 상태변수(요소 보임/숨김)
     const [visible, setVisible] = useState(true);
+
+    // 리스트 출력용 상태변수(검색결과 반영)
+    const [initData, setInitData] = useState(vdata);
 
     // 데이터 검색 출력 함수
     const schList = () => {
@@ -109,6 +112,7 @@ export default function Video() {
                     </>
                 );
 
+                setInitData(completeList);
                 $(".sortbx").css({ display: "block" });
                 setVidTit(<h3 className="mv_item_tit">Video Clip</h3>);
                 setVisible(true);
@@ -243,9 +247,9 @@ export default function Video() {
         return (
             <main className="video_wrap" style={{ display: visible ? 'block' : 'none'}}>
                 <div className="contents_inner">
-                    {vidTit && <>{vidTit}</>}
+                    {vidTit}
                     <section id="sub_mv">
-                        {vdata.map((x, i) => (
+                        {initData.map((x, i) => (
                             <div className="mvbx" key={i} onClick={() => showVid(x.vsrc, x.txt)}>
                                 <figure className="mv_img">
                                     <img src={x.isrc} />
@@ -316,7 +320,7 @@ export default function Video() {
                                         <ul>
                                             {autocomplete.map((item, i) => (
                                                 <li key={i}>
-                                                    <span>{item}</span>
+                                                    <span data-index={i}>{item}</span>
                                                 </li>
                                             ))}
                                         </ul>
