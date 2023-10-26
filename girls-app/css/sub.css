@@ -25,7 +25,7 @@
 /* 멤버프로필박스 */
 .members_inner {
     position: relative;
-    max-width: 1260px;
+    max-width: 1080px;
     width: 100%;
     margin: 0 auto;
     display: table;
@@ -43,6 +43,7 @@
     width: 40%;
     padding-right: 30px;
     white-space: nowrap;
+    font-family: var(--primary_font);
 }
 .group_intro > p {
     color: #ddd;
@@ -92,6 +93,7 @@
     color: #fff;
     vertical-align: middle;
     display: table-cell;
+    font-family: var(--primary_font);
 }
 #imbx {
     position: absolute;
@@ -127,7 +129,7 @@
     font-size: 35px;
     margin-bottom: 25px;
     font-weight: 600;
-    font-family: Noto Sans KR;
+    font-family: var(--primary_font);
     display: inline-block;
 }
 #imbx .imgbx .gimg dd,
@@ -135,7 +137,9 @@
     font-size: 17px;
     width: -moz-fit-content;
     width: fit-content;
+    font-family: var(--primary_font);
     letter-spacing: -0.06em;
+    word-spacing: 3px;
 }
 #imbx .imgbx .close_btn {
     position: absolute;
@@ -148,6 +152,7 @@
 #imbx img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 /****** 앨범 페이지 ******/
@@ -234,16 +239,19 @@
     position: relative;
     width: 600px;
     padding-left: 3.5vw;
-    float: left;
     width: 50%;
 }
 .albumlist_wrap .contents_right .album_info > p {
     text-align: justify;
+    font-family: var(--primary_font);
+    line-height: 24px;
 }
-.albumlist_wrap .contents_right .album_tit > p {
+.albumlist_wrap .contents_right .album_tit > p,
+.track-list .contents-title {
     font-size: 4vw;
-    font-family: NEXONFootballGothicBA1;
+    font-family: var(--primary_font);
     text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
 }
 .albumlist_wrap .contents_left {
     position: relative;
@@ -256,26 +264,218 @@
     position: absolute;
     top: -50px;
 }
-
 #albumlist_bx {
     padding-bottom: 5%;
 }
-
+.release_date {
+    margin-top: 10px;
+}
 .release_date > p {
-    font-size: 1.2vw;
+    font-size: calc(min(15.5px, 1.2vw));
     color: #000;
 }
 .track-list {
     text-align: center;
 }
-.track-list .contents-title {
-    font-family: NEXONFootballGothicBA1;
-    font-size: 4vw;
-    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
-}
-
 .album_cover > img {
     width: 100%;
     height: 100%;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+}
+.list-wrap span {
+    font-family: var(--primary_font);
+}
+.list-wrap li + li {
+    margin-top: 5px;
+}
+#sub_mv .mvbx {
+    padding-right: 0.75rem;
+    cursor: pointer;
+}
+.mvbx img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/****** 비디오 페이지 ******/
+.contents_wrap {
+    position: relative;
+    width: 100%;
+    padding: 40px 180px 25px;
+    margin: 0 auto;
+}
+.contents_wrap .chkbx {
+    position: relative;
+}
+.contents_wrap .chkbx li {
+    padding: 10px 0;
+    font-size: 18px;
+}
+.contents_wrap .chkbx li ol > li:last-child {
+    margin-top: -10px;
+}
+.contents_wrap .chkbx li input[type="checkbox"] {
+    display: none;
+}
+.contents_wrap .chkbx li .spbtn {
+    display: block;
+    float: right;
+    margin-right: 5px;
+    font-size: 30px;
+    line-height: 40px;
+    cursor: pointer;
+}
+.contents_wrap .chkbx li .chklb {
+    float: right;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+}
+.contents_wrap .chkbx li input:checked + .chklb {
+    position: relative;
+    background-color: #d7266d;
+    text-align: center;
+    font-weight: bold;
+}
+.contents_wrap .chkbx li input:checked + .chklb::before {
+    content: "✓";
+    position: absolute;
+    top: -4px;
+    left: 5px;
+    color: #fff;
+}
+#sub_mv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#sub_mv .mvbx {
+    cursor: pointer;
+    width: 49%;
+}
+.mv_date p:nth-child(1) {
+    font-weight: 600;
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: min(15px, 1.25vw);
+}
+.mv_date p:nth-child(2) {
+    text-align: right;
+    font-size: min(13px, 1vw);
+}
+/* 검색입력창 박스 */
+.searching {
+    position: relative;
+    width: 250px;
+    height: 40px;
+    border: solid 1px #111;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 0 5px;
+}
+.searching svg {
+    position: absolute;
+    right: 15px;
+}
+.searching input {
+    width: 75%;
+    position: absolute;
+    font-size: 13px;
+    left: 15px;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+}
+input:focus {
+    outline: none;
+}
+.schbtn {
+    cursor: pointer;
+    margin-top: 9px;
+    margin-left: 10px;
+}
+.restit > * {
+    font-family: var(--primary_font);
+}
+.listbx {
+    width: 100%;
+    margin-left: 20px;
+}
+.listbx .sortbx {
+    margin-top: 8px;
+}
+.listbx .restit {
+    font-size: 1.5em;
+    font-family: KOTRA_GOTHIC;
+    font-weight: 600;
+    border-bottom: 1px solid #b1b1b1;
+    text-align: center;
+}
+.listbx .restit .inputVal {
+    color: #d7266d;
+}
+.mv_item_tit {
+    padding: 20px 0 15px 0;
+}
+/* 아이프레임박스 */
+.ifr_bg_bx {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    right: 0;
+    bottom: 0;
+}
+.ifr_bg_bx .vid_ifr_wrap {
+    position: absolute;
+    min-height: calc(100% - 16rem);
+    top: 45%;
+    max-width: 800px;
+    width: 100%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    transform: translate(-50%, -50%);
+    gap: 10px 0;
+}
+.ifr_bg_bx .vid_ifr_wrap button {
+    width: 1.75rem;
+    align-self: flex-end;
+    height: 1.75rem;
+    background-color: inherit;
+    cursor: pointer;
+}
+.ifr_bg_bx .vid_ifr_wrap button:hover {
+    color: #d7266d;
+}
+.ifr_bg_bx .vid_ifr_wrap h3 {
+    color: #fff;
+    text-align: center;
+}
+.ifr_bg_bx .vid_ifr_wrap .vid_ifr_inner {
+    display: flex;
+    flex-direction: column;
+}
+.ifr_bg_bx .vid_ifr_wrap .vid_ifr_inner iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    position: absolute;
+}
+/* 검색박스 */
+.schbx {
+    font-family: "Roboto Condensed", sans-serif;
+    display: flex;
+    padding: 20px;
+}
+/* 검색옵션박스 */
+.schopt {
+    height: fit-content;
 }

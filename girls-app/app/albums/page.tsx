@@ -8,7 +8,7 @@ import HeaderComp from "../components/HeaderComp";
 // 서브 CSS
 import "../../css/sub.css";
 
-export default function Album() {
+function Album() {
     return (
         <>
             <HeaderComp />

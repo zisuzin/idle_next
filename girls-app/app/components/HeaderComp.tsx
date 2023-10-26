@@ -21,7 +21,6 @@ export default function HeaderComp(){
                 <nav className="navbar">
                     <Link href="/artists" scroll={false}>프로필</Link>
                     <Link href="/albums" scroll={false}>앨범</Link>
-                    <Link href="/gallery" scroll={false}>갤러리</Link>
                     <Link href="/videos" scroll={false}>비디오</Link>
                 </nav>
             </div>
