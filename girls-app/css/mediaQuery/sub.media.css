@@ -1,5 +1,45 @@
 @charset "utf-8";
 
+/* 앨범 상세페이지 */
+@media screen and (max-width: 1080px) {
+    .albumlist_wrap {
+        padding: 157px 74px 100px !important;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .albumlist_wrap {
+        flex-direction: column;
+        padding: 157px 74px 90px !important;
+    }
+    .contents_left {
+        width: 100% !important;
+    }
+    .contents_right {
+        width: 100% !important;
+        padding-left: 0 !important;
+        text-align: center;
+    }
+    .album_info {
+        padding: 10px;
+    }
+    .release_date {
+        margin-bottom: 40px;
+    }
+    .album_tit > p, .contents-title {
+        font-size: 6vw !important;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .albumlist_wrap {
+        padding: 157px 50px 90px !important;
+    }
+    .album_tit > p, .contents-title {
+        font-size: 7vw !important;
+    }
+}
+
 /* 앨범 페이지 */
 @media screen and (max-width: 1060px) {
     .album_list li {

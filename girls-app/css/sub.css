@@ -246,6 +246,9 @@
     font-family: var(--primary_font);
     line-height: 24px;
 }
+.album_info span, .list-wrap span, .back_btn {
+    font-size: calc(min(16px, 3.8vw));
+}
 .albumlist_wrap .contents_right .album_tit > p,
 .track-list .contents-title {
     font-size: 4vw;
@@ -271,7 +274,7 @@
     margin-top: 10px;
 }
 .release_date > p {
-    font-size: calc(min(15.5px, 1.2vw));
+    font-size: calc(min(15.5px, 3.5vw));
     color: #000;
 }
 .track-list {
