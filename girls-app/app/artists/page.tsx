@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 // 더미데이터
 import { artists } from "../../data/hcode.js";
 /* 컴포넌트 */
@@ -11,8 +11,8 @@ import $ from "jquery";
 import "../../css/sub.css";
 
 export default function Profile() {
+    // 멤버 프로필 리스트 클릭시 큰이미지박스 보이기
     const showPfbx = () => {
-        // 멤버 프로필 리스트 클릭시 큰이미지박스 보이기
         const tgImg = $(".profile_img > li");
         tgImg.click(function () {
             // 1. 클릭된 이미지 경로 읽어오기

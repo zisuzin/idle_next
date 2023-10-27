@@ -48,12 +48,6 @@
 }
 
 @media screen and (max-width: 800px) {
-    .menuwrap {
-        display: none;
-    }
-    header {
-        position: inherit !important;
-    }
     .contents_wrap {
         padding: 40px 50px 25px !important;
     }
@@ -76,12 +70,73 @@
     .group_intro {
         display: flex !important;
         flex-direction: column;
+        padding: 63px 100px 25px !important;
+    }
+    .group_intro > h2 {
+        width: 100% !important;
+        padding-right: 0 !important;
+        font-size: 4vw !important;
+    }
+    .intro_title > h2 {
+        font-size: 3vw !important;
     }
     .group_intro > p {
         width: 100% !important;
         margin-top: 10px;
     }
+    .kv {
+        padding: 63px 40px 0 !important;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .intro_title, .profile_img > * {
+        width: 50% !important;
+    }
+    .intro_title {
+        height: 49vw !important;
+    }
     #kv_wrap {
-        padding: 40px 160px 25px !important;
+        padding: 0 !important;
+    }
+    .profile_img > li {
+        margin-left: 0 !important;
+    }
+    .intro_title > h2 {
+        font-size: 6.8vw !important;
+    }
+    .kv {
+        padding: 63px 25px 0;
+    }
+    .profile_img li:nth-child(even) {
+        margin-right: 50% !important;
+    }
+    .profile_img li:nth-child(odd):not(li:first-child) {
+        margin-left: 50% !important;
+    }
+    .members_inner {
+        padding: 0 !important;
+    }
+    .group_intro {
+        padding: 63px 40px 25px !important;
+        margin: 0 0 60px !important;
+    }
+    .group_intro > h2 {
+        font-size: 6.2vw !important;
+    }
+    .profile_img > * {
+        height: auto !important;
+    }
+    #imbx .imgbx {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .kv {
+        padding: 63px 20px 0 !important;
+    }
+    .group_intro > h2 {
+        font-size: 6.8vw !important;
     }
 }

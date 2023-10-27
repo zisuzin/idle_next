@@ -8,12 +8,16 @@
     max-width: 1440px;
     padding: 40px 180px 25px;
     margin: 0 auto;
+    height: 100vh;
 }
 
 /* kv박스 */
 #kv_wrap {
     position: relative;
-    padding: 40px 180px 25px;
+    background: #111;
+}
+.kv {
+    padding: 63px 180px 0;
 }
 .kv img {
     width: 100%;
@@ -24,17 +28,16 @@
 /* 멤버프로필박스 */
 .members_inner {
     position: relative;
-    max-width: 1080px;
     width: 100%;
     margin: 0 auto;
     display: table;
+    padding: 60px 40px 25px;
 }
 .group_intro {
     display: table;
     width: 100%;
-    margin-bottom: 50px;
-    margin: 40px 0 50px;
-    padding: 30px;
+    margin: 0 0 30px;
+    padding: 63px 180px 25px;
 }
 .group_intro > h2 {
     color: #fff;
@@ -88,6 +91,7 @@
     float: left;
     text-align: center;
     display: table;
+    font-size: 1.6vw;
 }
 .intro_title > h2 {
     color: #fff;
@@ -126,7 +130,7 @@
 }
 #imbx .imgbx .gimg dt,
 #imbx .imgbx .gimgDetail dt {
-    font-size: 35px;
+    font-size: calc(min(35px, 8vw));
     margin-bottom: 25px;
     font-weight: 600;
     font-family: var(--primary_font);
@@ -134,7 +138,7 @@
 }
 #imbx .imgbx .gimg dd,
 #imbx .imgbx .gimgDetail dd {
-    font-size: 17px;
+    font-size: calc(min(17px, 5vw));
     width: -moz-fit-content;
     width: fit-content;
     font-family: var(--primary_font);
@@ -357,7 +361,6 @@
 }
 .mv_date {
     margin-top: 10px;
-    color: #fff;
 }
 #sub_mv .mvbx {
     cursor: pointer;
@@ -384,7 +387,7 @@
     width: 250px;
     height: 40px;
     border-radius: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #000;
     box-sizing: border-box;
     padding: 0 5px;
     background: #fff;
@@ -423,7 +426,6 @@
     font-weight: 600;
     border-bottom: 1px solid #b1b1b1;
     text-align: center;
-    color: #fff;
 }
 .listbx .restit .inputVal {
     color: #d7266d;
@@ -433,7 +435,6 @@
     padding: 20px 0 15px 0;
     font-family: var(--primary_font);
     font-size: 24px;
-    color: #fff;
 }
 /* 아이프레임박스 */
 .ifr_bg_bx {
@@ -502,7 +503,7 @@
     margin-top: 5px;
     border-radius: 10px;
     overflow: hidden;
-    z-index: 9;
+    z-index: 1;
     display: none;
 }
 #keyword_collection .panels li:hover span {
