@@ -6,7 +6,7 @@
 /* 우측 컨텐츠박스 */
 .container {
     position: relative;
-    padding-left: 220px;
+    padding-left: 150px;
 }
 .container_inner {
     padding: 50px 55px;

@@ -194,7 +194,7 @@
     color: #fff;
     font-family: var(--primary_font);
     text-align: center;
-    font-size: min(19px, 2.5vw);
+    font-size: min(19px, 3vw);
     margin: 0;
     margin-top: 10px;
 }
@@ -203,7 +203,7 @@
     color: #fff;
     font-family: var(--primary_font);
     text-align: center;
-    font-size: min(15px, 1.5vw);
+    font-size: calc(min(15px, 3vw));
 }
 .album_list li img {
     width: 100%;
@@ -298,12 +298,6 @@
 }
 
 /****** 비디오 페이지 ******/
-.contents_wrap {
-    position: relative;
-    width: 100%;
-    padding: 40px 180px 25px;
-    margin: 0 auto;
-}
 .contents_wrap .chkbx {
     position: relative;
     color: #fff;
@@ -348,9 +342,9 @@
     color: #fff;
 }
 .mttit {
-    font-size: 28px;
+    font-size: calc(min(28px, 7vw));
     font-family: var(--primary_font);
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     color: #fff;
 }
 #sub_mv {

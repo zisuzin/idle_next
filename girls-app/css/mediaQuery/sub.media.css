@@ -7,8 +7,26 @@
     }
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 800px) {
+    .menuwrap {
+        display: none;
+    }
+    header {
+        position: inherit !important;
+    }
+    .contents_wrap {
+        padding: 40px 50px 25px !important;
+    }
+}
+
+@media screen and (max-width: 550px) {
     .album_list li {
-        width: 47% !important;
+        width: 100% !important;
+    }
+    .albumInfo_txt h5 {
+        font-size: calc(min(20px, 4vw)) !important;
+    }
+    .albumInfo_txt h2 {
+        font-size: min(24px, 5vw) !important;
     }
 }
