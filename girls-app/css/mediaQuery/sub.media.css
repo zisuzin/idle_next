@@ -70,3 +70,18 @@
         font-size: min(24px, 5vw) !important;
     }
 }
+
+/* 프로필 페이지 */
+@media screen and (max-width: 1000px) {
+    .group_intro {
+        display: flex !important;
+        flex-direction: column;
+    }
+    .group_intro > p {
+        width: 100% !important;
+        margin-top: 10px;
+    }
+    #kv_wrap {
+        padding: 40px 160px 25px !important;
+    }
+}

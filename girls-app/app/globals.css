@@ -16,32 +16,64 @@
 /* 좌측 GNB메뉴 */
 header {
     position: fixed;
-    width: 220px;
-    height: 100%;
-    top: 20px;
-    padding: 0 16px 0 24px;
-    z-index: 999;
-    margin-top: 20px;
+    width: 100%;
+    height: 63px;
+    top: 0;
+    left: 0;
+    line-height: 63px;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    background: #000;
 }
-.menuwrap {
+.gnb {
     position: absolute;
-    top: 80px;
+    top: 0;
+    height: 100%;
+    left: 0;
 }
-.logowrap {
+.gnb .gnb_btn {
+    position: relative;
+    width: 90px;
+    height: 100%;
+    background: url(../public/images/btn-gnb.png) no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+    z-index: 9;
+}
+.logo {
     width: 81px;
     height: 46px;
+    margin: 0 auto;
 }
-.logowrap img {
+.logo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 /* 네비게이션 */
-.navbar {
-    display: flex;
-    flex-direction: column;
+.navInner ul {
+    width: 364px;
+    margin: 0 auto;
 }
-.navbar > a {
+.navInner li {
+    cursor: pointer;
+    text-align: center;
+    font-size: 23px;
+    font-weight: 600;
+    padding: 10px;
+    font-family: var(--primary_font);
+}
+.navMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(22, 22, 22, 0.95);
+    display: none;
+}
+.navMenu > a {
     width: fit-content;
     margin-left: 5px;
     padding: 10px 5px 15px;
@@ -49,4 +81,6 @@ header {
     font-weight: bold;
     font-size: 18px;
 }
-
+.gnb_btn.on {
+    background: url(../public/images/btn-gnb_on.png) no-repeat;
+}

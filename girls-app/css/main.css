@@ -1,12 +1,14 @@
 @charset "utf-8";
 
 /* 메인 CSS - main.css */
+@import url(../app/globals.css);
 @import url(./mediaQuery/main_media.css);
 
 /* 우측 컨텐츠박스 */
 .container {
     position: relative;
-    padding-left: 150px;
+    margin: 0 100px;
+    padding-top: 63px;
 }
 .container_inner {
     padding: 50px 55px;

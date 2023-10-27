@@ -246,7 +246,7 @@
     font-family: var(--primary_font);
     line-height: 24px;
 }
-.album_info span, .list-wrap span, .back_btn {
+.album_info span, .list-wrap span {
     font-size: calc(min(16px, 3.8vw));
 }
 .albumlist_wrap .contents_right .album_tit > p,
@@ -274,7 +274,7 @@
     margin-top: 10px;
 }
 .release_date > p {
-    font-size: calc(min(15.5px, 3.5vw));
+    font-size: calc(min(15.5px, 2.8vw));
     color: #000;
 }
 .track-list {
@@ -303,7 +303,6 @@
 /****** 비디오 페이지 ******/
 .contents_wrap .chkbx {
     position: relative;
-    color: #fff;
     margin-top: 10px;
 }
 .contents_wrap .chkbx li {
@@ -385,6 +384,7 @@
     width: 250px;
     height: 40px;
     border-radius: 20px;
+    border: 1px solid #ccc;
     box-sizing: border-box;
     padding: 0 5px;
     background: #fff;
