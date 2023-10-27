@@ -14,7 +14,7 @@ export default function HeaderComp(){
         <header>
             <div className="logowrap">
                 <Link href="/" scroll={false}>
-                    <img src="./images/logo.jpg" alt="로고" />
+                    <img src="./images/logo.png" alt="로고" />
                 </Link>
             </div>
             <div className="menuwrap">

@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 /* 메인 CSS - main.css */
+@import url(./mediaQuery/main_media.css);
 
 /* 우측 컨텐츠박스 */
 .container {

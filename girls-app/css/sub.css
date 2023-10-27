@@ -1,4 +1,6 @@
 /****** 프로필 페이지 ******/
+@import url(./mediaQuery/sub.media.css);
+
 /* 공통 */
 .contents_wrap {
     position: relative;
@@ -10,16 +12,13 @@
 
 /* kv박스 */
 #kv_wrap {
-    background: #111;
-}
-.kv {
-    max-width: 1080px;
     position: relative;
-    width: 100%;
-    margin: 0 auto;
+    padding: 40px 180px 25px;
 }
 .kv img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* 멤버프로필박스 */
@@ -31,10 +30,11 @@
     display: table;
 }
 .group_intro {
-    padding: 33px 220px 40px;
     display: table;
     width: 100%;
     margin-bottom: 50px;
+    margin: 40px 0 50px;
+    padding: 30px;
 }
 .group_intro > h2 {
     color: #fff;
@@ -162,7 +162,7 @@
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 30px 0;
     justify-content: space-between;
 }
 .album_list li {
@@ -301,12 +301,13 @@
 .contents_wrap {
     position: relative;
     width: 100%;
-    height: 100vh;
     padding: 40px 180px 25px;
     margin: 0 auto;
 }
 .contents_wrap .chkbx {
     position: relative;
+    color: #fff;
+    margin-top: 10px;
 }
 .contents_wrap .chkbx li {
     padding: 10px 0;
@@ -349,6 +350,8 @@
 .mttit {
     font-size: 28px;
     font-family: var(--primary_font);
+    margin-bottom: 20px;
+    color: #fff;
 }
 #sub_mv {
     display: flex;
@@ -358,6 +361,7 @@
 }
 .mv_date {
     margin-top: 10px;
+    color: #fff;
 }
 #sub_mv .mvbx {
     cursor: pointer;
@@ -383,10 +387,10 @@
     position: relative;
     width: 250px;
     height: 40px;
-    border: solid 1px #111;
     border-radius: 20px;
     box-sizing: border-box;
     padding: 0 5px;
+    background: #fff;
 }
 .searching svg {
     position: absolute;
@@ -412,6 +416,7 @@
 }
 .listbx {
     margin-left: 40px;
+    margin-top: 30px;
 }
 .listbx .sortbx {
     margin-top: 8px;
@@ -421,6 +426,7 @@
     font-weight: 600;
     border-bottom: 1px solid #b1b1b1;
     text-align: center;
+    color: #fff;
 }
 .listbx .restit .inputVal {
     color: #d7266d;
@@ -430,6 +436,7 @@
     padding: 20px 0 15px 0;
     font-family: var(--primary_font);
     font-size: 24px;
+    color: #fff;
 }
 /* 아이프레임박스 */
 .ifr_bg_bx {
@@ -441,6 +448,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     right: 0;
     bottom: 0;
+    z-index: 99999;
 }
 .ifr_bg_bx .vid_ifr_wrap {
     position: absolute;
@@ -460,6 +468,7 @@
     height: 1.75rem;
     background-color: inherit;
     cursor: pointer;
+    color: #eee;
 }
 .ifr_bg_bx .vid_ifr_wrap button:hover {
     color: #d7266d;
@@ -508,6 +517,9 @@
     padding: 7px;
 }
 /* 검색옵션박스 */
+#search_filter_bx {
+    margin-top: 30px;
+}
 .schopt {
     height: fit-content;
 }

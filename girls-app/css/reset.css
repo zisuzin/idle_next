@@ -11,6 +11,7 @@ html,body,div,h2,h3,h5,ul,ol,li,nav,header,main,section,p,a,button,figure,figcap
 /* 가로스크롤 생김 방지!(특히 모바일) */
 body, html {
     overflow-x: hidden;
+    background: #111;
 }
 
 /* ul,ol 블릿/숫자없앰 */
@@ -20,7 +21,7 @@ ul,ol {
 
 /* a요소 - 글자색, 밑줄없앰 */
 a {
-    color: rgb(47, 52, 56);
+    color: #fff;
     text-decoration: none;
 }
 

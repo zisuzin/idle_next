@@ -19,6 +19,12 @@ header {
     width: 220px;
     top: 20px;
     padding: 0 16px 0 24px;
+    z-index: 999;
+    margin-top: 20px;
+}
+.menuwrap {
+    position: absolute;
+    top: 80px;
 }
 .logowrap {
     width: 81px;

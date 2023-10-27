@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+/* 앨범 페이지 */
+@media screen and (max-width: 1060px) {
+    .album_list li {
+        width: 47% !important;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .album_list li {
+        width: 47% !important;
+    }
+}

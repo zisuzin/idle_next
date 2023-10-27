@@ -9,7 +9,7 @@ import { artists } from "../../data/hcode.js";
 /* Material UI 컴포넌트 */
 import SearchIcon from "@mui/icons-material/Search";
 /* Jquery */
-import $ from "jquery";
+import $, { now } from "jquery";
 // 서브 CSS
 import "../../css/sub.css";
 
@@ -22,9 +22,6 @@ export default function Video() {
     // 데이터구성 : [배열데이터,정렬상태값]
     // 정렬상태값 : 1 - 오름차순, 2 - 내림차순, 3 - 정렬전
     let [mvd, setMvd] = useState([vdata, 3]);
-
-    // 데이터 건수 상태변수
-    let [tot, setTot] = useState(vdata.length);
 
     // 자동완성 상태변수
     const [autocomplete, setAutocomplete] = useState<string[]>([]);
@@ -55,8 +52,6 @@ export default function Video() {
             input.focus();
             // 기존 정렬상태로 돌아가기
             setMvd([vdata, mvd[3]]);
-            // 검색건수 초기화
-            setTot(vdata.length);
             return;
         }
 
@@ -149,9 +144,6 @@ export default function Video() {
         // 임시변수 : 기존입력된 데이터 가져옴
         let temp: any = mvd[0];
 
-        // 결과집합변수
-        let newList = [];
-
         // 3. 체크박스 체크갯수 세기 : 1개 초과시 배열 합쳐서 결과 출력!
         let num = 0;
         chkele.forEach(v => {
@@ -167,41 +159,16 @@ export default function Video() {
             let nowdt = vdata.filter(v => {
                 if (v.sort === chkid) return true;
             }); // filter
-
+            
             // 체크갯수가 1초과일때 배열합치기! (스프레드연산자 사용)
             if (num > 1) {
-                // 기존데이터(temp) + 새데이터(noWdt)
-                newList = [...temp, ...nowdt];
+                setInitData(temp);
             }
             // 체크갯수 1일 때
             else {
-                newList = nowdt;
+                setInitData(nowdt);
             }
         } // if : 체크박스 true
-
-        // (2) 체크박스가 false일때 데이터지우기
-        else {
-            console.log("지울 데이터:", chkid, temp.length);
-            // splice삭제시 일반for문으로 --처리해야함
-            for (let i = 0; i < temp.length; i++) {
-                // console.log(temp[i].sort);
-                // 조건은 체크박스 풀린 값
-                if (temp[i].sort === chkid) {
-                    // 배열지우기 메서드 : splice(순번,개수)
-                    temp.splice(i, 1);
-                    // splice로 지우면 배열항목자체가 삭제되므로 for문 돌때 개수가 줄어듦
-                    // 따라서 다음번호를 지울때 ++을 --처리 필수!
-                    i--;
-                } /////// if ////////////
-            }
-            // 결과처리하기 : 삭제처리된 temp 결과에 넣기!
-            newList = temp;
-        }
-
-        // 4. 검색결과 리스트 업데이트
-        // Hook 데이터변수+데이터건수
-        setMvd([newList, 2]);
-        setTot(newList.length);
     }; // chkSearch 함수
 
     // 리스트 정렬 변경함수
@@ -243,7 +210,7 @@ export default function Video() {
         });
     }; // Showvid //
 
-    const CatList = () => {
+    function CatList() {
         return (
             <main className="video_wrap" style={{ display: visible ? "block" : "none" }}>
                 <div className="contents_inner">
@@ -294,7 +261,7 @@ export default function Video() {
                 </div>
             </main>
         );
-    };
+    }
 
     return (
         <>
@@ -320,7 +287,7 @@ export default function Video() {
                                         <ul>
                                             {autocomplete.map((item, i) => (
                                                 <li key={i}>
-                                                    <span data-index={i}>{item}</span>
+                                                    <span>{item}</span>
                                                 </li>
                                             ))}
                                         </ul>

@@ -9,8 +9,6 @@ import { artists, headlines, records } from "../data/hcode";
 import HeaderComp from "./components/HeaderComp";
 /* 메인 CSS */
 import "../css/main.css";
-/* 미디어 CSS */
-import "../css/mediaQuery/main_media.css";
 /* Redux store 관련 */
 import { useSelector, useDispatch } from "react-redux";
 import { setImg, setTit, setAudio } from "../ts/redux";
@@ -382,7 +380,7 @@ export default function Home() {
                     </SwiperReact>
                     <div className="artists_bx">
                         <h3>멤버</h3>
-                        <Link href="/artists">
+                        <Link href="/artists" scroll={false}>
                             <span>See all</span>
                         </Link>
                         <ul>
