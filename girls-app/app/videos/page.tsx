@@ -1,7 +1,7 @@
 "use client";
 
 /* React hooks */
-import React, { useEffect, useState, ReactNode } from "react";
+import React, { useEffect, useState, useRef, ReactNode } from "react";
 /* 컴포넌트 */
 import HeaderComp from "../components/HeaderComp";
 // 더미데이터
@@ -127,7 +127,7 @@ export default function Video() {
             else if (completeList.length == 0) {
                 setResultTit("검색 결과가 없습니다");
                 $(".sortbx").css({ display: "none" });
-                $(".listbx").css({ width: "100%"});
+                $(".listbx").css({ width: "100%" });
                 setVisible(false);
                 setVidTit(null);
             }
@@ -245,14 +245,14 @@ export default function Video() {
 
     const CatList = () => {
         return (
-            <main className="video_wrap" style={{ display: visible ? 'block' : 'none'}}>
+            <main className="video_wrap" style={{ display: visible ? "block" : "none" }}>
                 <div className="contents_inner">
                     {vidTit}
                     <section id="sub_mv">
                         {initData.map((x, i) => (
                             <div className="mvbx" key={i} onClick={() => showVid(x.vsrc, x.txt)}>
                                 <figure className="mv_img">
-                                    <img src={x.isrc} />
+                                    <img src={x.isrc} alt={x.txt} />
                                 </figure>
                                 <figcaption className="mv_date">
                                     <p>{x.txt}</p>
@@ -363,7 +363,7 @@ export default function Video() {
                             </aside>
                             {/* 비디오 리스트 컴포넌트 
                             전달속성 dt - 리스트 데이터 */}
-                            <CatList/>
+                            <CatList />
                         </div>
                     </section>
                 </div>
