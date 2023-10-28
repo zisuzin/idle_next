@@ -159,7 +159,7 @@ export default function Video() {
             let nowdt = vdata.filter(v => {
                 if (v.sort === chkid) return true;
             }); // filter
-            
+
             // 체크갯수가 1초과일때 배열합치기! (스프레드연산자 사용)
             if (num > 1) {
                 setInitData(temp);
@@ -266,9 +266,9 @@ export default function Video() {
     return (
         <>
             <HeaderComp />
-            <main className="contents_wrap">
+            <main className="vid_wrap">
                 {/* <h2>VIDEO</h2> */}
-                <div className="contents_inner">
+                <div className="vid_inner">
                     {/* 모듈코드 */}
                     <section className="schbx">
                         {/* 1. 옵션선택박스 */}
@@ -280,7 +280,6 @@ export default function Video() {
                                     <SearchIcon className="schbtn" />
                                     {/* 입력창 */}
                                     <input id="searchInput" type="text" maxLength={14} placeholder="검색어를 입력해주세요" onKeyUp={enterKy} />
-                                </div>
                                 {/* 키워드 검색시 연관검색어 팝업 */}
                                 <div id="keyword_collection">
                                     <div className="panels">
@@ -293,27 +292,24 @@ export default function Video() {
                                         </ul>
                                     </div>
                                 </div>
+                                </div>
                             </div>
                             {/* 체크박스구역 */}
                             <div className="chkbx">
-                                <ul>
+                                <h2>Category</h2>
+                                <ol>
+                                    {/* 체크박스리스트 */}
                                     <li>
-                                        <h2>Category</h2>
-                                        {/* 체크박스리스트 */}
-                                        <ol>
-                                            <li>
-                                                Music Videos
-                                                <input type="checkbox" id="mv" className="chkhdn" onChange={chkSearch} />
-                                                <label htmlFor="mv" className="chklb"></label>
-                                            </li>
-                                            <li>
-                                                V-logs
-                                                <input type="checkbox" id="vlog" className="chkhdn" onChange={chkSearch} />
-                                                <label htmlFor="vlog" className="chklb"></label>
-                                            </li>
-                                        </ol>
+                                        Music Videos
+                                        <input type="checkbox" id="mv" className="chkhdn" onChange={chkSearch} />
+                                        <label htmlFor="mv" className="chklb"></label>
                                     </li>
-                                </ul>
+                                    <li>
+                                        V-logs
+                                        <input type="checkbox" id="vlog" className="chkhdn" onChange={chkSearch} />
+                                        <label htmlFor="vlog" className="chklb"></label>
+                                    </li>
+                                </ol>
                             </div>
                         </div>
                         {/* 2. 결과리스트박스 */}

@@ -1,16 +1,6 @@
 /****** 프로필 페이지 ******/
 @import url(./mediaQuery/sub.media.css);
 
-/* 공통 */
-.contents_wrap {
-    position: relative;
-    width: 100%;
-    max-width: 1440px;
-    padding: 63px 180px 25px;
-    margin: 0 auto;
-    height: 100vh;
-}
-
 /* kv박스 */
 #kv_wrap {
     position: relative;
@@ -253,6 +243,13 @@
 .album_info span, .list-wrap span {
     font-size: calc(min(16px, 3.8vw));
 }
+.contents_wrap {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    padding: 63px 180px 25px;
+    margin: 0 auto;
+}
 .albumlist_wrap .contents_right .album_tit > p,
 .track-list .contents-title {
     font-size: 4vw;
@@ -304,21 +301,34 @@
 }
 
 /****** 비디오 페이지 ******/
-.contents_wrap .chkbx {
+.vid_wrap {
     position: relative;
+    width: 100%;
+    max-width: 1440px;
+    padding: 63px 180px 25px;
+    margin: 0 auto;
+}
+.vid_wrap .chkbx {
+    position: relative;
+    margin-top: 13px;
+}
+.chkbx ol {
     margin-top: 10px;
 }
-.contents_wrap .chkbx li {
-    padding: 10px 0;
-    font-size: 18px;
+.vid_wrap .chkbx li {
+    padding: 10px 0 0;
+    font-size: calc(min(18px, 2.8vw));
 }
-.contents_wrap .chkbx li ol > li:last-child {
+.vid_wrap .chkbx h2 {
+    font-size: calc(min(24px, 3.8vw));
+}
+.vid_wrap .chkbx li ol > li:last-child {
     margin-top: -10px;
 }
-.contents_wrap .chkbx li input[type="checkbox"] {
+.vid_wrap .chkbx li input[type="checkbox"] {
     display: none;
 }
-.contents_wrap .chkbx li .spbtn {
+.vid_wrap .chkbx li .spbtn {
     display: block;
     float: right;
     margin-right: 5px;
@@ -326,20 +336,20 @@
     line-height: 40px;
     cursor: pointer;
 }
-.contents_wrap .chkbx li .chklb {
+.vid_wrap .chkbx li .chklb {
     float: right;
     display: block;
     width: 20px;
     height: 20px;
     background-color: #ccc;
 }
-.contents_wrap .chkbx li input:checked + .chklb {
+.vid_wrap .chkbx li input:checked + .chklb {
     position: relative;
     background-color: #d7266d;
     text-align: center;
     font-weight: bold;
 }
-.contents_wrap .chkbx li input:checked + .chklb::before {
+.vid_wrap .chkbx li input:checked + .chklb::before {
     content: "✓";
     position: absolute;
     top: -1px;
@@ -377,7 +387,7 @@
 }
 .mv_date p:nth-child(2) {
     text-align: right;
-    font-size: min(15px, 1.2vw);
+    font-size: min(15px, 1.1vw);
     font-family: var(--primary_font);
 }
 /* 검색입력창 박스 */
@@ -398,7 +408,7 @@
 .searching input {
     width: 75%;
     position: absolute;
-    font-size: 13px;
+    font-size: calc(min(13px, 2.6vw));
     left: 15px;
     height: 100%;
     background-color: transparent;
@@ -433,7 +443,7 @@
 .mv_item_tit {
     padding: 20px 0 15px 0;
     font-family: var(--primary_font);
-    font-size: 24px;
+    font-size: calc(min(24px, 3.8vw));
 }
 /* 아이프레임박스 */
 .ifr_bg_bx {
@@ -449,8 +459,7 @@
 }
 .ifr_bg_bx .vid_ifr_wrap {
     position: absolute;
-    min-height: calc(100% - 16rem);
-    top: 45%;
+    top: 50%;
     max-width: 800px;
     width: 100%;
     left: 50%;
@@ -475,14 +484,15 @@
     text-align: center;
 }
 .ifr_bg_bx .vid_ifr_wrap .vid_ifr_inner {
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    width: 100%;
+    padding-bottom:52.25%
 }
 .ifr_bg_bx .vid_ifr_wrap .vid_ifr_inner iframe {
+    position: absolute;
     width: 100%;
     height: 100%;
     border: none;
-    position: absolute;
 }
 /* 검색박스 */
 .schbx {
@@ -491,15 +501,15 @@
     padding: 20px;
 }
 #keyword_collection {
-    width: 250px;
+    width: 100%;
     position: absolute;
+    left: 0;
+    margin-top: 45px;
 }
 #keyword_collection .panels {
     position: relative;
-    width: 100%;
     background: #fff;
     border: 1px solid #111;
-    margin-top: 5px;
     border-radius: 10px;
     overflow: hidden;
     z-index: 1;
@@ -512,6 +522,7 @@
     display: block;
     cursor: pointer;
     padding: 7px;
+    font-size: calc(min(16px, 2.6vw));
 }
 /* 검색옵션박스 */
 #search_filter_bx {
