@@ -4,14 +4,14 @@
 @media screen and (max-width: 1290px) {
     .genre_bx {
         width: 64% !important;
-        height: 330px !important;
+        height: 340px !important;
     }
     .record_bx {
         width: 100% !important;
         margin: 15px 0 0 0 !important;
     }
     .record_bx li {
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
     .genre_bx li {
         padding: 15px !important;
@@ -21,6 +21,9 @@
         overflow-y: scroll;
         height: 245px;
         padding-right: 20px;
+    }
+    #play-list {
+        height: 380px !important;
     }
 }
 
@@ -32,10 +35,9 @@
     .txt_area {
         width: calc(100% - 370px) !important;
         height: 258px !important;
-        padding: 32px 40px 0 36px !important;
+        padding: 32px 40px 36px !important;
     }
     .title {
-        font-size: 30px !important;
         line-height: 35px !important;
     }
     .sub {
@@ -52,5 +54,104 @@
     }
     .swiper-button-next {
         display: none !important;
+    }
+    .artists_bx,
+    .genre_bx {
+        width: 100% !important;
+    }
+    .player_bx {
+        width: 100% !important;
+    }
+    .progress {
+        width: 500px !important;
+    }
+}
+
+@media screen and (max-width: 1065px) {
+    .swiper-slide {
+        flex-direction: column;
+    }
+    .img_area {
+        width: 100% !important;
+        height: 380px !important;
+    }
+    .txt_area {
+        width: 100% !important;
+    }
+    .play_now_btn {
+        bottom: 270px !important;
+    }
+    .container {
+        margin: 0 !important;
+    }
+    .container_inner {
+        padding: 50px 20px 35px !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .artists_bx ul {
+        flex-direction: column;
+    }
+    .artists_bx li {
+        width: 100% !important;
+    }
+    .imgbx .member_name {
+        margin-top: 20px !important;
+        font-size: calc(min(15px, 4vw)) !important;
+    }
+    .title {
+        font-size: calc(min(36px, 7vw)) !important;
+    }
+    .info, .sub {
+        font-size: calc(min(16px, 3.8vw)) !important;
+    }
+    .artists_bx h3, .genre_bx h3, .record_bx h3, .player_bx h3 {
+        font-size: calc(min(18px, 4.5vw)) !important;
+    }
+    .artists_bx span, .genre_bx span, .record_bx span {
+        font-size: calc(min(16px, 3.8vw)) !important;
+    }
+    .genre_bx li {
+        font-size: calc(min(16px, 3.5vw)) !important;
+    }
+    .record_bx .altit h5 {
+        font-size: calc(min(15px, 3.8vw)) !important;
+    }
+    .record_bx .altit p {
+        font-size: calc(min(13.5px, 3.8vw)) !important;
+    }
+    .record_bx ul {
+        padding-right: 5px !important;
+    }
+    .record_bx .altime, .record_bx .alnum {
+        font-size: calc(min(14px, 3.5vw)) !important;
+    }
+    .record_bx .altit {
+        width: 80px !important;
+    }
+    #play-list {
+        height: 300px !important;
+    }
+    #play-list strong {
+        font-size: calc(min(19px, 3.9vw)) !important;
+    }
+    #play-list em {
+        font-size: calc(min(14.5px, 3.5vw)) !important;
+    }
+    #play-list span {
+        font-size: calc(min(17px, 3.6vw)) !important;
+    }
+    .player_inner .timer {
+        font-size: calc(min(14.5px, 3.5vw)) !important;
+    }
+    .lyrics_info > p {
+        font-size: calc(min(13px, 2.9vw)) !important;
+    }
+    .title {
+        line-height: 30px !important;
+    }
+    .navInner li {
+        font-size: calc(min(23px, 5.2vw)) !important;
     }
 }

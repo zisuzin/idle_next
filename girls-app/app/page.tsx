@@ -79,7 +79,6 @@ export default function Home() {
 
     //음악 및 음악 정보 불러오기
     const loadMusic = (num: number) => {
-        const listAll = document.querySelectorAll("#play-list li");
         const lyrics = document.querySelector(".p_lyrics") as HTMLElement;
         const lyricImg = document.querySelector(".p_img") as HTMLElement;
 
@@ -319,6 +318,17 @@ export default function Home() {
         prevBtn.addEventListener("click", prevMusic);
         nextBtn.addEventListener("click", nextMusic);
 
+        // 공사중 표시 모달창 띄움
+        const shuffleBtn = document.querySelector("#shuffle-btn");
+        const repeatBtn = document.querySelector("#repeat-btn");
+
+        shuffleBtn?.addEventListener("click", function () {
+            alert("공사중 입니다.");
+        });
+        repeatBtn?.addEventListener("click", function () {
+            alert("공사중 입니다.");
+        });
+
         // 함수호출
         playSong();
         timeAudio();
@@ -326,10 +336,6 @@ export default function Home() {
         showList();
         clkList();
     }, [audSrc, audioEl]);
-
-    useEffect(() => {
-        loadMusic(song_index);
-    }, []);
 
     return (
         <div>
@@ -379,7 +385,7 @@ export default function Home() {
                         ))}
                     </SwiperReact>
                     <div className="artists_bx">
-                        <h3>멤버</h3>
+                        <h3>Artists</h3>
                         <Link href="/artists" scroll={false}>
                             <span>See all</span>
                         </Link>
@@ -400,7 +406,7 @@ export default function Home() {
                         <div className="player_inner">
                             <div className="p_wrap">
                                 <h3>
-                                    플레이어
+                                    Player
                                     <span className="list-btn">
                                         <QueueMusicIcon />
                                     </span>
@@ -465,7 +471,7 @@ export default function Home() {
                     </div>
                     {/* 음악 장르 */}
                     <div className="genre_bx">
-                        <h3>장르</h3>
+                        <h3>Genres</h3>
                         <span>See all</span>
                         <ul>
                             {/* 멤버프로필 출력 */}
@@ -503,7 +509,7 @@ export default function Home() {
                     </div>
                     {/* 전체 음반 */}
                     <div className="record_bx">
-                        <h3>음반</h3>
+                        <h3>Records</h3>
                         <span>See all</span>
                         <ul>
                             {/* 음반리스트 출력 */}
