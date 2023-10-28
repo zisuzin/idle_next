@@ -6,7 +6,7 @@
     position: relative;
     width: 100%;
     max-width: 1440px;
-    padding: 40px 180px 25px;
+    padding: 63px 180px 25px;
     margin: 0 auto;
     height: 100vh;
 }
@@ -271,18 +271,17 @@
     position: absolute;
     top: -50px;
 }
-#albumlist_bx {
-    padding-bottom: 5%;
-}
 .release_date {
     margin-top: 10px;
+    font-family: var(--primary_font);
 }
 .release_date > p {
-    font-size: calc(min(15.5px, 2.8vw));
+    font-size: calc(min(15.5px, 3.8vw));
     color: #000;
 }
 .track-list {
     text-align: center;
+    padding-bottom: 80px;
 }
 .album_cover > img {
     width: 100%;
