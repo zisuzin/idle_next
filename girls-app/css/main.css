@@ -197,7 +197,7 @@
     font-size: 16px;
 }
 .player_inner .p_wrap {
-    padding: 5% 7% 8.5%;
+    padding: 21px 29px 20px;
 }
 .player_inner .timer {
     color: #fff;
@@ -334,7 +334,7 @@
 .genre_bx li {
     padding: 20px;
     border-radius: 10px;
-    width: 105px;
+    width: 120px;
     cursor: pointer;
     font-size: calc(min(16px, 2.9vw));
 }
@@ -345,11 +345,11 @@
     background-color: #ab967a;
 }
 .genre_bx .hiphop {
-    width: 80px;
+    width: 95px;
     background-color: #3d583d;
 }
 .genre_bx .indie {
-    width: 130px;
+    width: 145px;
     background-color: #c04949;
 }
 .genre_bx .balad {
