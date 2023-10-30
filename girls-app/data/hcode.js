@@ -8,7 +8,7 @@ const artists = {
     det: [
         {
             isrc: "/images/profile/mindy.jpeg",
-            name: "민디",
+            name: "민니",
             birth: "생일: 1997년 10월 23일",
         },
         {
