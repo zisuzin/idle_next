@@ -11,7 +11,7 @@ import HeaderComp from "./components/HeaderComp";
 import "../css/main.css";
 /* Redux store 관련 */
 import { useSelector, useDispatch } from "react-redux";
-import { setImg, setTit, setAudio } from "../ts/redux";
+import { setImg, setTit, setAudio, setIndex } from "../ts/redux";
 /* Swiper */
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper as SwiperReact, SwiperSlide } from "swiper/react";
@@ -37,6 +37,7 @@ type RootState = {
         imgSrc: string;
         alTit: string;
         audSrc: string;
+        alIdx: number;
     };
 };
 
@@ -44,6 +45,7 @@ export default function Home() {
     let imgSrc = useSelector((state: RootState) => state.ref.imgSrc);
     let alTit = useSelector((state: RootState) => state.ref.alTit);
     let audSrc = useSelector((state: RootState) => state.ref.audSrc);
+    let alIdx = useSelector((state: RootState) => state.ref.alIdx);
     const dispatch = useDispatch();
     let song_index = 0;
     const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -67,6 +69,7 @@ export default function Home() {
             lyrics.innerHTML = headlines[i].lyrics;
             // 오디오 재생
             setIsCheck(true);
+            // 가사 변경
             audBtn.play().catch(() => {
                 console.log("음원 재생!");
             });
@@ -79,9 +82,6 @@ export default function Home() {
 
     //음악 및 음악 정보 불러오기
     const loadMusic = (num: number) => {
-        const lyrics = document.querySelector(".p_lyrics") as HTMLElement;
-        const lyricImg = document.querySelector(".p_img") as HTMLElement;
-
         // 이미지 변경
         let newSrc = `/images/album/records/alb-${num}.webp`;
         dispatch(setImg(newSrc));
@@ -93,18 +93,6 @@ export default function Home() {
         // 오디오 변경
         let listAud = records[num].msrc;
         dispatch(setAudio(listAud));
-
-        // 가사 변경
-        lyrics.innerHTML = records[num].lyrics;
-
-        lyricImg.addEventListener("click", function (this: HTMLElement) {
-            lyrics.style.display = "block";
-        });
-
-        // 가사창 숨김
-        lyrics.addEventListener("click", function (this: HTMLElement) {
-            this.style.display = "none";
-        });
     };
 
     // 플레이어 재생버튼 토글시 아이콘 변경
@@ -224,6 +212,16 @@ export default function Home() {
             let listTxt = $(this).find(".txtarea > strong").text();
             // 리스트 곡
             let listAud = $(this).find("audio").attr("src");
+            // 가사창
+            const lyrics = $(".p_lyrics");
+
+            // 일치하는 데이터 순번 구하기
+            const pickIdx = records.findIndex(hd => hd.tit === listTxt);
+
+            if (pickIdx !== -1) {
+                // 가사 변경
+                lyrics.html(records[pickIdx].lyrics);
+            }
 
             // redux 상태 업데이트
             dispatch(setImg(listImg));
@@ -300,10 +298,22 @@ export default function Home() {
         const crtAudio: any = $("#audio")[0];
         const progress = $(".progress");
         const duration = crtAudio.duration || 0;
+        const lyrics = document.querySelector(".p_lyrics") as HTMLElement;
+        const lyricImg = document.querySelector(".p_img") as HTMLElement;
 
         if (audSrc && audioEl) {
             // 오디오 재생
             audioEl.play();
+
+            // 가사창 보이기
+            lyricImg.addEventListener("click", function (this: HTMLElement) {
+                lyrics.style.display = "block";
+            });
+
+            // 가사창 숨김
+            lyrics.addEventListener("click", function (this: HTMLElement) {
+                this.style.display = "none";
+            });
         }
 
         // 재생바 특정 위치 클릭시
