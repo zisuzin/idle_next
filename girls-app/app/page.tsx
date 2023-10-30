@@ -11,7 +11,7 @@ import HeaderComp from "./components/HeaderComp";
 import "../css/main.css";
 /* Redux store 관련 */
 import { useSelector, useDispatch } from "react-redux";
-import { setImg, setTit, setAudio, setIndex } from "../ts/redux";
+import { setImg, setTit, setAudio } from "../ts/redux";
 /* Swiper */
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper as SwiperReact, SwiperSlide } from "swiper/react";
@@ -37,7 +37,6 @@ type RootState = {
         imgSrc: string;
         alTit: string;
         audSrc: string;
-        alIdx: number;
     };
 };
 
@@ -45,7 +44,6 @@ export default function Home() {
     let imgSrc = useSelector((state: RootState) => state.ref.imgSrc);
     let alTit = useSelector((state: RootState) => state.ref.alTit);
     let audSrc = useSelector((state: RootState) => state.ref.audSrc);
-    let alIdx = useSelector((state: RootState) => state.ref.alIdx);
     const dispatch = useDispatch();
     let song_index = 0;
     const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -235,7 +233,7 @@ export default function Home() {
     };
 
     // 이전 곡 버튼 클릭시
-    const prevMusic = () => {
+    const prevMusic = (e: any) => {
         const listAll = document.querySelectorAll("#play-list li");
 
         song_index--;

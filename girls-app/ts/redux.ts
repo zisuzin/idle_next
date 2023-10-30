@@ -7,7 +7,6 @@ const imageSlice = createSlice({
         imgSrc: './images/init_bg.png',
         alTit: '재생 곡 없음',
         audSrc: '',
-        alIdx: '',
     }, 
     reducers: {
         setImg: (state, action) => {
@@ -19,11 +18,8 @@ const imageSlice = createSlice({
         setAudio: (state, action) => {
             state.audSrc = action.payload;
         },
-        setIndex: (state, action) => {
-            state.alIdx = action.payload;
-        }
     },
 });
 
-export const { setImg, setTit, setAudio, setIndex } = imageSlice.actions;
+export const { setImg, setTit, setAudio } = imageSlice.actions;
 export default imageSlice.reducer;
