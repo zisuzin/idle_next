@@ -14,7 +14,8 @@
 |[🌱 지수진](https://github.com/zisuzin)|
 |:---:|
 |<a href="https://github.com/zisuzin"> <img src="https://avatars.githubusercontent.com/zisuzin" width=200px alt="지수진"/> </a>|
-|프론트엔드|  
+|프론트엔드|
+개발기간: 2023.10.11 ~ 2023.10.29 (18일)
 
 <br>
 
