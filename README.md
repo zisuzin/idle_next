@@ -21,6 +21,10 @@
 ## ✨ 프론트엔드 기술 스택
 ![Group 7](https://github.com/zisuzin/idle_next/assets/120540018/c41624ca-d2e7-4640-bf55-d571708f151f)
 
+<br/>
+
+## ✨ 디렉토리 구조
+![Group 16](https://github.com/zisuzin/idle_next/assets/120540018/87ac529e-160c-479b-bdb1-03eeba3fe083)
 
 <br/>
 
