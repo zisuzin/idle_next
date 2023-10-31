@@ -19,10 +19,10 @@
 <br>
 
 ## ✨ 프론트엔드 기술 스택
-![stack_front](https://github.com/zisuzin/shoopen_cli/assets/120540018/e2730c50-2439-4447-9e55-3fca31d9afbf)
+![Group 7](https://github.com/zisuzin/idle_next/assets/120540018/c41624ca-d2e7-4640-bf55-d571708f151f)
+
 
 <br/>
 
-## ⚙️ 인프라 기술 스택 
-
-## 🦁 프론트엔드 인프라 구조
+## 📚 SPA 구조
+![Group 13](https://github.com/zisuzin/idle_next/assets/120540018/3ba2b1f8-755f-4b29-951e-59c4e2f91769)
