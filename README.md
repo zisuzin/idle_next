@@ -28,14 +28,15 @@
 
 <br/>
 
-## ✨ 주요 기능
-> SSL Proxy Server, API Server 요청 프리뷰입니다.
+## ✨ Preview
+> Redux state 상태 변경, 새로고침시 state 값 유지 프리뷰입니다.
 
-|SSL Proxy Server|API Server|
+|Redux state 상태 변경|새로고침시 state 값 유지|
 |---|---|
 |![ssl proxy server](https://user-images.githubusercontent.com/61215550/214685219-5013a398-322b-4210-8585-c026d939d6e6.gif)|![api server](https://user-images.githubusercontent.com/61215550/214685251-875a31aa-b303-4382-955b-1920cdba6236.gif)|
 
 <br/>
 
 ## 📚 SPA 구조
-![Group 13](https://github.com/zisuzin/idle_next/assets/120540018/3ba2b1f8-755f-4b29-951e-59c4e2f91769)
+![Group 13 (1)](https://github.com/zisuzin/idle_next/assets/120540018/bff5d9ff-dcee-4462-9319-f1f8814af1b6)
+
