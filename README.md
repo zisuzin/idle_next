@@ -18,13 +18,22 @@
 
 <br>
 
-## ✨ 프론트엔드 기술 스택
+## 🛠 프론트엔드 기술 스택
 ![Group 7](https://github.com/zisuzin/idle_next/assets/120540018/c41624ca-d2e7-4640-bf55-d571708f151f)
 
 <br/>
 
-## ✨ 디렉토리 구조
+## 📂 디렉토리 구조
 ![Group 16](https://github.com/zisuzin/idle_next/assets/120540018/87ac529e-160c-479b-bdb1-03eeba3fe083)
+
+<br/>
+
+## ✨ 주요 기능
+> SSL Proxy Server, API Server 요청 프리뷰입니다.
+
+|SSL Proxy Server|API Server|
+|---|---|
+|![ssl proxy server](https://user-images.githubusercontent.com/61215550/214685219-5013a398-322b-4210-8585-c026d939d6e6.gif)|![api server](https://user-images.githubusercontent.com/61215550/214685251-875a31aa-b303-4382-955b-1920cdba6236.gif)|
 
 <br/>
 
