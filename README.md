@@ -41,7 +41,6 @@
 |특정 시점의 음원 재생|플레이리스트 추가/삭제/재생|
 |---|---|
 ![time-move](https://github.com/zisuzin/idle_next/assets/120540018/ee60e9f8-43eb-4d83-8a38-6a116476199f)|![playlist-play](https://github.com/zisuzin/idle_next/assets/120540018/48a0ff64-54e7-4509-8e1e-d9864a5f4915)
-)
 
 <br/>
 
