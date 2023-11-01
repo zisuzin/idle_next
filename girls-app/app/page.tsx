@@ -136,7 +136,7 @@ export default function Home() {
                 console.log("중복 판별 여부:", isB);
 
                 // 버튼 클래스 on & 데이터 중복 아닐시
-                if (this.classList.contains("active") && !isB) {
+                if (this.classList.contains("active") && !isB && saveList) {
                     console.log("플레이리스트 추가");
 
                     const list = { tit: records[i].tit, alb: records[i].alb, img: records[i].isrc, time: records[i].time, song: records[i].msrc };
@@ -145,6 +145,7 @@ export default function Home() {
                     saveList.push(list);
                     localStorage.setItem("song_item", JSON.stringify(saveList));
                     updateList();
+                    clkList();
                 }
                 // 버튼 클래스 off시
                 else if (!this.classList.contains("active")) {
