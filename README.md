@@ -36,9 +36,9 @@
 |---|---|
 |![state-update](https://github.com/zisuzin/idle_next/assets/120540018/4251185b-d320-42f4-8b70-604caf56b244)|![state-persist](https://github.com/zisuzin/idle_next/assets/120540018/5df6c577-471e-4844-8b65-4538b215d3ce)
 
-> 특정 시점의 음원 재생, 플레이리스트 추가/재생 프리뷰입니다.
+> 특정 시점의 음원 재생, 플레이리스트 추가/삭제/재생 프리뷰입니다.
 
-|특정 시점의 음원 재생|플레이리스트 추가/재생|
+|특정 시점의 음원 재생|플레이리스트 추가/삭제/재생|
 |---|---|
 ![time-move](https://github.com/zisuzin/idle_next/assets/120540018/ee60e9f8-43eb-4d83-8a38-6a116476199f)|![playlist-play](https://github.com/zisuzin/idle_next/assets/120540018/48a0ff64-54e7-4509-8e1e-d9864a5f4915)
 )
