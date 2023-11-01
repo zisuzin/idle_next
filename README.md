@@ -6,7 +6,7 @@
 
 `Next.js`환경에서 개발한 `걸그룹 '여자아이들' 홍보 사이트` 입니다.<br>
 <p align="middle"><a href="https://idle-next.vercel.app/">배포 링크</a></p>
-<p align="middle"><a href="https://drive.google.com/file/d/1LamH2NI8cobudYXXtaWCOpWh3jYi0qUC/view?usp=sharing">가이드문서</a></p>
+<p align="middle"><a href="https://drive.google.com/file/d/1oPqjcREqQ08VSz9BEDtN_EH637rkJr_O/view?usp=sharing">가이드문서</a></p>
 
 </div>
 
@@ -30,11 +30,12 @@
 <br/>
 
 ## ✨ Preview
-> Redux state 상태 변경, 새로고침시 state 값 유지 프리뷰입니다.
+> Redux state 변경, 새로고침시 state 유지 프리뷰입니다.
 
-|Redux state 상태 변경|새로고침시 state 값 유지|
+|Redux state 변경|새로고침시 state 유지|
 |---|---|
-|![ssl proxy server](https://user-images.githubusercontent.com/61215550/214685219-5013a398-322b-4210-8585-c026d939d6e6.gif)|![api server](https://user-images.githubusercontent.com/61215550/214685251-875a31aa-b303-4382-955b-1920cdba6236.gif)|
+|![state-update](https://github.com/zisuzin/idle_next/assets/120540018/4251185b-d320-42f4-8b70-604caf56b244)|![state-persist](https://github.com/zisuzin/idle_next/assets/120540018/5df6c577-471e-4844-8b65-4538b215d3ce)
+()|
 
 <br/>
 
