@@ -25,6 +25,9 @@
     #play-list {
         height: 380px !important;
     }
+    #play-list {
+        height: 300px !important;
+    }
 }
 
 @media screen and (max-width: 1230px) {
@@ -129,9 +132,6 @@
     }
     .record_bx .altit {
         width: 80px !important;
-    }
-    #play-list {
-        height: 300px !important;
     }
     #play-list strong {
         font-size: calc(min(19px, 3.9vw)) !important;
