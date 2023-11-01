@@ -34,7 +34,8 @@
 
 |Redux state 상태 변경|새로고침시 state 값 유지|
 |---|---|
-|![ssl proxy server](https://github.com/zisuzin/idle_next/assets/120540018/4251185b-d320-42f4-8b70-604caf56b244)|![api server](https://user-images.githubusercontent.com/61215550/214685251-875a31aa-b303-4382-955b-1920cdba6236.gif)|
+|![state-update](https://github.com/zisuzin/idle_next/assets/120540018/4251185b-d320-42f4-8b70-604caf56b244)|![state-persist](https://github.com/zisuzin/idle_next/assets/120540018/5df6c577-471e-4844-8b65-4538b215d3ce)
+()|
 
 <br/>
 
