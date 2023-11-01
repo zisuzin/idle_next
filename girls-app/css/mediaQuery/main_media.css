@@ -22,12 +22,6 @@
         height: 245px;
         padding-right: 20px;
     }
-    #play-list {
-        height: 380px !important;
-    }
-    #play-list {
-        height: 300px !important;
-    }
 }
 
 @media screen and (max-width: 1230px) {
