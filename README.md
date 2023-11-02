@@ -5,8 +5,8 @@
 # 🎧 (G)I-DLE
 
 `Next.js`환경에서 개발한 `걸그룹 '여자아이들' 홍보 사이트` 입니다.<br>
-<p align="middle"><a href="https://idle-next.vercel.app/" target="_blank">배포 링크</a></p>
-<p align="middle"><a href="https://drive.google.com/file/d/1oPqjcREqQ08VSz9BEDtN_EH637rkJr_O/view?usp=sharing" target="_blank">가이드문서</a></p>
+<p align="middle"><a href="https://idle-next.vercel.app/" onclick="window.open(this.href, '_blank'); return false;">배포 링크</a></p>
+<p align="middle"><a href="https://drive.google.com/file/d/1oPqjcREqQ08VSz9BEDtN_EH637rkJr_O/view?usp=sharing" onclick="window.open(this.href, '_blank'); return false;">가이드문서</a></p>
 
 </div>
 
