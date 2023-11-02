@@ -135,7 +135,7 @@ export default function Home() {
                 const isB = saveList.some(item => item.tit === records[i].tit);
                 console.log("중복 판별 여부:", isB);
 
-                // 버튼 클래스 on & 데이터 중복 아닐시
+                // 버튼 클래스 on & 데이터 중복 아닐시 && 로컬스 데이터 있으면
                 if (this.classList.contains("active") && !isB && saveList) {
                     console.log("플레이리스트 추가");
 
@@ -342,8 +342,8 @@ export default function Home() {
         playSong();
         timeAudio();
         addSong();
-        showList();
         clkList();
+        showList();
     }, [audSrc, audioEl]);
 
     return (
