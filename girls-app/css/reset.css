@@ -11,6 +11,7 @@ html,body,div,h1,h2,h3,h5,ul,ol,li,nav,header,main,section,p,a,button,figure,fig
 /* 가로스크롤 생김 방지!(특히 모바일) */
 body {
     overflow-x: hidden;
+    user-select: none;
 }
 
 /* ul,ol 블릿/숫자없앰 */
