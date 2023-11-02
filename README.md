@@ -42,6 +42,12 @@
 |---|---|
 ![time-move](https://github.com/zisuzin/idle_next/assets/120540018/ee60e9f8-43eb-4d83-8a38-6a116476199f)|![playlist-play](https://github.com/zisuzin/idle_next/assets/120540018/48a0ff64-54e7-4509-8e1e-d9864a5f4915)
 
+> 컨텐츠 검색/검색결과 표시, 카테고리 선택시 필터 프리뷰입니다.
+
+|컨텐츠 검색/검색결과 표시|카테고리 선택시 필터|
+|---|---|
+![search-keyword](https://github.com/zisuzin/idle_next/assets/120540018/4152c70b-69f0-426f-8c29-f6740be8ecd6)|
+
 <br/>
 
 ## 📚 SPA 구조
