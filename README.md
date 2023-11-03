@@ -5,8 +5,8 @@
 # 🎧 (G)I-DLE
 
 `Next.js`환경에서 개발한 `걸그룹 '여자아이들' 홍보 사이트` 입니다.<br>
-<p align="middle"><a href="https://idle-next.vercel.app/">배포 링크</a></p>
-<p align="middle"><a href="https://drive.google.com/file/d/1oPqjcREqQ08VSz9BEDtN_EH637rkJr_O/view?usp=sharing">가이드문서</a></p>
+<p align="middle"><a href="https://idle-next.vercel.app/" target="_blank">배포 링크</a></p>
+<p align="middle"><a href="https://drive.google.com/file/d/1oPqjcREqQ08VSz9BEDtN_EH637rkJr_O/view?usp=sharing" target="_blank">가이드문서</a></p>
 
 </div>
 
@@ -41,6 +41,12 @@
 |특정 시점의 음원 재생|플레이리스트 추가/삭제/재생|
 |---|---|
 ![time-move](https://github.com/zisuzin/idle_next/assets/120540018/ee60e9f8-43eb-4d83-8a38-6a116476199f)|![playlist-play](https://github.com/zisuzin/idle_next/assets/120540018/48a0ff64-54e7-4509-8e1e-d9864a5f4915)
+
+> 컨텐츠 검색/검색결과 표시, 카테고리 선택시 필터 프리뷰입니다.
+
+|컨텐츠 검색/검색결과 표시|카테고리 선택시 필터|
+|---|---|
+![search-keyword](https://github.com/zisuzin/idle_next/assets/120540018/4152c70b-69f0-426f-8c29-f6740be8ecd6)|![filter](https://github.com/zisuzin/idle_next/assets/120540018/1f5aefe4-7293-4471-8543-3be6d4896388)
 
 <br/>
 
