@@ -34,7 +34,7 @@
 
 |Redux state 변경|새로고침시 state 유지|
 |---|---|
-|![state-update](https://github.com/zisuzin/idle_next/assets/120540018/4251185b-d320-42f4-8b70-604caf56b244)|![state-persist](https://github.com/zisuzin/idle_next/assets/120540018/5df6c577-471e-4844-8b65-4538b215d3ce)
+![state-update](https://github.com/zisuzin/idle_next/assets/120540018/dcd1198d-5ec7-4966-aa66-651638a60294)|![state-persist](https://github.com/zisuzin/idle_next/assets/120540018/5df6c577-471e-4844-8b65-4538b215d3ce)
 
 > 특정 시점의 음원 재생, 플레이리스트 추가/삭제/재생 프리뷰입니다.
 
