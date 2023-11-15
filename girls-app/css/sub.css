@@ -509,7 +509,7 @@
     border: 1px solid #111;
     border-radius: 10px;
     overflow: hidden;
-    z-index: 9;
+    z-index: 1;
     display: none;
 }
 #keyword_collection .panels li:hover span {
